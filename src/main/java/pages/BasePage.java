@@ -6,49 +6,38 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.Reporter;
+import org.testng.annotations.*;
+
 
 public class BasePage {
 
-    public static WebDriver driverLocal;
-    //pagina web care urmeaza sa o testam
-
-    public static WebDriver driverLocal;
- 
+    public static WebDriver driver_local; //--> rulare in mod normal pe local
     String url = "https://semicolon-task-manager-skillbrains-grxarv6yb-cezarmocanu.vercel.app/login";
-    public static ExtentReports reports;
     public static ExtentTest logger;
+    public static ExtentReports report;
+    
 
-    @BeforeMethod(alwaysRun = true)
-    public void setUp(ITestContext context){
-        //System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
-
-    public void setUp(ITestContext context) {
-
+    /*pentru Webdriver Local - rularea pe acelasi pc
+     */
+    @BeforeMethod(alwaysRun=true)
+    public void setup(ITestContext context) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        driverLocal = new ChromeDriver(options);
-        driverLocal.manage().window().maximize();
-        driverLocal.get(url);
-        context.setAttribute("WebDriver", driverLocal);
-
+        driver_local = new ChromeDriver(options);
+        driver_local.manage().window().maximize();
+        driver_local.get(url);
+        context.setAttribute("WebDriver", driver_local);
     }
 
-    @AfterMethod(alwaysRun = true)
-    public void tearDown(){
 
-        driverLocal.quit();
-   }
-
-
-        driverLocal.manage().deleteAllCookies();
-        driverLocal.get(url);
-        context.setAttribute("WebDriver", driverLocal);
-    }
-
-    @AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun=true)
     public void tearDown() {
-        driverLocal.quit();
+        driver_local.quit();
     }
+
+    public void reportLog(String message){
+        Reporter.log(message);
+    }
+
 }

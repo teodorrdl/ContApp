@@ -35,11 +35,11 @@ public class LoginPage extends BaseTest {
     private WebElement buttonCreateAccount;
 
     public void addUserName(String username) {
-        addText(emailAddress, username);
+        addText(username, emailAddress);
     }
 
     public void addUserPassword(String userpassword) {
-        addText(emailPassword, userpassword);
+        addText(userpassword, emailPassword);
     }
 
     public void clickLoginButton() {
@@ -54,28 +54,11 @@ public class LoginPage extends BaseTest {
                                    String email,
                                    String password) {
 
-        addText(this.firstName, firstName);
-        addText(this.lastName, lastName);
-        addText(this.email, email);
-        addText(this.password, password);
+        addText(firstName, this.firstName);
+        addText(lastName, this.lastName);
+        addText(email, this.email);
+        addText(password, this.password);
         click(buttonCreateAccount);
     }
-    @FindBy(xpath = "//h5[normalize-space()='Welcome Back']")
-    private WebElement welcomeBack;
-
-    @FindBy(xpath = "//input[@name='username']")
-    private WebElement userName;
-
-    @FindBy(xpath = "//input[@name='password']")
-    private WebElement password;
-
-    @FindBy(xpath = "//button[normalize-space()='Log in']")
-    private WebElement loginButton;
-
-    @FindBy(xpath = "//a[normalize-space()='here']")
-    private WebElement createAccount;
-
-    @FindBy(xpath = "//input[@type='checkbox']")
-    private WebElement checkboxRememberME;
 
 }
