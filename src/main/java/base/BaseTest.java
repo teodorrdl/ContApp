@@ -11,15 +11,31 @@ import pages.BasePage;
 
 
 public class BaseTest {
+
+    protected WebDriver driver;
+    Actions action;
+
+    public BaseTest(){
+
+
+public class BaseTest {
     protected WebDriver driver;
     Actions action;
     public BaseTest() {
+
         driver = BasePage.driverLocal;
         PageFactory.initElements(driver,this);
         action = new Actions(driver);
     }
 
     private WebDriverWait waitElement(){
+
+
+        return new WebDriverWait(driver, 15);
+    }
+
+    protected WebElement find(WebElement locator){
+        waitElement().until(ExpectedConditions.visibilityOf(locator) );
         return new WebDriverWait(driver,15);
     }
 
@@ -29,6 +45,18 @@ public class BaseTest {
     }
 
     protected void click(WebElement locator){
+
+        clickAble(locator).click();
+    }
+
+    protected WebElement clickAble(WebElement locator){
+        waitElement().until(ExpectedConditions.elementToBeClickable(locator));
+        return(locator);
+    }
+
+    private String getOperationSystem(){
+        String operatSystem = System.getProperty("os.name");
+        return operatSystem;
         clickAble(locator).click();
     }
 
@@ -39,6 +67,17 @@ public class BaseTest {
 
     protected void clear(WebElement locator){
         click(locator);
+
+        if(getOperationSystem().contains("Windows")) {
+            locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        }
+        else if(getOperationSystem().contains("Mac OS X")){
+            locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
+        }
+    }
+
+    protected void addText(WebElement locator, String inputText){
+
         if(getOperationSystem().contains("Windows")){
             locator.sendKeys(Keys.chord(Keys.CONTROL,"a"));
         } else if (getOperationSystem().contains("Mac OS X")) {
@@ -52,6 +91,14 @@ public class BaseTest {
     }
 
     protected String getPageTitle(){
+
+        return driver.getTitle();
+    }
+
+    public String getUrl(){
+
+        return driver.getCurrentUrl();
+    }
         return driver.getTitle();
     }
 
@@ -63,6 +110,5 @@ public class BaseTest {
         String operateSystem = System.getProperty("os.name");
         return operateSystem;
     }
-
 }
 

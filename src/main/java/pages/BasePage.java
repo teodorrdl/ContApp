@@ -10,17 +10,38 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class BasePage {
+
     public static WebDriver driverLocal;
+    //pagina web care urmeaza sa o testam
+
+    public static WebDriver driverLocal;
+ 
     String url = "https://semicolon-task-manager-skillbrains-grxarv6yb-cezarmocanu.vercel.app/login";
     public static ExtentReports reports;
     public static ExtentTest logger;
 
     @BeforeMethod(alwaysRun = true)
+    public void setUp(ITestContext context){
+        //System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver.exe");
+
     public void setUp(ITestContext context) {
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driverLocal = new ChromeDriver(options);
         driverLocal.manage().window().maximize();
+        driverLocal.get(url);
+        context.setAttribute("WebDriver", driverLocal);
+
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown(){
+
+        driverLocal.quit();
+   }
+
+
         driverLocal.manage().deleteAllCookies();
         driverLocal.get(url);
         context.setAttribute("WebDriver", driverLocal);
