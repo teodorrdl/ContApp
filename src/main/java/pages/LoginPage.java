@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BaseTest {
 
+
     @FindBy(xpath = "//input[@name='username']")
     private WebElement emailAddress;
 
@@ -59,4 +60,22 @@ public class LoginPage extends BaseTest {
         addText(this.password, password);
         click(buttonCreateAccount);
     }
+    @FindBy(xpath = "//h5[normalize-space()='Welcome Back']")
+    private WebElement welcomeBack;
+
+    @FindBy(xpath = "//input[@name='username']")
+    private WebElement userName;
+
+    @FindBy(xpath = "//input[@name='password']")
+    private WebElement password;
+
+    @FindBy(xpath = "//button[normalize-space()='Log in']")
+    private WebElement loginButton;
+
+    @FindBy(xpath = "//a[normalize-space()='here']")
+    private WebElement createAccount;
+
+    @FindBy(xpath = "//input[@type='checkbox']")
+    private WebElement checkboxRememberME;
+
 }
