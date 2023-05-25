@@ -9,5 +9,8 @@
         <module name="Helin_Framework" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Helin_Internship" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>
