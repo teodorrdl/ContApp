@@ -1,6 +1,5 @@
 package base;
 
-import org.jsoup.Connection;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
@@ -8,7 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
 import java.util.List;
-import java.util.Locale;
 
 public class BaseTest extends BasePage {
 
@@ -23,7 +21,7 @@ public class BaseTest extends BasePage {
     }
 
     private WebDriverWait waitPage(){
-        return  new WebDriverWait(driver, 15);
+        return  new WebDriverWait(driver,5);
     }
 
     protected WebElement find(WebElement locator) {
@@ -113,7 +111,7 @@ public class BaseTest extends BasePage {
     }
 
     private String getOperationSystem(){
-        String operatSystem = System.getProperty("os.name");
-        return operatSystem;
+        String operateSystem = System.getProperty("os.name");
+        return operateSystem;
     }
 }

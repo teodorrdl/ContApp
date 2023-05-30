@@ -15,7 +15,6 @@ public class LoginPageTest extends BasePage {
     @Test(description = "Happy Test!")
     @Parameters({"username", "password"})
     public void verifyLogin(String username, String password) {
-
         loginPage().addUserName(username);
         loginPage().addUserPassword(password);
         loginPage().clickLoginButton();
@@ -27,7 +26,6 @@ public class LoginPageTest extends BasePage {
         loginPage().clickCreateAccount();
         Assert.assertEquals(loginPage().getUrl(),"https://semicolon-task-manager-skillbrains-grxarv6yb-cezarmocanu.vercel.app/signup");
         loginPage().createAccount(firstName, lastName, email,password);
-
     }
 
 

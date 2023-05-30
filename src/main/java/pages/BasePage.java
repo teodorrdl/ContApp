@@ -14,6 +14,7 @@ public class BasePage {
 
     public static WebDriver driver_local; //--> rulare in mod normal pe local
     String url = "https://semicolon-task-manager-skillbrains-grxarv6yb-cezarmocanu.vercel.app/login";
+    String contactAppUrl = "https://contapp.ro/";
     public static ExtentTest logger;
     public static ExtentReports report;
     
@@ -26,7 +27,7 @@ public class BasePage {
         options.addArguments("--remote-allow-origins=*");
         driver_local = new ChromeDriver(options);
         driver_local.manage().window().maximize();
-        driver_local.get(url);
+        driver_local.get(contactAppUrl);
         context.setAttribute("WebDriver", driver_local);
     }
 
