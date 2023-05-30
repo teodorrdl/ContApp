@@ -8,17 +8,35 @@
     <!--	</listeners>-->
     <test name="Smoke Test">
         <classes>
-            <class name="tests.LoginPageTest">
+<!--            <class name="tests.LoginPageTest">-->
+<!--                <methods>-->
+<!--                    <include name="verifyLogin">-->
+<!--                        <parameter name="username" value="alexandrabarboni@semicolon.com"/>-->
+<!--                        <parameter name="password" value="yrEpJyuu"/>-->
+<!--                    </include>-->
+<!--                    <include name="verifyCreateAccount">-->
+<!--                        <parameter name="firstName" value="Admin12121"/>-->
+<!--                        <parameter name="lastName" value="admin123"/>-->
+<!--                        <parameter name="email" value="test@yahoo.com"/>-->
+<!--                        <parameter name="password" value="parola122345"/>-->
+<!--                    </include>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="tests.LoginPageContactAppTest">
                 <methods>
                     <include name="verifyLogin">
-                        <parameter name="username" value="alexandrabarboni@semicolon.com"/>
-                        <parameter name="password" value="yrEpJyuu"/>
+                        <parameter name="username" value="test@yahoo.com"/>
+                        <parameter name="password" value="pass123456"/>
                     </include>
-                    <include name="verifyCreateAccount">
-                        <parameter name="firstName" value="Admin12121"/>
-                        <parameter name="lastName" value="admin123"/>
-                        <parameter name="email" value="test@yahoo.com"/>
-                        <parameter name="password" value="parola122345"/>
+                    <include name="verifyLoginWithInvalidPassword">
+                        <parameter name="username" value="test@yahoo.com"/>
+                        <parameter name="invalidPassword" value=""/>
+                    </include>
+                    <include name="verifyLoginWithBlankFields">
+                        <parameter name="username" value=""/>
+                        <parameter name="password" value=""/>
+                    </include>
+                    <include name="verifyForgotPasswordLink">
                     </include>
                 </methods>
             </class>
