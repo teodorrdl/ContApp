@@ -11,7 +11,7 @@ public class LoginPageContactApp extends BaseTest {
     private WebElement authenticationButton;
 
     @FindBy(xpath = "//a[normalize-space()='Creeaza un cont!']")
-    private WebElement createAccountButton;
+    public WebElement createAccountButton;
 
     @FindBy(xpath = "//input[@id='email']")
     private WebElement emailField;
@@ -32,7 +32,7 @@ public class LoginPageContactApp extends BaseTest {
     private WebElement passwordAlertMessage;
 
     @FindBy(xpath = "//a[normalize-space()='Ai uitat parola?']")
-    private WebElement forgotPasswordLink;
+    public WebElement forgotPasswordLink;
 
     public String [] expectedAlertMessages = {"Datele de autentificare introduse nu se potrivesc cu baza de date.",
             "Campul \"E-mail\" este obligatoriu.",
@@ -50,7 +50,6 @@ public class LoginPageContactApp extends BaseTest {
     public void clickRememberMeCheckbox() {
         click(rememberMeCheckbox);
     }
-
     public void clickLoginButton() {
         click(loginButton);
     }
@@ -67,7 +66,7 @@ public class LoginPageContactApp extends BaseTest {
     }
 
     public void verifyAlertMessages() {
-        if (emailAlertMessage.getText().equals(expectedAlertMessages[0]) && passwordAlertMessage.getText().equals(expectedAlertMessages[0])) {
+        if (emailAlertMessage.getText().equals(expectedAlertMessages[1]) && passwordAlertMessage.getText().equals(expectedAlertMessages[2])) {
             System.out.println(emailAlertMessage.getText());
             System.out.println(passwordAlertMessage.getText());
         } else if (emailAlertMessage.getText().equals(expectedAlertMessages[1])) {
