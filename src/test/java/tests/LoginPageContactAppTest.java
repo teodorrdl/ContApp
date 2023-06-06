@@ -12,7 +12,7 @@ public class LoginPageContactAppTest extends BasePage {
         return new LoginPageContactApp();
     }
 
-    @Test(description = "Happy Test!")
+    @Test(description = "Happy Test!",priority = 3)
     @Parameters({"username", "password"})
     public void verifyLogin(String username, String password) {
         loginPageContactApp().clickAuthenticationButton();
@@ -22,7 +22,7 @@ public class LoginPageContactAppTest extends BasePage {
         loginPageContactApp().clickLoginButton();
     }
 
-    @Test(description = "Verify the login page for both, when the field is blank and Submit button is clicked.")
+    @Test(description = "Verify the login page for both, when the field is blank and Submit button is clicked.",priority = 1)
     @Parameters({"username", "password"})
     public void verifyLoginWithBlankFields(String username, String password) {
         loginPageContactApp().clickAuthenticationButton();
@@ -33,7 +33,7 @@ public class LoginPageContactAppTest extends BasePage {
         loginPageContactApp().verifyAlertMessages();
     }
 
-    @Test(description = "Verify if a user cannot login with a valid username and an invalid password.")
+    @Test(description = "Verify if a user cannot login with a valid username and an invalid password.",priority = 2)
     @Parameters({"username", "invalidPassword"})
     public void verifyLoginWithInvalidPassword(String username, String invalidPassword) {
         loginPageContactApp().clickAuthenticationButton();
