@@ -79,7 +79,7 @@ public class BaseTest extends BasePage {
      * @return String representing the inner HTML of the DOM element (MW: To check it is actually inner-text
      */
     protected String getText(WebElement locator) {
-        return find(locator).getText();
+          return locator.getText();
     }
 
     /**

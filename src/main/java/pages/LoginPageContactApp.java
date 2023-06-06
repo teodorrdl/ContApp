@@ -10,9 +10,6 @@ public class LoginPageContactApp extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Autentifica-te']")
     private WebElement authenticationButton;
 
-    @FindBy(xpath = "//a[normalize-space()='Creeaza un cont!']")
-    public WebElement createAccountButton;
-
     @FindBy(xpath = "//input[@id='email']")
     private WebElement emailField;
 
@@ -59,11 +56,7 @@ public class LoginPageContactApp extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), "https://account.contapp.ro/login");
     }
 
-    public void clickCreateAccountButton() {
-        click(createAccountButton);
-        Assert.assertEquals(driver.getCurrentUrl(), "https://account.contapp.ro/register",
-                "The url page  is not the expected one.");
-    }
+
 
     public void verifyAlertMessages() {
         if (emailAlertMessage.getText().equals(expectedAlertMessages[1]) && passwordAlertMessage.getText().equals(expectedAlertMessages[2])) {

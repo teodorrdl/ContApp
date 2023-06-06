@@ -7,10 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Helin_Framework" />
+        <module name="Helin_Internship" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Helin_Internship" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>
