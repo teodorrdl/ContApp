@@ -40,14 +40,23 @@
 <!--                    </include>-->
 <!--                </methods>-->
 <!--            </class>-->
-            <class name="tests.CreateAccountTest">
+<!--            <class name="tests.CreateAccountTest">-->
+<!--                <methods>-->
+<!--                    <include name="createAccountTest">-->
+<!--                        <parameter name="email" value="test_catavei@yahoo.com"/>-->
+<!--                        <parameter name="firstname" value="Dana"/>-->
+<!--                        <parameter name="lastname" value="Catavei"/>-->
+<!--                        <parameter name="password" value="InternSh!p2023"/>-->
+<!--                        <parameter name="confPassword" value="InternSh!p2023"/>-->
+<!--                    </include>-->
+<!--                </methods>-->
+<!--            </class>-->
+
+            <class name="tests.SettingCompanyTest">
                 <methods>
-                    <include name="createAccountTest">
-                        <parameter name="email" value="test_catavei@yahoo.com"/>
-                        <parameter name="firstname" value="Dana"/>
-                        <parameter name="lastname" value="Catavei"/>
-                        <parameter name="password" value="InternSh!p2023"/>
-                        <parameter name="confPassword" value="InternSh!p2023"/>
+                    <include name="verifySettingCompany">
+                        <parameter name="username" value="danytheshark@yahoo.com"/>
+                        <parameter name="password" value="pass123456"/>
                     </include>
                 </methods>
             </class>
