@@ -29,7 +29,29 @@ public class SettingCompany extends BaseTest {
     @FindBy(xpath = "//input[@id='nr_reg_com']")
     @CacheLookup private WebElement nrRegComInput;
 
+    @FindBy(xpath = "(//span[@role=\"textbox\"])[2]")
+    @CacheLookup private WebElement entityTypeOption;
 
+    @FindBy(xpath = "//span[@title='---']")
+    private WebElement entityTypeValue;
+
+    @FindBy(xpath = "//span[contains(@title,'Alta')]")
+    private WebElement entityTypeValueOther;
+
+    @FindBy(xpath = "//span[contains(@title,'Asociere de P.F.')]")
+    private WebElement entityTypeValueAssociate;
+
+    @FindBy(xpath = "//span[normalize-space()='II']")
+    private WebElement entityTypeValueII;
+
+    @FindBy(xpath = "//span[contains(text(),'Persoană fizică')]")
+    private WebElement entityTypeValuePF;
+
+    @FindBy(xpath = "//span[contains(text(),'PFA')]")
+    private WebElement entityTypeValuePFA;
+
+    @FindBy(xpath = "//span[normalize-space()='PFI']")
+    private WebElement entityTypeValuePFI;
 
     public void clickContAppPs(){
         click(contAppPs);
