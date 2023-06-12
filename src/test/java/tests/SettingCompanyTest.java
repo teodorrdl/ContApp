@@ -4,7 +4,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.BasePage;
 import pages.LoginPageContactApp;
-import pages.SettingCompany;
+import pages.SettingCompany.SettingCompany;
 
 public class SettingCompanyTest extends BasePage {
 
@@ -16,7 +16,7 @@ public class SettingCompanyTest extends BasePage {
         return new LoginPageContactApp();
     }
 
-    @Test(description = "check the company settings if go to the correct url with valid login credentials " +
+    @Test(description = "check the company settings if direct to the correct url with valid login credentials " +
             "and with the company already created")
     @Parameters({"username", "password"})
     public void verifySettingCompany(String username, String password) {
