@@ -51,4 +51,53 @@ public class GeneralSetting extends BaseTest {
     @FindBy(xpath = "//span[normalize-space()='SRL']")
     private WebElement entityTypeOptionSRL;
 
+    @FindBy(xpath = "//label[normalize-space()='Numele firmei']")
+    private WebElement companyNameLabel;
+
+    @FindBy (xpath = "//div[@class='input-group with-text']")
+    private WebElement registrationDate;
+
+    @FindBy(xpath = "//span[contains(@role,'combobox')]")
+    private WebElement countryOption;
+
+    @FindBy(xpath = "//span[contains(@role,'combobox')]")
+    private WebElement countyOption;
+
+    @FindBy(xpath = "//input[@id='input-city']")
+    private WebElement cityInput;
+
+    @FindBy(xpath = "//label[contains(text(),'Adresă')]")
+    private WebElement addressInput;
+
+    @FindBy(xpath = "//label[normalize-space()='Persoana de contact']")
+    private WebElement contactPersonInput;
+
+    @FindBy(xpath = "//label[normalize-space()='Website']")
+    private WebElement websiteInput;
+
+    @FindBy(xpath = "//label[normalize-space()='Email']")
+    private WebElement emailInput;
+
+    @FindBy(xpath = "//label[normalize-space()='Telefon']")
+    private WebElement phoneInput;
+
+    // alert messages
+    @FindBy(xpath = "//label[contains(text(),'CUI/CIF trebuie să fie un șir de caractere.')]")
+    private WebElement cuiAlertMessage;
+
+    @FindBy(xpath = "//label[normalize-space()='Campul 'Tip entitate' este obligatoriu.']")
+    private WebElement entityTypeAlertMessage;
+
+    @FindBy(xpath = "//label[normalize-space()='Campul 'Numele firmei' este obligatoriu.']")
+    private WebElement companyNameAlertMessage;
+
+    @FindBy(xpath = "//label[contains(text(),'Campul \"Județ\" este obligatoriu.')]")
+    private WebElement countyAlertMessage;
+
+    @FindBy(xpath = "//label[normalize-space()='Campul \"Localitate\" este obligatoriu.']")
+    private WebElement cityAlertMessage;
+
+    @FindBy(xpath = "//label[contains(text(),'Campul \"Adresă\" este obligatoriu.')]")
+    private WebElement addressAlertMessage;
+
 }
