@@ -58,8 +58,26 @@
                         <parameter name="username" value="danytheshark@yahoo.com"/>
                         <parameter name="password" value="pass123456"/>
                     </include>
+                    <include name="modifySettingCompany">
+                        <parameter name="username" value="danytheshark@yahoo.com"/>
+                        <parameter name="password" value="pass123456"/>
+                        <parameter name="cui" value="1234567"/>
+                        <parameter name="regCom" value="1234567"/>
+                        <parameter name="entityType" value="Alta"/>
+                        <parameter name="companyName" value="Daniel SRL"/>
+                        <parameter name="registrationDate" value="07-02-2023"/>
+                        <parameter name="country" value="Romania"/>
+                        <parameter name="county" value="Tulcea"/>
+                        <parameter name="city" value="Sulina"/>
+                        <parameter name="address" value="Str. Principala"/>
+                        <parameter name="contactPerson" value="Daniel"/>
+                        <parameter name="website" value="dan.ro"/>
+                        <parameter name="email" value="dantest@yahoo.com"/>
+                        <parameter name="phone" value="0745123456"/>
+                    </include>
                 </methods>
             </class>
+
 
 
             <!--			<class name="tests.MyInfoTest" >-->
