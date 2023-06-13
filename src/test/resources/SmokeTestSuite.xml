@@ -55,11 +55,11 @@
             <class name="tests.SettingCompanyTest">
                 <methods>
                     <include name="verifySettingCompany">
-                        <parameter name="username" value="danytheshark@yahoo.com"/>
+                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>
                         <parameter name="password" value="pass123456"/>
                     </include>
                     <include name="modifySettingCompany">
-                        <parameter name="username" value="danytheshark@yahoo.com"/>
+                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>
                         <parameter name="password" value="pass123456"/>
                         <parameter name="cui" value="1234567"/>
                         <parameter name="regCom" value="1234567"/>
