@@ -66,7 +66,7 @@
             						<parameter name="IBAN" value="RO27RZBR2782911463382942" />
             						<parameter name="BankName" value="Banca Transilvania" />
             						<parameter name="Contact" value="Popescu Marian" />
-                                    <parameter name="SupplierEmail" value="test@test.com" />
+                                    <parameter name="SupplierEmail" value="test_@test.com" />
                                     <parameter name="SupplierWebsite" value="www.firmates.ro" />
                                     <parameter name="SupplierPhone" value="031816781" />
                                     <parameter name="CaenActivity" value="urban" />
