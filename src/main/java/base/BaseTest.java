@@ -11,7 +11,7 @@ import java.util.List;
 public class BaseTest extends BasePage {
 
     protected WebDriver driver;
-    Actions action;
+    public Actions action;
 
     public BaseTest() {
         //driver pentru Webdriver ul local
