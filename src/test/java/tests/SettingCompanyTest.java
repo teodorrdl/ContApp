@@ -36,13 +36,12 @@ public class SettingCompanyTest extends BasePage {
         settingCompany().clickSettingCompany();
     }
 
-    @Test(description = "modified the company settings",priority = 1)
-    @Parameters({"username", "password","cui", "regCom", "entityType", "companyName", "registrationDate", "country", "county", "city",
-            "address", "contactPerson", "website", "email", "phone"})
-    public void modifySettingCompany(String username,String password, String cui, String regCom, String entityType,
-                                     String companyName, String registrationDate, String country, String county,
-                                     String city, String address, String contactPerson, String website, String email,
-                                     String phone) {
+    @Test(description = "modified the company at the value organization type with 'persoana fizica' from 'Alta' value ", priority = 1)
+    @Parameters({"username", "password", "entityType", "cnp", "firstName", "lastName", "country", "county", "city",
+            "address", "email", "phone"})
+    public void modifyCompanyOrganisationType( String username, String password, String entityType, String cnp,
+                                               String firstName, String lastName, String country, String county,
+                                               String city, String address, String email, String phone) {
         loginPageContactApp().clickAuthenticationButton();
         loginPageContactApp().addEmail(username);
         loginPageContactApp().addPassword(password);
@@ -51,7 +50,6 @@ public class SettingCompanyTest extends BasePage {
         settingCompany().clickContAppPs();
         settingCompany().clickDropdownButtonSetting();
         settingCompany().clickSettingCompany();
-        generalSetting().modifiedCompany(cui, regCom, entityType, companyName, registrationDate, country, county,
-                city, address, contactPerson, website, email, phone);
+        generalSetting().modifiedCompany(entityType, cnp, firstName, lastName, country, county, city, address, email, phone);
     }
 }
