@@ -4,6 +4,7 @@ import base.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class GeneralSetting extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='General']")
@@ -56,19 +57,31 @@ public class GeneralSetting extends BaseTest {
     @FindBy(xpath = "(//div//div[@class=\"input-group \"]//input[@class=\"form-control \"])[2]")
     private WebElement companyNameLabel;
 
+    @FindBy(xpath = "(//div//div[@class='input-group ']//input[@class='form-control '])[1]")
+    private WebElement cnpInput;
+
+    @FindBy(xpath = "(//div[@class=\"input-group \"]//input[@class=\"form-control \"])[2]")
+    private WebElement firstNameInput;
+
+    @FindBy(xpath = "(//div[@class=\"input-group \"]//input[@class=\"form-control \"])[3]")
+    private WebElement lastNameInput;
+
     @FindBy (xpath = "//div[@class=\"input-group with-text\"]//input[@class=\"form-control\"]")
     private WebElement registrationDate;
 
-    @FindBy(xpath = "//span[contains(@role,'combobox')]")
+    @FindBy(xpath = "(//span[contains(@role,'combobox')])[3]")
     private WebElement countryOption;
 
-    @FindBy(xpath = "(//span[@role='combobox'])[3]")
+    @FindBy(xpath = "//div[contains(@class,'row')]//div[3]//div[1]//div[2]")
+    private WebElement countrySaved;
+
+    @FindBy(xpath = "(//span[@role='combobox'])[4]")
     private WebElement countyOption;
 
     @FindBy(xpath = "//input[@id='input-city']")
     private WebElement cityInput;
 
-    @FindBy(xpath = "(//div//div[@class=\"input-group \"]//input[@class=\"form-control \"])[4]")
+    @FindBy(xpath = "(//div//div[@class=\"input-group \"]//input[@class=\"form-control \"])[5]")
     private WebElement addressInput;
 
     @FindBy(xpath = "(//div//div[@class=\"input-group \"]//input[@class=\"form-control \"])[5]")
@@ -77,17 +90,20 @@ public class GeneralSetting extends BaseTest {
     @FindBy(xpath = "(//div//div[@class=\"input-group \"]//input[@class=\"form-control \"])[6]")
     private WebElement websiteInput;
 
-    @FindBy(xpath = "(//div//div[@class=\"input-group \"]//input[@class=\"form-control \"])[7]")
+    @FindBy(xpath = "(//div//div[@class=\"input-group \"]//input[@class=\"form-control \"])[6]")
     private WebElement emailInput;
 
-    @FindBy(xpath = "(//div//div[@class=\"input-group \"]//input[@class=\"form-control \"])[8]")
+    @FindBy(xpath = "(//div//div[@class=\"input-group \"]//input[@class=\"form-control \"])[7]")
     private WebElement phoneInput;
 
-    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    @FindBy(xpath = "(//div[contains(@class,'col text-truncate')])[4]")
+    private WebElement phoneSaved;
+
+    @FindBy(xpath = "//button[contains(@class,'btn btn-primary')]")
     private WebElement saveButton;
 
-    @FindBy(xpath = "(//button[contains(@type,'button')][normalize-space()='Închide'])[1]")
-    private WebElement closeButton;
+    @FindBy(xpath = "(//button[contains(@aria-label,'Close')])[2]")
+    private WebElement closeButtonX;
 
     // alert messages
     @FindBy(xpath = "//label[contains(text(),'CUI/CIF trebuie să fie un șir de caractere.')]")
@@ -175,7 +191,6 @@ public class GeneralSetting extends BaseTest {
         }
     }
 
-
     public void addCompanyName(String companyName){
         addText(companyName, companyNameLabel);
     }
@@ -185,42 +200,29 @@ public class GeneralSetting extends BaseTest {
         addText(registrationDate, this.registrationDate);
     }
 
-    public void getCountryOption(String country){
+    public void getCountryOption(String country) {
         click(countryOption);
         switch (country) {
             case "Romania":
                 click(countryOption);
                 break;
             default:
-                System.out.println("Country not found");
+                Assert.fail("Country not found");
         }
     }
 
-    public void getCountyOption(String county){
-        click(countyOption);
-        switch (county) {
-            case "Alba":
-                click(countyOption);
-                break;
-            default:
-                System.out.println("County not found");
-        }
-    }
-
-    public void modifiedCompany(String cui, String nrRegCom, String entityType, String companyName,
-                                String registrationDate, String country, String county, String city, String address,
-                                String contactPerson, String website, String email, String phone){
-        addText(cui, searchInputCUI);
-        addText(nrRegCom, nrRegComInput);
+    public void modifiedCompany(String entityType, String cnp, String firstName, String lastName,
+                                String country, String county, String city, String address,
+                                String email, String phone){
         getEntityTypeOption(entityType);
-        addCompanyName(companyName);
-        addRegistrationDate(registrationDate);
+        Assert.assertTrue(cnpInput.isDisplayed());
+        addText(cnp, cnpInput);
+        addText(firstName, firstNameInput);
+        addText(lastName, lastNameInput);
         getCountryOption(country);
-        getCountyOption(county);
+        addText(county, countyOption);
         addText(city, cityInput);
         addText(address, addressInput);
-        addText(contactPerson, contactPersonInput);
-        addText(website, websiteInput);
         addText(email, emailInput);
         addText(phone, phoneInput);
         click(saveButton);
