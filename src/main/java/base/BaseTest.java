@@ -10,7 +10,7 @@ import java.util.List;
 
 public class BaseTest extends BasePage {
 
-    protected WebDriver driver;
+    public WebDriver driver;
     Actions action;
 
     public BaseTest() {
@@ -19,9 +19,10 @@ public class BaseTest extends BasePage {
         PageFactory.initElements(driver, this);
         action = new Actions(driver);
     }
-
-    private WebDriverWait waitPage(){
+    public WebDriverWait waitPage(){
+//        return new WebDriverWait(driver, Duration.ofSeconds(15));
         return  new WebDriverWait(driver,5);
+
     }
 
     protected WebElement find(WebElement locator) {
