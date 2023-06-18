@@ -6,6 +6,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class GeneralSetting extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='General']")
     private WebElement generalSettingLink;
@@ -22,7 +24,8 @@ public class GeneralSetting extends BaseTest {
     @CacheLookup private WebElement nrRegComInput;
 
     @FindBy(xpath = "(//span[@role='textbox'])[2]")
-    @CacheLookup private WebElement entityTypeOption;
+    private List<WebElement> entityTypeOption;
+
 
     @FindBy(xpath = "//span[@title='---']")
     private WebElement entityOptionDefault;
@@ -70,7 +73,7 @@ public class GeneralSetting extends BaseTest {
     private WebElement registrationDate;
 
     @FindBy(xpath = "(//span[contains(@role,'combobox')])[3]")
-    private WebElement countryOption;
+    private List<WebElement> countryOption;
 
     @FindBy(xpath = "//div[contains(@class,'row')]//div[3]//div[1]//div[2]")
     private WebElement countrySaved;
@@ -128,43 +131,8 @@ public class GeneralSetting extends BaseTest {
     public WebElement successMessage;
 
     public void getEntityTypeOption(String entityType){
-        click(entityTypeOption);
-        switch (entityType) {
-            case "---":
-                click(entityOptionDefault);
-                break;
-            case "Alta":
-                click(entityTypeOptionOther);
-                break;
-            case "Asociere de P.F.":
-                click(entityTypeOptionAPF);
-                break;
-            case "II":
-                click(entityTypeOptionII);
-                break;
-            case "Persoană fizică":
-                click(entityTypeOptionPF);
-                break;
-            case "PFA":
-                click(entityTypeOptionPFA);
-                break;
-            case "PFI":
-                click(entityTypeOptionPFI);
-                break;
-            case "Profesie Liberală":
-                click(entityTypeOptionPL);
-                break;
-            case "SA":
-                click(entityTypeOptionSA);
-                break;
-            case "SRL":
-                click(entityTypeOptionSRL);
-                break;
-            default:
-                System.out.println("Entity type not found");
-        }
+        listofElements(entityTypeOption, entityType);
     }
-
 
     public void getMessageAlert(String message){
         switch (message) {
@@ -201,14 +169,7 @@ public class GeneralSetting extends BaseTest {
     }
 
     public void getCountryOption(String country) {
-        click(countryOption);
-        switch (country) {
-            case "Romania":
-                click(countryOption);
-                break;
-            default:
-                Assert.fail("Country not found");
-        }
+        listofElements(countryOption, country);
     }
 
     public void modifiedCompany(String entityType, String cnp, String firstName, String lastName,
