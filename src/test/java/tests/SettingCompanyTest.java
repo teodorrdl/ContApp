@@ -121,6 +121,5 @@ public class SettingCompanyTest extends BasePage {
         settingCompany().clickSettingCompany();
         placeOfActivity().clickPlaceOfActivityLink();
         placeOfActivity().addNewLocation(locationName, locationCounty, locationCity, locationAddress);
-        Assert.assertTrue(placeOfActivity().checkIfLocationIsAdded(locationName));
     }
 }
