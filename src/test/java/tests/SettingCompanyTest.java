@@ -1,10 +1,12 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.BasePage;
 import pages.LoginPageContactApp;
 import pages.SettingCompany.GeneralSetting;
+import pages.SettingCompany.PlaceOfActivity;
 import pages.SettingCompany.SettingCompany;
 import pages.SettingCompany.TVASetting;
 
@@ -24,6 +26,10 @@ public class SettingCompanyTest extends BasePage {
 
     public TVASetting tvaSetting() {
         return new TVASetting();
+    }
+
+    public PlaceOfActivity placeOfActivity() {
+        return new PlaceOfActivity();
     }
 
     @Test(description = "check the company settings if direct to the correct url with valid login credentials " +
@@ -100,5 +106,21 @@ public class SettingCompanyTest extends BasePage {
         settingCompany().clickSettingCompany();
         tvaSetting().clickTVALink();
         tvaSetting().addVATRate(VATRate);
+    }
+
+    @Test(description = "Add new location", priority = 6)
+    @Parameters({"username", "password", "locationName", "locationCounty", "locationCity", "locationAddress"})
+    public void addNewLocation(String username, String password, String locationName, String locationCounty, String locationCity, String locationAddress) {
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickRememberMeCheckbox();
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        placeOfActivity().clickPlaceOfActivityLink();
+        placeOfActivity().addNewLocation(locationName, locationCounty, locationCity, locationAddress);
+        Assert.assertTrue(placeOfActivity().checkIfLocationIsAdded(locationName));
     }
 }
