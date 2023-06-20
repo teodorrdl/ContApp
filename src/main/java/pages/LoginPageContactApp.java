@@ -9,25 +9,18 @@ public class LoginPageContactApp extends BaseTest {
 
     @FindBy(xpath = "//a[normalize-space()='Autentifica-te']")
     private WebElement authenticationButton;
-
     @FindBy(xpath = "//input[@id='email']")
     private WebElement emailField;
-
     @FindBy(xpath = "//input[@id='password']")
     private WebElement passwordField;
-
     @FindBy(id = "remember-me")
     private WebElement rememberMeCheckbox;
-
     @FindBy(xpath = "//button[normalize-space()='Autentificare']")
     private WebElement loginButton;
-
     @FindBy(xpath = "//label[@for='email']")
     private WebElement emailAlertMessage;
-
     @FindBy(xpath = "//label[@for='password']")
     private WebElement passwordAlertMessage;
-
     @FindBy(xpath = "//a[normalize-space()='Ai uitat parola?']")
     public WebElement forgotPasswordLink;
 
@@ -55,8 +48,6 @@ public class LoginPageContactApp extends BaseTest {
         click(authenticationButton);
         Assert.assertEquals(driver.getCurrentUrl(), "https://account.contapp.ro/login");
     }
-
-
 
     public void verifyAlertMessages() {
         if (emailAlertMessage.getText().equals(expectedAlertMessages[1]) && passwordAlertMessage.getText().equals(expectedAlertMessages[2])) {

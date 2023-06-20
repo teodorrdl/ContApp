@@ -24,7 +24,7 @@ public class BaseTest extends BasePage {
         action = new Actions(driver);
     }
 
-    private WebDriverWait waitPage(){
+    protected WebDriverWait waitPage(){
         return  new WebDriverWait(driver,5);
     }
 
@@ -37,13 +37,10 @@ public class BaseTest extends BasePage {
         waitPage().until(ExpectedConditions.elementToBeClickable(locator));
         return locator;
     }
-
-
     protected void addText(String inputText, WebElement locator) {
         clear(locator);
         locator.sendKeys(inputText);
     }
-
     protected void clear(WebElement locator) {
         click(locator);
 
@@ -53,11 +50,9 @@ public class BaseTest extends BasePage {
                 locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
             }
     }
-
     protected void click(WebElement locator) {
         clickAble(locator).click();
     }
-
     protected void movetoElement(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
