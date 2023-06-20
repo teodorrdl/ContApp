@@ -1,12 +1,11 @@
 package pages;
 
 import base.BaseTest;
+import base.PageLinksAndText;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-import static base.BaseTest.PageLinksAndTexts.clickCreateAccountButtonLink;
-import static base.BaseTest.PageLinksAndTexts.clickCreateAccountButtonText;
 
 public class CreateAccountPage extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Autentifica-te']")
@@ -35,36 +34,50 @@ public class CreateAccountPage extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Creeaza un cont!']")
     public WebElement createAccountButton;
 
-    public void firstemail(String email){
-        addText(email,this.email);
+    public void firstemail(String email) {
+        addText(email, this.email);
     }
-    public void clickContinue(){
+
+    public void clickContinue() {
         click(butoncontinua);
     }
-    public boolean verifyemail(String firstemail){
-        return firstemail.contains(getText(email))?true:false;
+
+    public boolean verifyemail(String firstemail) {
+        return firstemail.contains(getText(email)) ? true : false;
     }
-    public void addfirstname(String prenume){
-        addText(prenume,this.prenume);
+
+    public void addfirstname(String prenume) {
+        addText(prenume, this.prenume);
     }
-    public void addlastname(String nume){
-        addText(nume,this.nume);
+
+    public void addlastname(String nume) {
+        addText(nume, this.nume);
     }
-    public void addpassword(String parola){addText(parola,this.parola);}
-    public void confirmpassword(String confirmaparola){addText(confirmaparola,this.confirmaparola);}
-    public void clickTermsandConditions(){
+
+    public void addpassword(String parola) {
+        addText(parola, this.parola);
+    }
+
+    public void confirmpassword(String confirmaparola) {
+        addText(confirmaparola, this.confirmaparola);
+    }
+
+    public void clickTermsandConditions() {
         click(termenisiconditii);
     }
-    public void send(){click(trimite);}
 
-    public void clickAutentification(){
+    public void send() {
+        click(trimite);
+    }
+
+    public void clickAutentification() {
         click(authenticationButton);
 
     }
 
     public void clickCreateAccountButton() {
         click(createAccountButton);
-        Assert.assertEquals(driver.getCurrentUrl(), clickCreateAccountButtonLink,
-                String.valueOf(clickCreateAccountButtonText));
+        Assert.assertEquals(driver.getCurrentUrl(), PageLinksAndText.clickCreateAccountButtonLink.getValue(),
+                PageLinksAndText.clickCreateAccountButtonText.getValue());
     }
 }

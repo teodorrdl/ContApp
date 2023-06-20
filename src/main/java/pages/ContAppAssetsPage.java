@@ -1,13 +1,13 @@
 package pages;
 
 import base.BaseTest;
+import base.PageLinksAndText;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import java.util.ArrayList;
 
-import static base.BaseTest.PageLinksAndTexts.verifyAssetsRegistryButtonLink;
 
 public class ContAppAssetsPage extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Active']")
@@ -191,7 +191,7 @@ public class ContAppAssetsPage extends BaseTest {
         click(assetsRegistryButton);
         waitPage();
         SwitchToNextTab();
-        Assert.assertEquals(getUrl(), verifyAssetsRegistryButtonLink);
+        Assert.assertEquals(getUrl(), PageLinksAndText.verifyAssetsRegistryButtonLink.getValue());
 
     }
 
