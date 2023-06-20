@@ -1,5 +1,6 @@
 package base;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,101 +10,119 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
 
+import java.util.List;
 
-public class BaseTest {
+public class BaseTest extends BasePage {
 
     protected WebDriver driver;
     Actions action;
 
-    public BaseTest(){
-
-
-public class BaseTest {
-    protected WebDriver driver;
-    Actions action;
     public BaseTest() {
-
-        driver = BasePage.driverLocal;
-        PageFactory.initElements(driver,this);
+        //driver pentru Webdriver ul local
+        driver = BasePage.driver_local;
+        PageFactory.initElements(driver, this);
         action = new Actions(driver);
     }
 
-    private WebDriverWait waitElement(){
-
-
-        return new WebDriverWait(driver, 15);
-    }
-
-    protected WebElement find(WebElement locator){
-        waitElement().until(ExpectedConditions.visibilityOf(locator) );
-        return new WebDriverWait(driver,15);
+    private WebDriverWait waitPage(){
+        return  new WebDriverWait(driver,5);
     }
 
     protected WebElement find(WebElement locator) {
-        waitElement().until(ExpectedConditions.visibilityOf(locator));
+        waitPage().until(ExpectedConditions.visibilityOf(locator));
         return locator;
-    }
-
-    protected void click(WebElement locator){
-
-        clickAble(locator).click();
     }
 
     protected WebElement clickAble(WebElement locator){
-        waitElement().until(ExpectedConditions.elementToBeClickable(locator));
-        return(locator);
-    }
-
-    private String getOperationSystem(){
-        String operatSystem = System.getProperty("os.name");
-        return operatSystem;
-        clickAble(locator).click();
-    }
-
-    protected WebElement clickAble(WebElement locator) {
-        waitElement().until(ExpectedConditions.elementToBeClickable(locator));
+        waitPage().until(ExpectedConditions.elementToBeClickable(locator));
         return locator;
     }
 
-    protected void clear(WebElement locator){
-        click(locator);
 
-        if(getOperationSystem().contains("Windows")) {
-            locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        }
-        else if(getOperationSystem().contains("Mac OS X")){
-            locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
-        }
-    }
-
-    protected void addText(WebElement locator, String inputText){
-
-        if(getOperationSystem().contains("Windows")){
-            locator.sendKeys(Keys.chord(Keys.CONTROL,"a"));
-        } else if (getOperationSystem().contains("Mac OS X")) {
-            locator.sendKeys(Keys.chord(Keys.COMMAND,"a"));
-        }
-    }
-
-    protected void addText(WebElement locator, String inputText ) {
+    protected void addText(String inputText, WebElement locator) {
         clear(locator);
         locator.sendKeys(inputText);
     }
 
-    protected String getPageTitle(){
+    protected void clear(WebElement locator) {
+        click(locator);
 
+            if(getOperationSystem().contains("Windows")) {
+                locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+            }else if(getOperationSystem().contains("Mac OS X")) {
+                locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
+            }
+    }
+
+    protected void click(WebElement locator) {
+        clickAble(locator).click();
+    }
+
+    protected void movetoElement(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+    }
+    protected void scrolltoElement() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+       // js.executeScript(“window.scrollTo(0, document.body.scrollHeight)”);
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+
+    protected void scrollToViewElement(WebElement locator){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+       // js.executeScript(“arguments[0].scrollIntoView();”, locator);
+        js.executeScript("arguments[0].scrollIntoView();",locator);
+
+
+    }
+    protected String getPageTitle() {
         return driver.getTitle();
     }
 
-    public String getUrl(){
-
+    public String getUrl() {
         return driver.getCurrentUrl();
     }
-        return driver.getTitle();
+
+    protected void visit(String url) {
+        driver.get(url);
     }
 
-    protected String getUrl(){
-        return driver.getCurrentUrl();
+    /**
+     * returns the text from the provided DOM locator using Selenium's getText method
+     *
+     * @param locator "webelement page from web app"
+     * @return String representing the inner HTML of the DOM element (MW: To check it is actually inner-text
+     */
+    protected String getText(WebElement locator) {
+          return locator.getText();
+    }
+
+    /**
+     * searches for the provided text in the current page Url
+     *
+     * @param searchString partial text to locate within the page url
+     * @throws IllegalStateException ""
+     */
+    protected void valCorrectPage(String searchString) {
+        if (!getPageTitle().contains(searchString)) {
+            throw new IllegalStateException("This is not " + searchString + " .The actual Url is: " + getUrl());
+        }
+    }
+
+
+    protected WebElement listofElements(List<WebElement> list, String text){
+        WebElement elem = null;
+        for(int i = 0; i< list.size();i++) {
+            if (list.get(i).getText().equalsIgnoreCase(text)) {
+                elem = list.get(i);
+                break;
+            }
+        }
+        return elem;
+    }
+
+    protected void uploadDoc(WebElement element, String path){
+        element.sendKeys(path);
     }
 
     private String getOperationSystem(){
@@ -111,4 +130,3 @@ public class BaseTest {
         return operateSystem;
     }
 }
-
