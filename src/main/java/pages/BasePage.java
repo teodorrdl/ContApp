@@ -18,7 +18,6 @@ public class BasePage {
     public static ExtentTest logger;
     public static ExtentReports report;
     
-
     /*pentru Webdriver Local - rularea pe acelasi pc
      */
     @BeforeMethod(alwaysRun=true)
@@ -31,14 +30,11 @@ public class BasePage {
         context.setAttribute("WebDriver", driver_local);
     }
 
-
     @AfterMethod(alwaysRun=true)
     public void tearDown() {
-        //driver_local.quit();
+        driver_local.quit();
     }
-
     public void reportLog(String message){
         Reporter.log(message);
     }
-
 }
