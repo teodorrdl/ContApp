@@ -36,6 +36,7 @@ public class BasePage {
 
     @AfterMethod(alwaysRun=true)
     public void tearDown() {
+
         driver_local.quit();
     }
 
