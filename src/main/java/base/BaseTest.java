@@ -42,13 +42,6 @@ public class BaseTest extends BasePage {
 
     protected void clear(WebElement locator) {
         click(locator);
-
-            if(getOperationSystem().contains("Windows")) {
-                System.out.println(getOperationSystem().toString());
-                locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-            }else if(getOperationSystem().contains("Mac OS X")) {
-                locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
-            }
     }
 
     protected void click(WebElement locator) {
