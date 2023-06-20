@@ -7,6 +7,8 @@ import pages.BasePage;
 import pages.CreateAccountPage;
 import pages.LoginPageContactApp;
 
+import static base.BaseTest.PageLinksAndTexts.emailIncorectText;
+
 public class CreateAccountTest extends BasePage {
 
     public CreateAccountPage createAccount() {
@@ -20,7 +22,7 @@ public class CreateAccountTest extends BasePage {
         createAccount().clickCreateAccountButton();
         createAccount().firstemail(email);
         createAccount().clickContinue();
-        Assert.assertTrue(createAccount().verifyemail(email),"Email incorect!");
+        Assert.assertTrue(createAccount().verifyemail(email), String.valueOf(emailIncorectText));
         createAccount().addfirstname(firstname);
         createAccount().addlastname(lastname);
         createAccount().addpassword(password);

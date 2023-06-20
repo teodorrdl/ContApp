@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import static base.BaseTest.PageLinksAndTexts.clickCreateAccountButtonLink;
+import static base.BaseTest.PageLinksAndTexts.clickCreateAccountButtonText;
+
 public class CreateAccountPage extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Autentifica-te']")
     private WebElement authenticationButton;
@@ -61,7 +64,7 @@ public class CreateAccountPage extends BaseTest {
 
     public void clickCreateAccountButton() {
         click(createAccountButton);
-        Assert.assertEquals(driver.getCurrentUrl(), "https://account.contapp.ro/register",
-                "The url page  is not the expected one.");
+        Assert.assertEquals(driver.getCurrentUrl(), clickCreateAccountButtonLink,
+                String.valueOf(clickCreateAccountButtonText));
     }
 }

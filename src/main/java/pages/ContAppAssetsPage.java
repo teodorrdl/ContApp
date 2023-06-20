@@ -7,6 +7,8 @@ import org.testng.Assert;
 
 import java.util.ArrayList;
 
+import static base.BaseTest.PageLinksAndTexts.verifyAssetsRegistryButtonLink;
+
 public class ContAppAssetsPage extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Active']")
     private WebElement buttonActive;
@@ -189,8 +191,7 @@ public class ContAppAssetsPage extends BaseTest {
         click(assetsRegistryButton);
         waitPage();
         SwitchToNextTab();
-        String CurrentUrl = "https://ps.contapp.ro/export/3850/assets/pdf/view?year=2023";
-        Assert.assertEquals(getUrl(), CurrentUrl);
+        Assert.assertEquals(getUrl(), verifyAssetsRegistryButtonLink);
 
     }
 

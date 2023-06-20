@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
+
 import java.util.List;
 
 public class BaseTest extends BasePage {
@@ -20,8 +21,8 @@ public class BaseTest extends BasePage {
         action = new Actions(driver);
     }
 
-    private WebDriverWait waitPage(){
-        return  new WebDriverWait(driver,15);
+    protected WebDriverWait waitPage() {
+        return new WebDriverWait(driver, 15);
     }
 
     protected WebElement find(WebElement locator) {
@@ -29,7 +30,7 @@ public class BaseTest extends BasePage {
         return locator;
     }
 
-    protected WebElement clickAble(WebElement locator){
+    protected WebElement clickAble(WebElement locator) {
         waitPage().until(ExpectedConditions.elementToBeClickable(locator));
         return locator;
     }
@@ -43,19 +44,19 @@ public class BaseTest extends BasePage {
     protected void clear(WebElement locator) {
         click(locator);
 
-            if(getOperationSystem().contains("Windows")) {
-                System.out.println(getOperationSystem().toString());
-                locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-            }else if(getOperationSystem().contains("Mac OS X")) {
-                locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
-            }
+        if (getOperationSystem().contains("Windows")) {
+            System.out.println(getOperationSystem().toString());
+            locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        } else if (getOperationSystem().contains("Mac OS X")) {
+            locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
+        }
     }
 
     protected void click(WebElement locator) {
         clickAble(locator).click();
     }
 
-    protected void movetoElement(){
+    protected void movetoElement() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
@@ -79,7 +80,7 @@ public class BaseTest extends BasePage {
      * @return String representing the inner HTML of the DOM element (MW: To check it is actually inner-text
      */
     protected String getText(WebElement locator) {
-          return locator.getText();
+        return locator.getText();
     }
 
     /**
@@ -95,9 +96,9 @@ public class BaseTest extends BasePage {
     }
 
 
-    protected WebElement listofElements(List<WebElement> list, String text){
+    protected WebElement listofElements(List<WebElement> list, String text) {
         WebElement elem = null;
-        for(int i = 0; i< list.size();i++) {
+        for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getText().equalsIgnoreCase(text)) {
                 elem = list.get(i);
                 break;
@@ -106,12 +107,35 @@ public class BaseTest extends BasePage {
         return elem;
     }
 
-    protected void uploadDoc(WebElement element, String path){
+    protected void uploadDoc(WebElement element, String path) {
         element.sendKeys(path);
     }
 
-    private String getOperationSystem(){
+    private String getOperationSystem() {
         String operateSystem = System.getProperty("os.name");
         return operateSystem;
     }
+
+    public enum PageLinksAndTexts {
+        clickSettingCompanyLink("https://ps.contapp.ro/setari/general"),
+        contactAppUrlLink("https://contapp.ro/"),
+        verifyAssetsRegistryButtonLink("https://ps.contapp.ro/export/3850/assets/pdf/view?year=2023"),
+        clickCreateAccountButtonLink("https://account.contapp.ro/register"),
+        clickAuthenticationButtonLink("https://account.contapp.ro/login"),
+        clickCreateAccountButtonText("The url page  is not the expected one."),
+        verifyAlertMessagesText("The alert messages are not the expected ones."),
+        emailIncorectText("Email incorect!");
+
+        private final String value;
+
+        PageLinksAndTexts(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
 }
