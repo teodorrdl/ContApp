@@ -26,6 +26,10 @@ public class CreateAccountPage extends BaseTest {
     private WebElement confirmaparola;
     @FindBy(xpath = "//div[@class='row']//div[5]//input")
     private WebElement termenisiconditii;
+
+    @FindBy(xpath = "//button[@class='onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon']")
+    private WebElement inchideCookie;
+
     @FindBy(xpath = "//span[normalize-space()='Trimite']")
     private WebElement trimite;
 
@@ -47,11 +51,15 @@ public class CreateAccountPage extends BaseTest {
     public void addlastname(String nume){
         addText(nume,this.nume);
     }
+
+    public void clickCloseCookie() {
+        click(inchideCookie);}
     public void addpassword(String parola){addText(parola,this.parola);}
     public void confirmpassword(String confirmaparola){addText(confirmaparola,this.confirmaparola);}
     public void clickTermsandConditions(){
         click(termenisiconditii);
     }
+
     public void send(){click(trimite);}
 
     public void clickAutentification(){
