@@ -16,7 +16,7 @@ public class CreateAccountPage extends BaseTest {
     private WebElement butoncontinua;
     @FindBy(xpath = "//input[@id='email']")
     private WebElement email;
-    @FindBy(xpath = "//input[@placeholder='Prenume']")
+    @FindBy(xpath = "//input[@id='first-name']")
     private WebElement prenume;
     @FindBy(xpath = "//input[@placeholder='Nume']")
     private WebElement nume;

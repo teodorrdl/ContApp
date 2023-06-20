@@ -1,1 +1,2 @@
-tests\LoginPageTest.class
+tests/CreateAccountTest.class
+tests/LoginPageContactAppTest.class
