@@ -21,7 +21,7 @@ public class BaseTest extends BasePage {
     }
 
     private WebDriverWait waitPage(){
-        return  new WebDriverWait(driver,5);
+        return  new WebDriverWait(driver,15);
     }
 
     protected WebElement find(WebElement locator) {

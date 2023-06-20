@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Smoke_Test_Suite" class="navigator-link ">
-                    <span>C:\Users\stelu\IdeaProjects\Helin_Internship\src\test\resources\SmokeTestSuite.xml</span>
+                    <span>SmokeTestSuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,  2 skipped,  </span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
                     <span class="method-list-title skipped">Skipped methods</span>
@@ -102,12 +102,7 @@
                     <div class="method-list-content skipped suite-Smoke_Test_Suite">
                       <span>
                         <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Smoke_Test_Suite" title="tests.LoginPageTest" class="method navigator-link" hash-for-method="verifyCreateAccount">verifyCreateAccount</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Smoke_Test_Suite" title="tests.LoginPageTest" class="method navigator-link" hash-for-method="verifyLogin">verifyLogin</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Smoke_Test_Suite" title="tests.CreateAccountTest" class="method navigator-link" hash-for-method="createAccountTest">createAccountTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content skipped suite-Smoke_Test_Suite -->
@@ -125,132 +120,25 @@
           <div class="suite-Smoke_Test_Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
               <img src="skipped.png"/>
-              <span class="class-name">tests.LoginPageTest</span>
+              <span class="class-name">tests.CreateAccountTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyCreateAccount">
-                  </a> <!-- verifyCreateAccount -->
-                  <span class="method-name">verifyCreateAccount</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 110
-Current browser version is 113.0.5672.127 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DANA-PC&apos;, ip: &apos;192.168.0.191&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
-Driver info: driver.version: ChromeDriver
-remote stacktrace: Backtrace:
-	(No symbol) [0x012137D3]
-	(No symbol) [0x011A8B81]
-	(No symbol) [0x010AB36D]
-	(No symbol) [0x010CED6D]
-	(No symbol) [0x010C9B90]
-	(No symbol) [0x010C6FC9]
-	(No symbol) [0x01101ED5]
-	(No symbol) [0x01101B2C]
-	(No symbol) [0x010FB216]
-	(No symbol) [0x010D0D97]
-	(No symbol) [0x010D253D]
-	GetHandleVerifier [0x0148ABF2+2510930]
-	GetHandleVerifier [0x014B8EC1+2700065]
-	GetHandleVerifier [0x014BC86C+2714828]
-	GetHandleVerifier [0x012C3480+645344]
-	(No symbol) [0x011B0FD2]
-	(No symbol) [0x011B6C68]
-	(No symbol) [0x011B6D4B]
-	(No symbol) [0x011C0D6B]
-	BaseThreadInitThunk [0x75F47D59+25]
-	RtlInitializeExceptionChain [0x77E8B74B+107]
-	RtlClearBits [0x77E8B6CF+191]
-
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
-	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
-	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
-	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+                  <a name="createAccountTest">
+                  </a> <!-- createAccountTest -->
+                  <span class="method-name">createAccountTest</span>
+                  <div class="stack-trace">java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:847)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:134)
+	at org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:35)
+	at org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:159)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:355)
+	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:94)
 	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at pages.BasePage.setup(BasePage.java:27)
+	at pages.BasePage.setup(BasePage.java:28)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Create Account)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyLogin">
-                  </a> <!-- verifyLogin -->
-                  <span class="method-name">verifyLogin</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 110
-Current browser version is 113.0.5672.127 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DANA-PC&apos;, ip: &apos;192.168.0.191&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.2&apos;
-Driver info: driver.version: ChromeDriver
-remote stacktrace: Backtrace:
-	(No symbol) [0x012137D3]
-	(No symbol) [0x011A8B81]
-	(No symbol) [0x010AB36D]
-	(No symbol) [0x010CED6D]
-	(No symbol) [0x010C9B90]
-	(No symbol) [0x010C6FC9]
-	(No symbol) [0x01101ED5]
-	(No symbol) [0x01101B2C]
-	(No symbol) [0x010FB216]
-	(No symbol) [0x010D0D97]
-	(No symbol) [0x010D253D]
-	GetHandleVerifier [0x0148ABF2+2510930]
-	GetHandleVerifier [0x014B8EC1+2700065]
-	GetHandleVerifier [0x014BC86C+2714828]
-	GetHandleVerifier [0x012C3480+645344]
-	(No symbol) [0x011B0FD2]
-	(No symbol) [0x011B6C68]
-	(No symbol) [0x011B6D4B]
-	(No symbol) [0x011C0D6B]
-	BaseThreadInitThunk [0x75F47D59+25]
-	RtlInitializeExceptionChain [0x77E8B74B+107]
-	RtlClearBits [0x77E8B6CF+191]
-
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
-	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
-	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
-	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
-	at pages.BasePage.setup(BasePage.java:27)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames
+... Removed 33 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Happy Test!)                  </em>
@@ -261,7 +149,7 @@ remote stacktrace: Backtrace:
         </div> <!-- panel Smoke_Test_Suite -->
         <div panel-name="test-xml-Smoke_Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\stelu\IdeaProjects\Helin_Internship\src\test\resources\SmokeTestSuite.xml</span>
+            <span class="header-content">/Users/daniel/IdeaProjects/Helin_Internship/src/test/resources/SmokeTestSuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -270,20 +158,17 @@ remote stacktrace: Backtrace:
 &lt;suite name=&quot;Smoke Test Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Smoke Test&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.LoginPageTest&quot;&gt;
+      &lt;class name=&quot;tests.CreateAccountTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;verifyLogin&quot;&gt;
-            &lt;parameter name=&quot;password&quot; value=&quot;yrEpJyuu&quot;/&gt;
-            &lt;parameter name=&quot;username&quot; value=&quot;alexandrabarboni@semicolon.com&quot;/&gt;
-          &lt;/include&gt; &lt;!-- verifyLogin --&gt;
-          &lt;include name=&quot;verifyCreateAccount&quot;&gt;
-            &lt;parameter name=&quot;firstName&quot; value=&quot;Admin12121&quot;/&gt;
-            &lt;parameter name=&quot;lastName&quot; value=&quot;admin123&quot;/&gt;
-            &lt;parameter name=&quot;password&quot; value=&quot;parola122345&quot;/&gt;
-            &lt;parameter name=&quot;email&quot; value=&quot;test@yahoo.com&quot;/&gt;
-          &lt;/include&gt; &lt;!-- verifyCreateAccount --&gt;
+          &lt;include name=&quot;createAccountTest&quot;&gt;
+            &lt;parameter name=&quot;firstname&quot; value=&quot;Dana&quot;/&gt;
+            &lt;parameter name=&quot;password&quot; value=&quot;InternSh!p2023&quot;/&gt;
+            &lt;parameter name=&quot;confPassword&quot; value=&quot;InternSh!p2023&quot;/&gt;
+            &lt;parameter name=&quot;email&quot; value=&quot;test_catavei@yahoo.com&quot;/&gt;
+            &lt;parameter name=&quot;lastname&quot; value=&quot;Catavei&quot;/&gt;
+          &lt;/include&gt; &lt;!-- createAccountTest --&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- tests.LoginPageTest --&gt;
+      &lt;/class&gt; &lt;!-- tests.CreateAccountTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Smoke Test --&gt;
 &lt;/suite&gt; &lt;!-- Smoke Test Suite --&gt;
@@ -323,15 +208,11 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyLogin')
-data.setCell(0, 2, 'tests.LoginPageTest')
+data.setCell(0, 1, 'createAccountTest')
+data.setCell(0, 2, 'tests.CreateAccountTest')
 data.setCell(0, 3, 0);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyCreateAccount')
-data.setCell(1, 2, 'tests.LoginPageTest')
-data.setCell(1, 3, 0);
 window.suiteTableData['Smoke_Test_Suite']= { tableData: data, tableDiv: 'times-div-Smoke_Test_Suite'}
 return data;
 }
@@ -362,38 +243,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.LoginPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.CreateAccountTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">setup(org.testng.TestRunner@60975100)</span>
+                <span class="method-name">setup(org.testng.TestRunner@67c27493)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyLogin</span>
-                <span class="method-start">774 ms</span>
+                <span class="method-name">createAccountTest</span>
+                <span class="method-start">36 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">tearDown</span>
-                <span class="method-start">774 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">setup(org.testng.TestRunner@60975100)</span>
-                <span class="method-start">775 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyCreateAccount</span>
-                <span class="method-start">1294 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">tearDown</span>
-                <span class="method-start">1294 ms</span>
+                <span class="method-start">36 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
