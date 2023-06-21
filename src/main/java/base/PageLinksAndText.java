@@ -8,7 +8,12 @@ public enum PageLinksAndText {
     clickAuthenticationButtonLink("https://account.contapp.ro/login"),
     clickCreateAccountButtonText("The url page  is not the expected one."),
     verifyAlertMessagesText("The alert messages are not the expected ones."),
-    emailIncorectText("Email incorect!");
+    emailIncorectText("Email incorect!"),
+    authenticationErrorMessage("Datele de autentificare introduse nu se potrivesc cu baza de date"),
+    mandatoryEmailMessage("Campul \"E-mail\" este obligatoriu."),
+
+    mandatoryPasswordMessage("Campul \"Parola\" este obligatoriu.");
+
 
     private final String value;
 

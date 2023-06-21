@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-
 public class LoginPageContactApp extends BaseTest {
 
     @FindBy(xpath = "//a[normalize-space()='Autentifica-te']")
@@ -33,9 +32,9 @@ public class LoginPageContactApp extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Ai uitat parola?']")
     public WebElement forgotPasswordLink;
 
-    public String[] expectedAlertMessages = {"Datele de autentificare introduse nu se potrivesc cu baza de date.",
-            "Campul \"E-mail\" este obligatoriu.",
-            "Campul \"Parola\" este obligatoriu."
+    public String[] expectedAlertMessages = {PageLinksAndText.authenticationErrorMessage.getValue(),
+            PageLinksAndText.mandatoryEmailMessage.getValue(),
+            PageLinksAndText.mandatoryPasswordMessage.getValue()
     };
 
     public void addEmail(String email) {
