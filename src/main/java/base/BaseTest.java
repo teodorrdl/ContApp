@@ -6,22 +6,24 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
+
 import java.util.List;
 
 public class BaseTest extends BasePage {
 
-    public WebDriver driver;
+    protected WebDriver driver;
     Actions action;
 
     public BaseTest() {
-        //driver pentru Webdriver ul local
+
         driver = BasePage.driver_local;
         PageFactory.initElements(driver, this);
         action = new Actions(driver);
     }
-    public WebDriverWait waitPage(){
-//        return new WebDriverWait(driver, Duration.ofSeconds(15));
-        return  new WebDriverWait(driver,5);
+
+    private WebDriverWait waitPage() {
+
+        return new WebDriverWait(driver, 5);
 
     }
 
@@ -30,7 +32,7 @@ public class BaseTest extends BasePage {
         return locator;
     }
 
-    protected WebElement clickAble(WebElement locator){
+    protected WebElement clickAble(WebElement locator) {
         waitPage().until(ExpectedConditions.elementToBeClickable(locator));
         return locator;
     }
@@ -44,19 +46,19 @@ public class BaseTest extends BasePage {
     protected void clear(WebElement locator) {
         click(locator);
 
-            if(getOperationSystem().contains("Windows")) {
-                System.out.println(getOperationSystem().toString());
-                locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-            }else if(getOperationSystem().contains("Mac OS X")) {
-                locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
-            }
+        if (getOperationSystem().contains("Windows")) {
+
+            locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        } else if (getOperationSystem().contains("Mac OS X")) {
+            locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
+        }
     }
 
     protected void click(WebElement locator) {
         clickAble(locator).click();
     }
 
-    protected void movetoElement(){
+    protected void movetoElement() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
@@ -80,7 +82,7 @@ public class BaseTest extends BasePage {
      * @return String representing the inner HTML of the DOM element (MW: To check it is actually inner-text
      */
     protected String getText(WebElement locator) {
-          return locator.getText();
+        return locator.getText();
     }
 
     /**
@@ -96,9 +98,9 @@ public class BaseTest extends BasePage {
     }
 
 
-    protected WebElement listofElements(List<WebElement> list, String text){
+    protected WebElement listofElements(List<WebElement> list, String text) {
         WebElement elem = null;
-        for(int i = 0; i< list.size();i++) {
+        for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getText().equalsIgnoreCase(text)) {
                 elem = list.get(i);
                 break;
@@ -107,11 +109,11 @@ public class BaseTest extends BasePage {
         return elem;
     }
 
-    protected void uploadDoc(WebElement element, String path){
+    protected void uploadDoc(WebElement element, String path) {
         element.sendKeys(path);
     }
 
-    private String getOperationSystem(){
+    private String getOperationSystem() {
         String operateSystem = System.getProperty("os.name");
         return operateSystem;
     }

@@ -43,7 +43,7 @@
 
             <class name="tests.FacturaVanzariTest">
                 <methods>
-                    <include name="adaugaFacturiVanzari">
+                    <include name="AdaugaFacturiVanzari">
 
                         <parameter name="email" value="gabrielajitea77@gmail.com"/>
                         <parameter name="password" value="Rozaroza69"/>
@@ -55,27 +55,35 @@
                         <parameter name="localitate" value="Petrosani"/>
                         <parameter name="adresa" value="ghSincai"/>
                         <parameter name="salveaza" value="profilSalvat"/>
-
                         <parameter name="contAppPs" value="configurare"/>
                         <parameter name="configurare" value="venituri"/>
                         <parameter name="venituri" value="venituri"/>
                         <parameter name="facturiVanzari" value="facturiVanzari"/>
+                        <parameter name="adaugaFacturiVanzari" value="adaugaFacturiVanzari"/>
                         <parameter name="clienti" value="clienti"/>
-
                         <parameter name="alegeClient" value="cfrMarfa"/>
                         <parameter name="alegeTip" value="factura"/>
                         <parameter name="serieFactura" value="TGM"/>
                         <parameter name="numarFactura" value="1"/>
                         <parameter name="tipArticol" value="bunuri"/>
                         <parameter name="denumireArticol" value="servicii"/>
-
                         <parameter name="cantitate" value="1"/>
                         <parameter name="pretUnitar" value="500"/>
                         <parameter name="total" value="500"/>
                         <parameter name="adaugaArticol" value="adaugaArticol"/>
                         <parameter name="salveazaSiVezi" value="salveazaSiVezi"/>
-
-
+                    </include>
+                </methods>
+                <methods>
+                    <include name="IncasariSiPlati">
+                        <parameter name="incasariSiPlati" value="IncasariSiPlati"/>
+                        <parameter name="incasari" value="incasari"/>
+                        <parameter name="adaugaIncasare" value="adaugaIncasare"/>
+                        <parameter name="client" value="cfrMarfa"/>
+                        <parameter name="valoareIncasata" value="IncasatIntegral"/>
+                        <parameter name="explicatie" value="incasareCfrMarfa"/>
+                        <parameter name="adaugaIncasareNoua" value="adaugaIncasareNoua"/>
+                        <parameter name="deschide" value="editeaza"/>
                     </include>
                 </methods>
             </class>

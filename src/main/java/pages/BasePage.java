@@ -12,15 +12,14 @@ import org.testng.annotations.*;
 
 public class BasePage {
 
-    public static WebDriver driver_local; //--> rulare in mod normal pe local
-   // String url = "https://semicolon-task-manager-skillbrains-grxarv6yb-cezarmocanu.vercel.app/login";
+    public static WebDriver driver_local;
+
     String contactAppUrl = "https://contapp.ro/";
     public static ExtentTest logger;
     public static ExtentReports report;
     
 
-    /*pentru Webdriver Local - rularea pe acelasi pc
-     */
+
     @BeforeMethod(alwaysRun=true)
     public void setup(ITestContext context) {
         ChromeOptions options = new ChromeOptions();

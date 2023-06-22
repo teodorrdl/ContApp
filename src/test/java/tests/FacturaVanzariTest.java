@@ -19,11 +19,11 @@ public class FacturaVanzariTest extends BasePage {
 
 
     @Test(description = "adauga facturi vanzari")
-    @Parameters({"email", "password", "contAppPs", "configurare", "venituri", "facturiVanzari" ,"alegeClient", "alegeTip", "serieFactura",
+    @Parameters({"email", "password", "contAppPs", "configurare", "venituri", "facturiVanzari", "adaugaFacturiVanzari", "alegeClient", "alegeTip", "serieFactura",
             "numarFactura", "tipArticol", "denumireArticol", "cantitate", "pretUnitar", "total", "adaugaArticol", "salveazaSiVezi"})
 
-    public void adaugaFacturiVanzari(String textemail, String textPassword, String contAppPs, String configurare,
-                                     String venituri, String facturiVanzari,String alegeClient, String alegeTip,
+    public void AdaugaFacturiVanzari(String textemail, String textPassword, String contAppPs, String configurare,
+                                     String venituri, String facturiVanzari, String adaugaFacturiVanzari, String alegeClient, String alegeTip,
                                      String serieFactura, String numarFactura, String tipArticol, String denumireArticol,
                                      String cantitate, String pretUnitar, String total, String adaugaArticol,
                                      String salveazaSiVezi) {
@@ -37,7 +37,7 @@ public class FacturaVanzariTest extends BasePage {
         facturaVanzari().clickconfigurare();
         facturaVanzari().clickvenituri();
         facturaVanzari().clickfacturiVanzari();
-
+        facturaVanzari().clickfacturiVanzari();
         facturaVanzari().alegeClient();
         facturaVanzari().alegeTip();
         facturaVanzari().serieFactura();
@@ -53,5 +53,17 @@ public class FacturaVanzariTest extends BasePage {
         facturaVanzari().salveazaSiVezi();
     }
 
-
+    @Test(description = "incasari si plati")
+    @Parameters({"incasariSiPlati", "adaugaIncasare", "client", "valoareIncasata", "explicatie", "adaugaIncasareNoua",
+    "deschide"})
+    public void IncasariSiPlati(String incasariSiPlati, String adaugaIncasare, String client, String valoareIncasata,
+                                String explicatie, String adaugaIncasareNoua,String deschide) {
+       facturaVanzari().incasariSiPlati();
+        facturaVanzari().Incasari();
+        facturaVanzari().adaugaIncasare();
+        facturaVanzari().addClient();
+        facturaVanzari().valoareIncasata();
+        facturaVanzari().explicatie();
+        facturaVanzari().adaugaIncasare();
+    }
 }

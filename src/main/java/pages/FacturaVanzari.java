@@ -43,6 +43,8 @@ public class FacturaVanzari extends BaseTest {
     private WebElement venituri;
     @FindBy(xpath = "//a[normalize-space()='Facturi vanzari']")
     private WebElement facturiVanzari;
+    @FindBy(xpath = "<parameter name=\"facturiVanzari\" value=\"facturiVanzari\"/>")
+    private WebElement adaugaFacturiVanzari;
     @FindBy(xpath = "//a[contains(text(),'Clienți')]")
     private WebElement clienti;
 
@@ -66,19 +68,28 @@ public class FacturaVanzari extends BaseTest {
     private WebElement pretUnitar;
     @FindBy(xpath = "//input[@id='article-form-data-total-selling-price']")
     private WebElement total;
-   @FindBy(xpath = "//span[contains(text(),'Adaugă articol')]")
+    @FindBy(xpath = "//span[contains(text(),'Adaugă articol')]")
     private WebElement adaugaArticol;
-   @FindBy(xpath = "//button[contains(text(),'Salvează și vezi')]")
-   private WebElement salveazaSiVezi;
+    @FindBy(xpath = "//button[contains(text(),'Salvează și vezi')]")
+    private WebElement salveazaSiVezi;
 
 
-
-
-    public String[] expectedAlertMessages = {"Datele de autentificare introduse nu se potrivesc cu baza de date.",
-            "Campul \"E-mail\" este obligatoriu.",
-            "Campul \"Parola\" este obligatoriu."
-    };
-
+    @FindBy(xpath = "//a[contains(text(),'Încasări și plăți')]")
+    private WebElement incasariSiPlati;
+    @FindBy(xpath = "//a[@href='https://ps.contapp.ro/incasari'][contains(text(),'Încasări')]")
+    private WebElement incasari;
+    @FindBy(xpath = "//a[@href='https://ps.contapp.ro/incasare/creaza']")
+    private WebElement adaugaIncasare;
+    @FindBy(xpath = "//span[@id='select2-select-transaction-customer-id-income-1---container']")
+    private WebElement client;
+    @FindBy(xpath = "//label[@for='input-selectedInvoices.50833.selected']")
+    private WebElement incasatIntegral;
+    @FindBy(xpath = "//input[@id='input-description']")
+    private WebElement explicatie;
+    @FindBy(xpath = "//button[contains(text(),'Adaugă încasare')]")
+    private WebElement adaugaIncasareNoua;
+    @FindBy(xpath = " <parameter name=\"adaugaIncasareNoua\" value=\"adaugaIncasareNoua\"/>")
+    private WebElement deschide;
 
     public void addText(WebElement emailField, String email) {
     }
@@ -106,21 +117,33 @@ public class FacturaVanzari extends BaseTest {
     public void clickCreateAccountButton() {
         click(createAccountButton);
         Assert.assertEquals(driver_local.getCurrentUrl(), "https://account.contapp.ro/register",
-                "The url page  is not the expected one.");}
- public void clickcontAppPs(){click(contAppPs);}
-public void clickconfigurare(){click(configurare);}
+                "The url page  is not the expected one.");
+    }
+
+    public void clickcontAppPs() {
+        click(contAppPs);
+    }
+
+    public void clickconfigurare() {
+        click(configurare);
+    }
+
     public void clickvenituri() {
         click(venituri);
     }
 
-    public void clickfacturiVanzari() {click(facturiVanzari);
+    public void clickfacturiVanzari() {
+        click(facturiVanzari);
     }
 
+    public void clickadaugaFacturiVanzari() {
+        click(adaugaFacturiVanzari);
+    }
 
     public void clickClienti() {
         click(clienti);
     }
-    public void adaugaFacturiVanzari() {click(facturiVanzari);}
+
 
     public void alegeClient() {
         click(alegeClient);
@@ -159,18 +182,49 @@ public void clickconfigurare(){click(configurare);}
         click(total);
     }
 
-    public void adaugaArticol() {click(adaugaArticol);}
-    public void salveazaSiVezi(){click(salveazaSiVezi);}
+    public void adaugaArticol() {
+        click(adaugaArticol);
+    }
 
     public void verifyAlertMessages() {
-        if (emailAlertMessage.getText().equals(expectedAlertMessages[0]) && passwordAlertMessage.getText().equals(expectedAlertMessages[0])) {
-            System.out.println(emailAlertMessage.getText());
-            System.out.println(passwordAlertMessage.getText());
-        } else if (emailAlertMessage.getText().equals(expectedAlertMessages[1])) {
-            System.out.println(emailAlertMessage.getText());
-        } else if (passwordAlertMessage.getText().equals(expectedAlertMessages[2])) {
-            System.out.println(passwordAlertMessage.getText());
-        } else {
-            System.out.println("The alert messages are not the expected ones.");
-        }}
+        if (emailAlertMessage.getText().equals(expectedAlertMessages[0]) &&
+                passwordAlertMessage.getText().equals(expectedAlertMessages[0])) ; }
+
+    public String[] expectedAlertMessages = {"adauga articol"};
+
+    public void salveazaSiVezi() {
+        click(salveazaSiVezi);
+    }
+
+    public void incasariSiPlati() {
+        click(incasariSiPlati);
+    }
+
+    public void Incasari() {
+        click(incasari);
+    }
+
+    public void adaugaIncasare() {
+        click(adaugaIncasare);
+    }
+
+    public void addClient() {
+        click(client);
+    }
+
+    public void valoareIncasata() {
+        click(incasatIntegral);
+    }
+
+    public void explicatie() {
+        click(explicatie);
+    }
+
+    public void AdaugaIncasareNoua() {
+        click(adaugaIncasareNoua);
+    }
+
+    public void deschide() {
+        click(deschide);
+    }
 }
