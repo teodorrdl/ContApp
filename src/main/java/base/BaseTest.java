@@ -15,16 +15,14 @@ public class BaseTest extends BasePage {
     Actions action;
 
     public BaseTest() {
-
+        //driver pentru Webdriver ul local
         driver = BasePage.driver_local;
         PageFactory.initElements(driver, this);
         action = new Actions(driver);
     }
 
-    private WebDriverWait waitPage() {
-
-        return new WebDriverWait(driver, 5);
-
+    protected WebDriverWait waitPage() {
+        return new WebDriverWait(driver, 15);
     }
 
     protected WebElement find(WebElement locator) {
@@ -47,7 +45,6 @@ public class BaseTest extends BasePage {
         click(locator);
 
         if (getOperationSystem().contains("Windows")) {
-
             locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         } else if (getOperationSystem().contains("Mac OS X")) {
             locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
@@ -117,4 +114,5 @@ public class BaseTest extends BasePage {
         String operateSystem = System.getProperty("os.name");
         return operateSystem;
     }
+
 }
