@@ -21,7 +21,7 @@ public class CreateAccountTest extends BasePage {
         createAccount().clickCreateAccountButton();
         createAccount().firstemail(email);
         createAccount().clickContinue();
-        Assert.assertTrue(createAccount().verifyemail(email), String.valueOf(PageLinksAndText.emailIncorectText.getValue()));
+        Assert.assertTrue(createAccount().verifyemail(email),PageLinksAndText.emailIncorectText.getValue());
         createAccount().addfirstname(firstname);
         createAccount().addlastname(lastname);
         createAccount().addpassword(password);
