@@ -21,7 +21,7 @@ public class BaseTest extends BasePage {
         action = new Actions(driver);
     }
 
-    protected WebDriverWait waitPage() {
+    private WebDriverWait waitPage() {
         return new WebDriverWait(driver, 15);
     }
 
