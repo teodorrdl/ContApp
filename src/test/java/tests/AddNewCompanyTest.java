@@ -2,7 +2,7 @@ package tests;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.AddNewCompany;
+import pages.AddNewCompanyAndPayment.AddNewCompany;
 import pages.BasePage;
 import pages.LoginPageContactApp;
 

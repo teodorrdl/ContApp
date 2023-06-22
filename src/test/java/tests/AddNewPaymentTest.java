@@ -3,6 +3,9 @@ package tests;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.*;
+import pages.AddNewCompanyAndPayment.AddNewActivity;
+import pages.AddNewCompanyAndPayment.AddNewPayment;
+import pages.AddNewCompanyAndPayment.AddNewSupplier;
 
 public class AddNewPaymentTest  extends BasePage {
 

@@ -91,19 +91,22 @@ public class AddNewPayment extends BaseTest {
         fieldInputTotal.click();
     }
     public void clickSavePay(){
-        scrollToViewElement(buttonSavePay);
+        //scrollToViewElement(buttonSavePay);
+        movetoElement();
         click(buttonSavePay);
     }
     public void clickFieldExplanation(){
         click(fieldExplanation);
     }
     public void addExplanation(String text){
-        scrollToViewElement(buttonSavePay);
+        movetoElement();
+        //scrollToViewElement(buttonSavePay);
         click(fieldExplanation);
         addText(text, fieldAddExplanation);
         click(fieldAddExplanation);
     }
     public void scroll(){
-        scrolltoElement();
+        //scrolltoElement();
+        movetoElement();
     }
 }
