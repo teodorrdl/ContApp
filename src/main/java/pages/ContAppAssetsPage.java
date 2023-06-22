@@ -187,7 +187,7 @@ public class ContAppAssetsPage extends BaseTest {
 
     public void verifyAssetsRegistryButton() {
         click(assetsRegistryButton);
-        waitPage();
+
         SwitchToNextTab();
         String CurrentUrl = "https://ps.contapp.ro/export/3850/assets/pdf/view?year=2023";
         Assert.assertEquals(getUrl(), CurrentUrl);

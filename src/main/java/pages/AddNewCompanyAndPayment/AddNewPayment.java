@@ -54,7 +54,7 @@ public class AddNewPayment extends BaseTest {
         click(buttonAddPay);
     }
     public void clickButtonSupplierPay() {
-        waitPage();
+
         click(buttonSupplierPay);
     }
     public void clickButtonOtherPay() {
