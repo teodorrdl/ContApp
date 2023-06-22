@@ -1,10 +1,9 @@
-package pages;
+package pages.AddNewCompanyAndPayment;
 
 import base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
 public class AddNewSupplier extends BaseTest {
@@ -88,7 +87,6 @@ public class AddNewSupplier extends BaseTest {
         String[] arrOfStr = temp.split("\n");
         int i = 1;
         for (String a : arrOfStr) {
-            System.out.println(a);
             if (a.equals(text)) {
                 addText(a,fieldAddText);
                 valueFirstElement.click();

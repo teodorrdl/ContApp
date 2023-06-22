@@ -4,34 +4,41 @@
 
 <suite name="Smoke Test Suite">
     <!--	<listeners>-->
-    <!--		<listener class-name="util.ExtentReportListener" />-->
+    <!--		<listener class-name="util.ExtentReportListener"/>-->
     <!--	</listeners>-->
     <test name="Smoke Test">
         <classes>
-<!--        Test adaugare firma    -->
-<!--            <class name="tests.AddNewCompanyTest">-->
+            <!--        Test creare account    -->
+<!--            <class name="tests.CreateAccountTest">-->
 <!--                <methods>-->
-<!--                    <include name="test">-->
+<!--                    <include name="createAccountTest">`-->
 <!--                        <parameter name="email" value="dana_catavei@yahoo.com"/>-->
+<!--                        <parameter name="firstname" value="Dana"/>-->
+<!--                        <parameter name="lastname" value="Catavei"/>-->
 <!--                        <parameter name="password" value="InternSh!p2023"/>-->
-<!--                        <parameter name="textCUI" value="123456"/>-->
-<!--                        <parameter name="textNrRegCom" value="654321"/>-->
-<!--                        <parameter name="textEntityType" value="Alta"/>-->
-<!--                        <parameter name="textCompanyName" value="Danaka SRL"/>-->
-<!--                        <parameter name="textData" value="08-06-2023"/>-->
-<!--                        <parameter name="textCounty" value="Bihor"/>-->
-<!--                        <parameter name="textCity" value="Oradea"/>-->
-<!--                        <parameter name="textAdress" value="Obcina Mare 2"/>-->
-<!--                        <parameter name="textContactPerson" value="Bogdan C."/>-->
-<!--                        <parameter name="textWebSite" value="Danaka.ro"/>-->
-<!--                        <parameter name="textEmail" value="danaka@gmail.com"/>-->
-<!--                        <parameter name="textPhone" value="4078787878"/>-->
+<!--                        <parameter name="confPassword" value="InternSh!p2023"/>-->
 <!--                    </include>-->
 <!--                </methods>-->
 <!--            </class>-->
-            <!--        Test adaugare plata    -->
-            <class name="tests.AddNewPaymentTest">
+            <!--        Test adaugare firma si  plata    -->
+            <class name="tests.AddNewCompanyAndPaymentTest">
                 <methods>
+                    <include name="testNewCompany">
+                        <parameter name="email" value="dana_catavei@yahoo.com"/>
+                        <parameter name="password" value="InternSh!p2023"/>
+                        <parameter name="textCUI" value="123456"/>
+                        <parameter name="textNrRegCom" value="654321"/>
+                        <parameter name="textEntityType" value="Alta"/>
+                        <parameter name="textCompanyName" value="Danaka SRL"/>
+                        <parameter name="textData" value="08-06-2023"/>
+                        <parameter name="textCounty" value="Bihor"/>
+                        <parameter name="textCity" value="Oradea"/>
+                        <parameter name="textAdress" value="Obcina Mare 2"/>
+                        <parameter name="textContactPerson" value="Bogdan C."/>
+                        <parameter name="textWebSite" value="Danaka.ro"/>
+                        <parameter name="textEmail" value="danaka@gmail.com"/>
+                        <parameter name="textPhone" value="4078787878"/>
+                    </include>
                     <include name="testNewPayment">
                         <parameter name="email" value="dana_catavei@yahoo.com"/>
                         <parameter name="password" value="InternSh!p2023"/>

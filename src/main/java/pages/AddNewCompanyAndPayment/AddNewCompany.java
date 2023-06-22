@@ -1,10 +1,9 @@
-package pages;
+package pages.AddNewCompanyAndPayment;
 
 import base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
 public class AddNewCompany extends BaseTest {
@@ -41,7 +40,6 @@ public class AddNewCompany extends BaseTest {
     @FindBy(xpath="(//input[@type='text'])[1]")
     private WebElement fieldData;
 
-    //@FindBy(xpath="(//span[@title='---'][normalize-space()='---'])[2]")
     @FindBy(xpath="(//span[@role='presentation'])[3]")
     private WebElement fieldCounty;
 
@@ -73,14 +71,12 @@ public class AddNewCompany extends BaseTest {
     public void clickLinkContAppPS(){
         click(linkContAppPS);
     }
-
     public void clickIconSettings(){
         click(iconSettings);
     }
     public void clickLinkNewCompany(){
         click(linkNewCompany);
     }
-
     public void addCUI(String text) {
         addText(text,fieldCUI);
     }
@@ -96,15 +92,12 @@ public class AddNewCompany extends BaseTest {
     public void addDataCalendar(String text) {
         addText(text,fieldData);
     }
-
     public void addCity(String text) {
         addText(text,fieldCity);
     }
-
     public void addAdress(String text) {
         addText(text,fieldAdress);
     }
-
     public void addContactPerson(String text){
        addText(text, fieldContactPerson);
     }
@@ -128,8 +121,7 @@ public class AddNewCompany extends BaseTest {
         String[] arrOfStr = temp.split("\n");
         int i = 1;
         for (String a : arrOfStr) {
-            System.out.println(a);
-            if (a.equals(text)) {
+           if (a.equals(text)) {
                 addText(a,fieldAddCounty);
                 valueFirstElementCty.click();
                 break;
@@ -145,7 +137,6 @@ public class AddNewCompany extends BaseTest {
         String[] arrOfStr = temp.split("\n");
         int i = 1;
         for (String a : arrOfStr) {
-            System.out.println(a);
             if (a.equalsIgnoreCase(text)) {
                 addText(a,fieldAddText);
                 valueFirstElement.click();

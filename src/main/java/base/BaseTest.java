@@ -59,16 +59,12 @@ public class BaseTest extends BasePage {
     }
     protected void scrolltoElement() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-       // js.executeScript(“window.scrollTo(0, document.body.scrollHeight)”);
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 
     protected void scrollToViewElement(WebElement locator){
         JavascriptExecutor js = (JavascriptExecutor) driver;
-       // js.executeScript(“arguments[0].scrollIntoView();”, locator);
         js.executeScript("arguments[0].scrollIntoView();",locator);
-
-
     }
     protected String getPageTitle() {
         return driver.getTitle();

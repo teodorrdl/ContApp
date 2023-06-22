@@ -1,12 +1,12 @@
-package pages;
+package pages.AddNewCompanyAndPayment;
 
 import base.BaseTest;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.WebElement;
 
 public class AddNewActivity extends BaseTest {
-    //span[@aria-expanded='true']//span[@role='presentation']
-    @FindBy(xpath="(//span[contains(@role,'combobox')])[5]")//(//span[contains(@role,'combobox')])[5]
+
+    @FindBy(xpath="(//span[contains(@role,'combobox')])[5]")
     private WebElement fieldActivityPlace;
 
     @FindBy(xpath="(//input[@aria-label='Search'])[1]")
@@ -18,9 +18,8 @@ public class AddNewActivity extends BaseTest {
     @FindBy(xpath=" //span[@id='select2-select-transaction-activity-id-expense---container']")
     private WebElement fieldCodCaen;
 
-    @FindBy(xpath="(//span[@role='combobox'])[5]")//input[contains(@aria-label,'Search')])[1]
+    @FindBy(xpath="(//span[@role='combobox'])[5]")
     private WebElement fieldAddCodCaen;
-
 
     @FindBy(xpath="(//ul[@role='listbox'])[1]//li[2]")
     private WebElement buttonAddNewActivity;
@@ -49,7 +48,6 @@ public class AddNewActivity extends BaseTest {
     @FindBy(xpath="(//div[@class='justify-content-start modal-footer'])[3]//button[2]")
     private WebElement buttonClose;
 
-
     public void clickFieldActivityPlace(){
         click(fieldActivityPlace);
     }
@@ -61,7 +59,6 @@ public class AddNewActivity extends BaseTest {
     public void clickFieldCategoryIncome(){
         click(fieldCategoryIncome);
     }
-
 
     public void clickValueCategoryIncome(){
         click(valueCategoryIncome);

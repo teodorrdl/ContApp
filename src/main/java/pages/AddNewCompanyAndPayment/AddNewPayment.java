@@ -1,4 +1,4 @@
-package pages;
+package pages.AddNewCompanyAndPayment;
 
 import base.BaseTest;
 import org.openqa.selenium.By;
