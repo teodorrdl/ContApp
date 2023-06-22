@@ -45,7 +45,6 @@ public class BaseTest extends BasePage {
         click(locator);
 
         if (getOperationSystem().contains("Windows")) {
-            System.out.println(getOperationSystem().toString());
             locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         } else if (getOperationSystem().contains("Mac OS X")) {
             locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));

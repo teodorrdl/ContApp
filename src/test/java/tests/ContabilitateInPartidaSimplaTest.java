@@ -33,7 +33,7 @@ public class ContabilitateInPartidaSimplaTest extends BasePage {
         documentatieContabilitate().linkOUG();
         driver_local.navigate().back();
         documentatieContabilitate().clickRatingButton();
-        documentatieContabilitate().waitPage();
+        //documentatieContabilitate().waitPage();
         documentatieContabilitate().mesajRatingButton();
         driver_local.navigate().back();
         documentatieContabilitate().clickCategoriiFiscale();

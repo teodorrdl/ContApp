@@ -1,13 +1,11 @@
 package pages;
 
 import base.BaseTest;
-import base.PageLinksAndText;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import java.util.ArrayList;
-
 
 public class ContAppAssetsPage extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Active']")
@@ -191,7 +189,8 @@ public class ContAppAssetsPage extends BaseTest {
         click(assetsRegistryButton);
         waitPage();
         SwitchToNextTab();
-        Assert.assertEquals(getUrl(), PageLinksAndText.verifyAssetsRegistryButtonLink.getValue());
+        String CurrentUrl = "https://ps.contapp.ro/export/3850/assets/pdf/view?year=2023";
+        Assert.assertEquals(getUrl(), CurrentUrl);
 
     }
 
