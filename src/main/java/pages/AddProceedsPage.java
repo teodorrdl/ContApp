@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.List;
@@ -50,7 +51,9 @@ public class AddProceedsPage extends BaseTest {
     @FindBy(xpath = "//div[@class='toast toast-warning']")
     private WebElement imputErrorPopup;
 
-    //dup[ adaugare incasarii se redirectioneaza spre alta pagina "https://ps.contapp.ro/incasari"
+    private WebDriverWait waitPage(){
+        return  new WebDriverWait(driver,15);
+    }
 
     public WebElement droplistIndex(int index, String selector){
         List<WebElement> elements = driver_local.findElements(By.cssSelector(selector));
@@ -112,23 +115,6 @@ public class AddProceedsPage extends BaseTest {
         click(cashingInRon);
     }
 
-//    public boolean check(String numarIntrodus){
-//        int intValue;
-//        if (numarIntrodus == null || numarIntrodus.equals("")){
-//            return false;
-//        }
-//
-//        try {
-//            intValue = Integer.parseInt(numarIntrodus);
-//            System.out.println("The imput contains a number");
-//            return true;
-//        } catch (NumberFormatException e) {
-//            System.out.println("The imput is not a number.");
-//        }
-//        return false;
-//
-//
-//    }
 
     public void checks(Integer value){
         cashingInRon.sendKeys(value.toString());

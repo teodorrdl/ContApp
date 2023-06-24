@@ -23,10 +23,7 @@ public class AddClientProceedsPageTest extends BasePage {
         return new AddProceedsPage();
     }
 
-    protected WebDriverWait waitPage(){
 
-        return  new WebDriverWait(driver_local,5);
-    }
 
 
     @Test(description = "Succesfull new proceed added")
@@ -115,42 +112,10 @@ public class AddClientProceedsPageTest extends BasePage {
         addClient().succesConfirmationPopup();
     }
 
-//    @Test(description = "Add new client just with the minimal information")
-//    @Parameters({"name", "city", "adress", "txt", "txt0", "txt1"})
-//    public void addMinimReqNewClient(String name, String city, String adress, String txt, String txt0, String txt1) {
-////        LoginPage login = new LoginPage();
-////        login.addUserName("olaru.iuliana1999@gmail.com");
-////        login.addUserPassword("ovi17071");
-////        login.clickLoginButton();
-//        LoginContaApp loginApp = new LoginContaApp();
-//        loginApp.loginContaAccount("olaru.iuliana1999@gmail.com", "ovi17071");
-//        addClient().closeCoockiesAdd();
-//        addClient().clickContAppPSButton();
-//        addClient().clickAddProceedsButton();
-//        addClient().clickClientDroplist();
-//        addClient().clientDropDownList(1, ".select2-results__option.select2-results__option--selectable").click();
-//        addClient().clickEntityTypeDroplistButton();
-//        addClient().clientDropDownList(1, ".select2-results__option.select2-results__option--selectable").click();
-//        addClient().addNameField(name);
-//        addClient().clickDeadlineDroplistButton();
-//        addClient().byWOrdDropList(".select2-results__option.select2-results__option--selectable", txt).click();
-//        addClient().clickCountryDroplistButton();
-//        addClient().byWOrdDropList(".select2-results__option.select2-results__option--selectable", txt0).click();
-//        addClient().clickCountyDroplistButton();
-//
-//        addClient().byWOrdDropList(".select2-results__option.select2-results__option--selectable", txt1).click();
-//        addClient().addCityField(city);
-//        addClient().addAdressField(adress);
-//        addClient().clickSaveButton();
-//    }
 
     @Test(description = "Add new client just with the minimal information")
     @Parameters({"name", "city", "adress"})
     public void addMinimReqNewClient(String name, String city, String adress) {
-//        LoginPage login = new LoginPage();
-//        login.addUserName("olaru.iuliana1999@gmail.com");
-//        login.addUserPassword("ovi17071");
-//        login.clickLoginButton();
         LoginContaApp loginApp = new LoginContaApp();
         loginApp.loginContaAccount("olaru.iuliana1999@gmail.com", "ovi17071");
         addClient().closeCoockiesAdd();
@@ -165,7 +130,7 @@ public class AddClientProceedsPageTest extends BasePage {
         addClient().byWOrdDropList(".select2-results__option.select2-results__option--selectable", "7").click();
         addClient().clickCountryDroplistButton();
         addClient().byWOrdDropList(".select2-results__option.select2-results__option--selectable", "Italia").click();
-        waitPage();
+
         addClient().clickCountyDroplistButton();
         addClient().byWOrdDropList(".select2-results__option.select2-results__option--selectable", "Basilicata").click();
         addClient().addCityField(city);
