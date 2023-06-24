@@ -1,14 +1,10 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.BasePage;
 import pages.LoginPageContactApp;
-import pages.SettingCompany.GeneralSetting;
-import pages.SettingCompany.PlaceOfActivity;
-import pages.SettingCompany.SettingCompany;
-import pages.SettingCompany.TVASetting;
+import pages.SettingCompany.*;
 
 public class SettingCompanyTest extends BasePage {
 
@@ -30,6 +26,10 @@ public class SettingCompanyTest extends BasePage {
 
     public PlaceOfActivity placeOfActivity() {
         return new PlaceOfActivity();
+    }
+
+    public ActivityPage activityPage() {
+        return new ActivityPage();
     }
 
     @Test(description = "check the company settings if direct to the correct url with valid login credentials " +
@@ -122,4 +122,37 @@ public class SettingCompanyTest extends BasePage {
         placeOfActivity().clickPlaceOfActivityLink();
         placeOfActivity().addNewLocation(locationName, locationCounty, locationCity, locationAddress);
     }
+
+    @Test(description = "Add authorized activities", priority = 7)
+    @Parameters({"username", "password", "activityName", "incomeCategory",
+            "sourceOfIncome","authorizationNr","registrationDate","endedDate"})
+    public void addAuthorizedActivities(String username, String password, String activityName, String incomeCategory,
+                                        String sourceOfIncome, String authorizationNr, String registrationDate, String endedDate) {
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickRememberMeCheckbox();
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        activityPage().clickActivityLink();
+        activityPage().addAuthorizedActivities(activityName, incomeCategory, sourceOfIncome, authorizationNr, registrationDate, endedDate);
+    }
+
+    @Test(description = "Deletes the authorized activity already created ", priority = 8)
+    @Parameters({"username", "password"})
+    public void checkDeleteAuthorizedActivity(String username, String password) {
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickRememberMeCheckbox();
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        activityPage().clickActivityLink();
+        activityPage().deleteAuthorizedActivity();
+    }
+
 }
