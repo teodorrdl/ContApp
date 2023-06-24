@@ -122,6 +122,7 @@ public class ActivityPage extends BaseTest {
     public void deleteAuthorizedActivity() {
         click(deleteActivityButton);
         click(deleteButtonDanger);
+        Assert.assertTrue(modalContent.isDisplayed());
     }
 }
 
