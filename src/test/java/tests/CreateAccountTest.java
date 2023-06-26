@@ -10,6 +10,7 @@ import pages.LoginPageContactApp;
 public class CreateAccountTest extends BasePage {
 
     public CreateAccountPage createAccount() {
+
         return new CreateAccountPage();
     }
 
@@ -26,6 +27,7 @@ public class CreateAccountTest extends BasePage {
         createAccount().addpassword(password);
         createAccount().confirmpassword(confPassword);
         createAccount().clickTermsandConditions();
+        createAccount().clickCloseCookie();
         createAccount().send();
 
     }

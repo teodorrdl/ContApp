@@ -14,7 +14,6 @@ import org.testng.annotations.*;
 public class BasePage {
 
     public static WebDriver driver_local; //--> rulare in mod normal pe local
-    String url = "https://semicolon-task-manager-skillbrains-grxarv6yb-cezarmocanu.vercel.app/login";
     String contactAppUrl = "https://contapp.ro/";
     public static ExtentTest logger;
     public static ExtentReports report;
@@ -34,10 +33,10 @@ public class BasePage {
     }
 
 
-    @AfterMethod(alwaysRun=true)
-    public void tearDown() {
-        driver_local.quit();
-    }
+//    @AfterMethod(alwaysRun=true)
+//    public void tearDown() {
+//        driver_local.quit();
+//    }
 
     public void reportLog(String message){
         Reporter.log(message);

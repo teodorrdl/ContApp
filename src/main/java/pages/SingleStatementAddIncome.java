@@ -11,8 +11,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 public class SingleStatementAddIncome extends BaseTest {
+    @FindBy(xpath = "//button[@class='btn btn-light btn-xs'][normalize-space()='Deschide']")
+    private List<WebElement> listOfOpenButtons;
+    @FindBy(xpath = "//div[contains(@role,'dialog')]//button[contains(@aria-label,'Close')")
+    private WebElement closeButton;
     @FindBy(xpath = "//a[normalize-space()='Autentifica-te']")
     private WebElement authenticationButton;
 
@@ -100,7 +105,7 @@ public class SingleStatementAddIncome extends BaseTest {
     private WebElement summaryEstimatedCorection;
     @FindBy(xpath = "/html/body/main/div/div/div[2]/div/div[4]/div/div[3]/div/div[1]/div[3]/div/div/div/div/button")
     private WebElement openSummaryEstimatedCorection;
-    @FindBy(xpath = "html/body/main/div/div/div[2]/div/div[4]/div/div[3]/div/div[4]/div/div/div[3]/button")
+    @FindBy(xpath = "//div[@id='j2VYqNjUVmqmecfnCQOL-income']//button[contains(@type,'button')][normalize-space()='Închide']")
     private WebElement closeSummaryEstimatedCorection;
 
     @FindBy(xpath = "/html/body/main/div/div/div[2]/div/div[6]/div/div[1]/div/div[1]/button")
@@ -150,25 +155,6 @@ public class SingleStatementAddIncome extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), "https://account.contapp.ro/login");
     }
 
-    public String[] expectedAlertMessages = {"Datele de autentificare introduse nu se potrivesc cu baza de date.",
-            "Campul \"E-mail\" este obligatoriu.",
-            "Campul \"Parola\" este obligatoriu."
-    };
-
-    public void verifyAlertMessages() {
-        if (emailAlertMessage.getText().equals(expectedAlertMessages[1]) && passwordAlertMessage.getText().equals(expectedAlertMessages[2])) {
-            System.out.println(emailAlertMessage.getText());
-            System.out.println(passwordAlertMessage.getText());
-        } else if (emailAlertMessage.getText().equals(expectedAlertMessages[1])) {
-            System.out.println(emailAlertMessage.getText());
-        } else if (passwordAlertMessage.getText().equals(expectedAlertMessages[2])) {
-            System.out.println(passwordAlertMessage.getText());
-        } else {
-            System.out.println("The alert messages are not the expected ones.");
-        }
-    }
-
-
     public void clickAcceptCookie() {
         click(acceptCookie);
     }
@@ -207,9 +193,8 @@ public class SingleStatementAddIncome extends BaseTest {
         click(disabilityButton);
     }
 
-    public void addDisabilityButtonFrom() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,300)");
+    public void addDisabilityButtonFrom(int x, int y) {
+        javascriptExecutor(x, y);
         click(disabilityFrom);
 
 
@@ -275,13 +260,12 @@ public class SingleStatementAddIncome extends BaseTest {
         addText(incomeBrutEstimated, this.incomeBrutEstimated);
     }
 
-    public void addEstimatedDeductibleCosts(String estimatedDeductibleCosts) {
+    public void addEstimatedDeductibleCosts(String estimatedDeductibleCosts, int x, int y) {
+        javascriptExecutor(x, y);
         addText(estimatedDeductibleCosts, this.estimatedDeductibleCosts);
     }
 
     public void addEstimatedIncomeSaveButton() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1000)");
         click(EstimatedIncomeSaveButton);
     }
 
@@ -289,21 +273,19 @@ public class SingleStatementAddIncome extends BaseTest {
         click(summaryEstimatedCorection);
     }
 
-    public void clickOpenSummaryEstimatedCorection() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1000)");
-        click(openSummaryEstimatedCorection);
+    public void clickOpenSummaryEstimatedCorection(int x, int y) {
+        javascriptExecutor(x, y);
+//        click(listofButtons(listOfOpenButtons));
+        action(listofButtons(listOfOpenButtons));
     }
 
     public void clickCloseSummaryEstimatedCorection() {
-        click(closeSummaryEstimatedCorection);
+        click(closeButton);
     }
 
 
-    public void clickIncomeRealized() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1000)");
-
+    public void clickIncomeRealized(int x, int y) {
+        javascriptExecutor(x, y);
         click(incomeRealized);
     }
 
@@ -335,22 +317,22 @@ public class SingleStatementAddIncome extends BaseTest {
         addText(deductibleExpensesIncomeRealized, this.deductibleExpensesIncomeRealized);
     }
 
-    public void addSaveButtonIncomeRealized() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1500)");
+    public void addSaveButtonIncomeRealized(int x, int y) {
+        javascriptExecutor(x, y);
         click(saveButtonIncomeRealized);
     }
-    public void clickRectificationButtonIncomeRealized(){
+
+    public void clickRectificationButtonIncomeRealized() {
         click(rectificationButtonIncomeRealized);
     }
-    public void clickDeleteButton(){
+
+    public void clickDeleteButton() {
         click(deleteButton);
     }
-    public void clickDeleteDeclaration(){
+
+    public void clickDeleteDeclaration() {
         click(deleteDeclaration);
     }
-
-
 }
 
 
