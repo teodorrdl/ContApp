@@ -57,7 +57,7 @@ public class ActivityPage extends BaseTest {
     @FindBy(xpath = "/(//button[normalize-space()='Închide'])[1]")
     private WebElement closeButton;
 
-    @FindBy(xpath = "//tbody//tr")
+    @FindBy(xpath = "//tbody")
     private List<WebElement> activityList;
 
     @FindBy(xpath = "(//button[@class='btn btn-xs btn-light'][normalize-space()='Deschide'])[1]")
