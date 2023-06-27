@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BaseTest extends BasePage {
@@ -20,7 +21,11 @@ public class BaseTest extends BasePage {
         PageFactory.initElements(driver, this);
         action = new Actions(driver);
     }
+    public void SwitchToNextTab() {
+        ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tab.get(1));
 
+    }
     private WebDriverWait waitPage() {
         return new WebDriverWait(driver, 15);
     }
