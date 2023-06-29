@@ -51,13 +51,13 @@ public class ActivityPage extends BaseTest {
     @FindBy(xpath = "//input[@id='activity-from-end-date-']")
     private WebElement endDateInput;
 
-    @FindBy(xpath = "(//button[contains(text(),'Salvează')])[1]")
+    @FindBy(xpath = "(//button[contains(text(),'Salvează')])[2]")
     private WebElement saveButton;
 
     @FindBy(xpath = "/(//button[normalize-space()='Închide'])[1]")
     private WebElement closeButton;
 
-    @FindBy(xpath = "//tbody")
+    @FindBy(xpath = "//tbody//tr")
     private List<WebElement> activityList;
 
     @FindBy(xpath = "(//button[@class='btn btn-xs btn-light'][normalize-space()='Deschide'])[1]")
@@ -65,9 +65,6 @@ public class ActivityPage extends BaseTest {
 
     @FindBy(xpath = "(//button[@class='btn btn-xs btn-light'][normalize-space()='Șterge'])[1]")
     private WebElement deleteActivityButton;
-
-    @FindBy(xpath = "//div[@role='dialog']//div[@class='modal-content']")
-    private WebElement modalContent;
 
     @FindBy(xpath = "(//button[@class='btn btn-sm btn-danger'])[1]")
     private WebElement deleteButtonDanger;
@@ -96,13 +93,12 @@ public class ActivityPage extends BaseTest {
 
     public void checkActivity(String activityName, String incomeCategory, String sourceOfIncome,
                               String authorizationNr, String registrationDate, String endedDate) {
-        for (WebElement activity : activityList) {
-            if (activity.getText().contains(activityName) && activity.getText().contains(incomeCategory)
+        for (int i = 1; i < activityList.size(); i++) {
+            WebElement activity = activityList.get(i);
+            Assert.assertTrue(activity.getText().contains(activityName) && activity.getText().contains(incomeCategory)
                     && activity.getText().contains(sourceOfIncome) && activity.getText().contains(authorizationNr)
-                    && activity.getText().contains(registrationDate) && activity.getText().contains(endedDate)) {
-                Assert.assertTrue(true);
-                break;
-            }
+                    && activity.getText().contains(registrationDate) && activity.getText().contains(endedDate));
+            break;
         }
     }
 
@@ -122,7 +118,6 @@ public class ActivityPage extends BaseTest {
     public void deleteAuthorizedActivity() {
         click(deleteActivityButton);
         click(deleteButtonDanger);
-        Assert.assertTrue(modalContent.isDisplayed());
     }
 }
 

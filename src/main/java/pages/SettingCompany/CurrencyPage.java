@@ -35,7 +35,7 @@ public class CurrencyPage extends BaseTest {
     @FindBy(xpath = "(//input[contains(@type,'checkbox')])[2]")
     private WebElement checkboxDefault;
 
-    @FindBy(xpath = "//tbody")
+    @FindBy(xpath = "(//tbody)[1]//tr")
     private List<WebElement> currencyTable;
 
     public void clickCurrencyLink() {
@@ -55,14 +55,18 @@ public class CurrencyPage extends BaseTest {
     }
 
     public void checkCurrencyAdded(String currencyName, String currencySymbol) {
-        for (WebElement currency : currencyTable) {
-            if (currency.getText().contains(currencyName) && currency.getText().contains(currencySymbol)) {
-                Assert.assertTrue(true);
-                break;
-            } else {
-                Assert.assertTrue(false);
-            }
+        for (int i = 2; i < currencyTable.size(); i++) {
+            Assert.assertTrue(currencyTable.get(i).getText().contains(currencyName)
+                    && currencyTable.get(i).getText().contains(currencySymbol));
+            break;
         }
+//        for (WebElement currency : currencyTable) {
+//            if (currency.getText().contains(currencyName) && currency.getText().contains(currencySymbol)) {
+//                break;
+//            }
+//        }
+//        Assert.assertTrue(currencyTable.get(2).getText().contains(currencyName)
+//        && currencyTable.get(2).getText().contains(currencySymbol));
     }
 
 }

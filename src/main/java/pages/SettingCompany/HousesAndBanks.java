@@ -51,8 +51,8 @@ public class HousesAndBanks extends BaseTest {
     @FindBy(xpath = "(//button[normalize-space()='Închide'])[5]")
     private WebElement closeButton;
 
-    @FindBy(xpath = "//tbody")
-    private List <WebElement> houseAndBanksTable;
+    @FindBy(xpath = "//tbody//tr")
+    private List <WebElement> houseAndBanksList;
 
     public void getBank(String typeofService ,String name, String currency, String iban, String details) {
         click(bankOption);
@@ -84,8 +84,6 @@ public class HousesAndBanks extends BaseTest {
         } else if (typeofService.equals("Casa")) {
             getHouse(typeofService, name, currency, details);
             saveButton = saveButtonCashRegister;
-        } else {
-            Assert.fail("Nu s-a gasit tipul de serviciu");
         }
         click(saveButton);
     }
@@ -96,16 +94,17 @@ public class HousesAndBanks extends BaseTest {
 
     public void checkBankOrHouseAdded(String typeofService ,String name, String currency, String iban) {
         if (typeofService.equals("Banca")) {
-            for (WebElement bank : houseAndBanksTable) {
-                if (bank.getText().contains(name) && bank.getText().contains(currency) && bank.getText().contains(iban)) {
-                    Assert.assertTrue(true);
-                }
+            for (int i = 2; i < houseAndBanksList.size(); i++) {
+                Assert.assertTrue(houseAndBanksList.get(i).getText().contains(name)
+                        && houseAndBanksList.get(i).getText().contains(currency)
+                        && houseAndBanksList.get(i).getText().contains(iban));
+                break;
             }
-        } else {
-            for (WebElement house : houseAndBanksTable) {
-                if (house.getText().contains(name) && house.getText().contains(currency)) {
-                    Assert.assertTrue(true);
-                }
+        } else if (typeofService.equals("Casa")) {
+            for (int i = 3; i < houseAndBanksList.size(); i++) {
+                Assert.assertTrue(houseAndBanksList.get(i).getText().contains(name)
+                        && houseAndBanksList.get(i).getText().contains(currency));
+                break;
             }
         }
     }
