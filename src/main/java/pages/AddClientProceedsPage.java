@@ -1,49 +1,50 @@
 package pages;
 
 import base.BaseTest;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.List;
 
 public class AddClientProceedsPage extends BaseTest {
 
+    @FindBy(xpath = "//div[@class='otFlat bottom ot-wo-title vertical-align-content']")
+    private WebElement cookiesAdd;
+    @FindBy(xpath = "//button[@class='onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon']")
+    private WebElement closeCoockiesAddButton;
     @FindBy(xpath = "//a[normalize-space()='ContApp PS']")
     private WebElement contAppPSButton;
 
     @FindBy(xpath = "//a[@href='https://ps.contapp.ro/incasare/creaza']")
     private WebElement addProceedsButton;
 
-    @FindBy(xpath = "//button[normalize-space()='Incasari clienti']")
-    private WebElement clientProceeds;
+    @FindBy(xpath = "//div//span[@id='select2-select-transaction-customer-id-income-1---container']")
+    private WebElement client;
 
-    @FindBy(xpath = "//button[normalize-space()='Incasari diverse']")
-    private WebElement otherProceeds;
+    @FindBy(xpath = "//ul[@id='select2-select-transaction-customer-id-income-1---results']//li")
+    private List<WebElement> clientDroplist;
 
-    @FindBy(xpath = "(//div[contains(@class,'select2-parent')])[2]")
-    private WebElement clientDroplistButton;
-
-    @FindBy(xpath = "(//li[contains(@role,'option')])[2]")
-    private WebElement newClientButton;
-
-    @FindBy(xpath = "//input[@placeholder='Caută după CUI/CIF']")
+    @FindBy(xpath = "//div//input[@id='registration-number']")
     private WebElement cuiOrCifField;
 
     @FindBy(xpath = "//input[@id='input-tradeRegistrationNumber']")
     private WebElement registerNumberField;
 
-    @FindBy(xpath = "(//span[contains(@role,'combobox')])[10]")
-    private WebElement entityTypeDroplistButton;
+    @FindBy(xpath = "//div//span[@id='select2-select-create-customer-org-type-select-container']")
+    private WebElement entity;
+
+    @FindBy(xpath = "//ul[@class='select2-results__options']")
+    private List<WebElement> entityDroplist;
 
     @FindBy(xpath = "//input[@id='input-name']")
     private WebElement nameField;
 
-    @FindBy(xpath = "(//span[@role='combobox'])[11]")
-    private WebElement deadlineDroplistButton;
+    @FindBy(xpath = "//div//span[@id='select2-select-create-customer-lifespan-select-container']")
+    private WebElement deadline;
+
+    @FindBy(xpath = "//ul[@class='select2-results__options']")
+    private List<WebElement> deadlineDroplist;
 
     @FindBy(xpath = "//input[@id='input-iban']")
     private WebElement ibanField;
@@ -51,11 +52,16 @@ public class AddClientProceedsPage extends BaseTest {
     @FindBy(xpath = "//input[@id='input-bankName']")
     private WebElement bankNameField;
 
-    @FindBy(xpath = "(//span[contains(@role,'combobox')])[12]")
-    private WebElement countryDroplistButton;
+    @FindBy(xpath = "//div//span[@id='select2-select-create-customer-country-select-container']")
+    private WebElement country;
 
-    @FindBy(xpath = "(//span[contains(@role,'combobox')])[13]")
-    private WebElement countyDroplistButton;
+    @FindBy(xpath = "//ul[@class='select2-results__options']")
+    private List<WebElement> countryDroplist;
+    @FindBy(xpath = "//div//span[@id='select2-select-create-customer-county-select-container']")
+    private WebElement county;
+
+    @FindBy(xpath = "//ul[@class='select2-results__options']")
+    private List<WebElement> countyDroplist;
 
     @FindBy(xpath = "//input[@id='input-city']")
     private WebElement cityField;
@@ -63,8 +69,10 @@ public class AddClientProceedsPage extends BaseTest {
     @FindBy(xpath = "//input[@id='input-address']")
     private WebElement adressField;
 
-    @FindBy(xpath = "(//span[@role='combobox'])[14]")
-    private WebElement currencyButton;
+    @FindBy(xpath = "//div//span[@id='select2-select-create-customer-currency-select-container']")
+    private WebElement currency;
+    @FindBy(xpath = "//ul[@class='select2-results__options']")
+    private List<WebElement> currencyDroplist;
 
     @FindBy(xpath = "//input[@id='input-contactName']")
     private WebElement contactPersonField;
@@ -84,156 +92,134 @@ public class AddClientProceedsPage extends BaseTest {
     @FindBy(xpath = "(//button[contains(@type,'button')][normalize-space()='Închide'])[2]")
     private WebElement cancelButton;
 
-    @FindBy(xpath = "//div[@class='otFlat bottom ot-wo-title vertical-align-content']")
-    private WebElement cookiesAdd;
+    @FindBy(xpath = "//button[normalize-space()='Incasari clienti']")
+    private WebElement clientProceeds;
 
-    @FindBy(xpath = "//button[@class='onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon']")
-    private WebElement closeCoockiesAddButton;
-
+    @FindBy(xpath = "//button[normalize-space()='Incasari diverse']")
+    private WebElement otherProceeds;
     @FindBy(xpath = "//div[@class='toast toast-success']")
     private WebElement confirmationPopup;
 
-    @FindBy(xpath = "//div[@class='card   ']")
-    private WebElement paymentCard;
+    @FindBy(xpath = "//div[@class='col-12 text-center'][1]")
+    private WebElement text1;
 
     @FindBy(xpath = "//div[@class='col-12 text-center']//a")
-    private WebElement paymentButton;
+    private WebElement addInvoice;
 
-    private WebDriverWait waitPage(){
-        return  new WebDriverWait(driver,15);
-    }
 
-    public void closeCoockiesAdd(){
+
+
+    public void closeCoockiesAdd() {
         find(cookiesAdd);
         click(closeCoockiesAddButton);
     }
 
-    public void clickContAppPSButton(){
+    public void selectContAppPSButton() {
         click(contAppPSButton);
     }
 
-    public void succesConfirmationPopup(){
-        waitPage().until(ExpectedConditions.visibilityOf(confirmationPopup));
-    }
-
-    public void clickAddProceedsButton(){
+    public void selectAddProceedsButton() {
         click(addProceedsButton);
     }
-    public void clickClientDroplist(){
-        click(clientDroplistButton);
-    }
-    public WebElement clientDropDownList(int index, String selector){
-        List<WebElement> clients = driver_local.findElements(By.cssSelector(selector));
-        WebElement firstClient = clients.get(index);
-        return firstClient;
-    }
 
-    public WebElement byWordDropList(String selector, String text){
-        waitPage();
-        List<WebElement> fields = driver_local.findElements(By.cssSelector(selector));
-        WebElement fieldName = driver_local.findElement(By.xpath("//*[text()='" + text + "']"));
-        return fieldName;
 
+    public void selectClientField(){
+        click(client);
+    }
+    public void selectClientList(String clientText) {
+        click(listofElements(clientDroplist, clientText));
     }
 
-    public WebElement byWOrdDropList(String selector, String text){
-        waitPage();
-        listofElements(driver_local.findElements(By.cssSelector(selector)), text);
-        WebElement fieldName = driver_local.findElement(By.xpath("//*[text()='" + text + "']"));
-        return fieldName;
-    }
 
-    public void clickNewClient(){
-        click(newClientButton);
-    }
-
-    public void addCuiOrCIF(String cuiOrCif){
+    public void addCuiOrCIF(String cuiOrCif) {
         addText(cuiOrCif, cuiOrCifField);
     }
 
-    public void addRegisterNumber(String registerNumber){
+    public void addRegisterNumber(String registerNumber) {
         addText(registerNumber, registerNumberField);
     }
 
-
-    public void clickEntityTypeDroplistButton(){
-        click(entityTypeDroplistButton);
+    public void selectEntityTypeDroplistButton(String text) {
+        click(entity);
+        listofElements(entityDroplist, text);
     }
 
-    public void addNameField(String name){
+    public void addNameField(String name) {
         addText(name, nameField);
     }
 
-    public void clickDeadlineDroplistButton(){
-        click(deadlineDroplistButton);
+    public void selectDeadlineDroplist(String text) {
+        click(deadline);
+        listofElements(deadlineDroplist, text);
     }
 
-    public void addIbanField(String iban){
+    public void addIbanField(String iban) {
         addText(iban, ibanField);
     }
 
-    public void addBankNameField(String bankName){
+    public void addBankNameField(String bankName) {
         addText(bankName, bankNameField);
     }
 
-    public void clickCountryDroplistButton(){
-        click(countryDroplistButton);
+    public void selectCountryDroplist(String text) {
+        click(country);
+        listofElements(countryDroplist, text);
     }
 
-    public void clickCountyDroplistButton()  {
-        click(countyDroplistButton);
-        waitPage();
+    public void selectCountyDroplist(String text) {
+        click(county);
+        listofElements(countyDroplist, text);
     }
 
-    public void addCityField(String city){
+    public void addCityField(String city) {
         addText(city, cityField);
     }
 
-    public void addAdressField(String adress){
+    public void addAdressField(String adress) {
         addText(adress, adressField);
     }
 
-    public void clickCurrencyButton(){
-        click(currencyButton);
+    public void selectCurrencyDroplist(String text) {
+        click(currency);
+        listofElements(currencyDroplist, text);
     }
 
-    public void addContactPersonField(String personContactName){
+    public void addContactPersonField(String personContactName) {
         addText(personContactName, contactPersonField);
     }
 
-    public void addContactPersonEmailField(String email){
+    public void addContactPersonEmailField(String email) {
         addText(email, contactPersonEmailField);
     }
 
-    public void addContactPersonPhoneField(String phone){
+    public void addContactPersonPhoneField(String phone) {
         addText(phone, contactPersonPhoneField);
     }
 
-    public void addContactPersonWebsiteField(String website){
+    public void addContactPersonWebsiteField(String website) {
         addText(website, contactPersonWebsiteField);
     }
 
-    public void clickSaveButton(){
+    public void selectSaveButton() {
         click(saveButton);
     }
 
-    public void clickCancelButton(){
+    public void selectCancelButton() {
         click(cancelButton);
     }
 
-    public void clickClientProceeds(){
+    public void selectClientProceeds() {
         click(clientProceeds);
     }
 
-    public void clickOtherProceeds(){
+    public void selectOtherProceeds() {
         click(otherProceeds);
     }
 
-    public void addNewPayment() {
-        waitPage().until(ExpectedConditions.visibilityOf(paymentCard));
-        click(paymentButton);
+    public void addNewInvoice() {
+        Assert.assertTrue(addInvoice.isDisplayed());
+        click(addInvoice);
     }
-
 
 
 }
