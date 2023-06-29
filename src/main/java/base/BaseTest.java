@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BaseTest extends BasePage {
@@ -21,13 +20,9 @@ public class BaseTest extends BasePage {
         PageFactory.initElements(driver, this);
         action = new Actions(driver);
     }
-    public void SwitchToNextTab() {
-        ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tab.get(1));
 
-    }
     private WebDriverWait waitPage() {
-        return new WebDriverWait(driver, 15);
+        return new WebDriverWait(driver, 5);
     }
 
     protected WebElement find(WebElement locator) {
@@ -36,7 +31,7 @@ public class BaseTest extends BasePage {
     }
 
     protected WebElement clickAble(WebElement locator) {
-        waitPage().until(ExpectedConditions.elementToBeClickable(locator));
+        waitPage().until(ExpectedConditions.visibilityOf(locator));
         return locator;
     }
 
@@ -48,8 +43,8 @@ public class BaseTest extends BasePage {
 
     protected void clear(WebElement locator) {
         click(locator);
-
         if (getOperationSystem().contains("Windows")) {
+            System.out.println(getOperationSystem().toString());
             locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         } else if (getOperationSystem().contains("Mac OS X")) {
             locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
@@ -111,6 +106,13 @@ public class BaseTest extends BasePage {
         return elem;
     }
 
+    protected WebElement listofButtons(List<WebElement> list) {
+        WebElement elem = null;
+        elem = list.get(utils.utils.randomNumber(list.size() - 1));
+        return elem;
+    }
+
+
     protected void uploadDoc(WebElement element, String path) {
         element.sendKeys(path);
     }
@@ -120,4 +122,13 @@ public class BaseTest extends BasePage {
         return operateSystem;
     }
 
+    protected void javascriptExecutor(int x, int y) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(" + x + "," + y + ")");
+
+    }
+
+    protected void action(WebElement locator) {
+        action.moveToElement(locator).click();
+    }
 }

@@ -74,6 +74,9 @@ public class SingleStatement extends BaseTest {
     @FindBy(xpath = "//*[contains(text(),'Adaugă venit')]")
     private WebElement adaugaVenitButton;
 
+
+
+
     public void addEmail(String email) {
         addText(email, emailField);
     }
