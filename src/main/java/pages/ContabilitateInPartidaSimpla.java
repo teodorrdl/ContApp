@@ -110,6 +110,7 @@ public class ContabilitateInPartidaSimpla extends BaseTest {
         click(ratingButton);
     }
 
+
     public void  mesajRatingButton(){
         Assert.assertEquals(getText(mesajRatingButton),"Mulțumim pentru părere");
     }

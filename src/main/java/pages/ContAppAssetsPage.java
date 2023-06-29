@@ -179,12 +179,6 @@ public class ContAppAssetsPage extends BaseTest {
         click(buttonSaveAssets);
     }
 
-    public void SwitchToNextTab() {
-        ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tab.get(1));
-
-    }
-
     public void verifyAssetsRegistryButton() {
         click(assetsRegistryButton);
         SwitchToNextTab();
