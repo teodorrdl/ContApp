@@ -55,10 +55,10 @@ public class FacturaVanzariTest extends BasePage {
 
     @Test(description = "incasari si plati")
     @Parameters({"incasariSiPlati", "adaugaIncasare", "client", "valoareIncasata", "explicatie", "adaugaIncasareNoua",
-    "deschide"})
+            "deschide"})
     public void IncasariSiPlati(String incasariSiPlati, String adaugaIncasare, String client, String valoareIncasata,
-                                String explicatie, String adaugaIncasareNoua,String deschide) {
-       facturaVanzari().incasariSiPlati();
+                                String explicatie, String adaugaIncasareNoua, String deschide) {
+        facturaVanzari().incasariSiPlati();
         facturaVanzari().Incasari();
         facturaVanzari().adaugaIncasare();
         facturaVanzari().addClient();
@@ -66,4 +66,6 @@ public class FacturaVanzariTest extends BasePage {
         facturaVanzari().explicatie();
         facturaVanzari().adaugaIncasare();
     }
+
+
 }
