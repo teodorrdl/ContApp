@@ -70,25 +70,21 @@
             <!--                </methods>-->
 <!--                        </class>-->
 
-            <class name="tests.SingleStatementAddIncomeTest">
+            <class name="tests.InventoryItemTest">
                 <methods>
-                    <include name="singleStatementTestAddIncome">
-                        <parameter name="username" value="litoror412@aramask.com"/>
-                        <parameter name="password" value="123123123"/>
-                        <parameter name="fatherName" value="Z"></parameter>
-                        <parameter name="ibanAccount" value="RO96PORL4832863441713653"></parameter>
-                        <parameter name="disabilityFrom" value="28022023"></parameter>
-                        <parameter name="disabilityToDate" value="30052023"></parameter>
-                        <parameter name="whichCategory" value="Drepturi de proprietate intelectuală - sistem real"></parameter>
-                        <parameter name="incomeDescription" value="Lorem Ipsum is simply dummy kktext of the printing and typesetting industry"></parameter>
-                        <parameter name="documentNumber" value="2514"></parameter>
-                        <parameter name="incomeBrutEstimated" value="29000"></parameter>
-                        <parameter name="estimatedDeductibleCosts" value="2000"></parameter>
-                        <parameter name="whichTypeOfIncomeCategoryRealized" value="Închirierea în scop turistic a camerelor situate în locuințe personale - sistem real"></parameter>
-                        <parameter name="descriptionIncomeRealized" value="Lorem Ipsum is simply dummy kktext "></parameter>
-                        <parameter name="addressIncomeRealized" value="Busteni, Strada Alexandru Ioan Cuza, nr.50"></parameter>
-                        <parameter name="brutIncomeRealized" value="30000"></parameter>
-                        <parameter name="deductibleExpensesIncomeRealized" value="4230"></parameter>
+                    <include name="addNewInventoryItem">
+                        <parameter name="email" value="teodor.rdl@gmail.com"/>
+                        <parameter name="password" value="Pokpol00"/>
+                        <parameter name="itemName" value="Masina"/>
+                        <parameter name="itemProvider" value="Mercedes"/>
+                        <parameter name="itemMeasurementUnit" value="Unitati"/>
+                        <parameter name="itemFiscalCategory" value="Automobil"/>
+                        <parameter name="itemQuantity" value="1"/>
+                        <parameter name="itemPrice" value="2121"/>
+                        <parameter name="itemInventoryNumber" value="1090"/>
+                        <parameter name="itemDocumentNumber" value="1221"/>
+                        <parameter name="itemTotalPrice" value="31001"/>
+
             <!--            <class name="tests.LoginPageTest">-->
             <!--                <methods>-->
             <!--                    <include name="verifyLogin">-->
