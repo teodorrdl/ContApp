@@ -179,15 +179,8 @@ public class ContAppAssetsPage extends BaseTest {
         click(buttonSaveAssets);
     }
 
-    public void SwitchToNextTab() {
-        ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tab.get(1));
-
-    }
-
     public void verifyAssetsRegistryButton() {
         click(assetsRegistryButton);
-
         SwitchToNextTab();
         String CurrentUrl = "https://ps.contapp.ro/export/3850/assets/pdf/view?year=2023";
         Assert.assertEquals(getUrl(), CurrentUrl);
