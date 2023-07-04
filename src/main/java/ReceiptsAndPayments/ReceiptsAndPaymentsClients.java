@@ -212,22 +212,18 @@ public class ReceiptsAndPaymentsClients extends BaseTest {
     }
 
     public void clickDateFromButton() {
-        toBeClickable(dateFromButton);
         click(dateFromButton);
     }
 
     public void addDateFromAddIncome() {
-        toBeClickable(dateFromAddIncome);
         click(dateFromAddIncome);
     }
 
     public void clickDateToButton() {
-        toBeClickable(toDateButton);
         click(toDateButton);
     }
 
     public void addDateToAddIncome() {
-        toBeClickable(dateToAddIncome);
         click(dateToAddIncome);
     }
 

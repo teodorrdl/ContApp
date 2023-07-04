@@ -136,9 +136,4 @@ public class BaseTest extends BasePage {
     protected void action(WebElement locator) {
         action.moveToElement(locator).click();
     }
-
-    protected WebElement toBeClickable(WebElement locator){
-        waitPage().until(ExpectedConditions.elementToBeClickable(locator));
-        return locator;
-    }
 }
