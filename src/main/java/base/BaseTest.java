@@ -6,9 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
-
 import java.util.ArrayList;
 import java.util.List;
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class BaseTest extends BasePage {
 
@@ -21,25 +21,20 @@ public class BaseTest extends BasePage {
         PageFactory.initElements(driver, this);
         action = new Actions(driver);
     }
+    
     public void SwitchToNextTab() {
         ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tab.get(1));
-
     }
+
     protected WebDriverWait waitPage() {
-        return new WebDriverWait(driver, 20);
-    }
-
-    protected WebElement find(WebElement locator) {
-        waitPage().until(ExpectedConditions.visibilityOf(locator));
-        return locator;
+        return new WebDriverWait(driver, 10);
     }
 
     protected WebElement clickAble(WebElement locator) {
         waitPage().until(ExpectedConditions.elementToBeClickable(locator));
         return locator;
     }
-
 
     protected void addText(String inputText, WebElement locator) {
         clear(locator);
@@ -48,7 +43,6 @@ public class BaseTest extends BasePage {
 
     protected void clear(WebElement locator) {
         click(locator);
-
         if (getOperationSystem().contains("Windows")) {
             locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         } else if (getOperationSystem().contains("Mac OS X")) {
@@ -113,9 +107,10 @@ public class BaseTest extends BasePage {
 
     protected WebElement listofButtons(List<WebElement> list) {
         WebElement elem = null;
-        elem = list.get(utils.Utils.randomNumber(list.size()-1));
+        elem = list.get(utils.utils.randomNumber(list.size() - 1));
         return elem;
     }
+
 
     protected void uploadDoc(WebElement element, String path) {
         element.sendKeys(path);
@@ -124,6 +119,30 @@ public class BaseTest extends BasePage {
     private String getOperationSystem() {
         String operateSystem = System.getProperty("os.name");
         return operateSystem;
+    }
+
+    protected void javascriptExecutor(int x, int y) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(" + x + "," + y + ")");
+
+    }
+
+    protected void action(WebElement locator) {
+        action.moveToElement(locator).click().perform();
+    }
+
+    public void clickWithRetries(WebElement element) {
+        int retryCount = 0;
+        boolean actionSuccessful = false;
+
+        while (retryCount < 5 && !actionSuccessful) {
+            try {
+                action(element);
+                actionSuccessful = true;
+            } catch (StaleElementReferenceException e) {
+                retryCount++;
+            }
+        }
     }
 
 }
