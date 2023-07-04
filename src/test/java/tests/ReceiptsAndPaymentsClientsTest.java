@@ -3,8 +3,8 @@ package tests;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.BasePage;
-import pages.SettingCompany.ReceiptsAndPaymentsClients;
-import pages.SettingCompany.ReceiptsAndPayments;
+import ReceiptsAndPayments.ReceiptsAndPaymentsClients;
+import ReceiptsAndPayments.ReceiptsAndPayments;
 
 public class ReceiptsAndPaymentsClientsTest extends BasePage {
 

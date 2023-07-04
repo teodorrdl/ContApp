@@ -3,7 +3,7 @@ package tests;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.BasePage;
-import pages.SettingCompany.ReceiptsAndPayments;
+import ReceiptsAndPayments.ReceiptsAndPayments;
 
 public class ReceiptsAndPaymentsiTest extends BasePage {
     public ReceiptsAndPayments receiptsAndPayments() {
