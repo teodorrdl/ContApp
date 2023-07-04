@@ -38,8 +38,8 @@
             <!--                </methods>-->
             <!--            </class>-->
 
-            <class name="tests.SettingCompanyTest">
-                <methods>
+<!--            <class name="tests.SettingCompanyTest">-->
+<!--                <methods>-->
 <!--                    <include name="verifySettingCompany">-->
 <!--                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>-->
 <!--                        <parameter name="password" value="pass123456"/>-->
@@ -84,46 +84,46 @@
 <!--                        <parameter name="locationCity" value="Brasov"/>-->
 <!--                        <parameter name="locationAddress" value="Str. Principala Brasov"/>-->
 <!--                    </include>-->
-                    <include name="addAuthorizedActivities">
-                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>
-                        <parameter name="password" value="pass123456"/>
-                        <parameter name="activityName" value="Sediul profesional"/>
-                        <parameter name="incomeCategory" value="Venituri din activități independente și profesii liberale "/>
-                        <parameter name="sourceOfIncome" value="Activităţi de închiriere şi leasing cu echipamente de transport pe apă"/>
-                        <parameter name="authorizationNr" value="1000"/>
-                        <parameter name="registrationDate" value="01-01-2023"/>
-                        <parameter name="endedDate" value="30-06-2023"/>
-                    </include>
-                    <include name="checkDeleteAuthorizedActivity">
-                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>
-                        <parameter name="password" value="pass123456"/>
-                    </include>
-                    <include name="addNewCurrency">
-                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>
-                        <parameter name="password" value="pass123456"/>
-                        <parameter name="currencyName" value="Euro"/>
-                        <parameter name="currencySymbol" value="EUR"/>
-                    </include>
-                    <include name="addBank">
-                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>
-                        <parameter name="password" value="pass123456"/>
-                        <parameter name="typeofService" value="Banca"/>
-                        <parameter name="bankName" value="BT Bank"/>
-                        <parameter name="currency" value="EUR"/>
-                        <parameter name="bankIBAN" value="RO25RZBR9782852662449233"/>
-                        <parameter name="bankDetails" value="Banca Transilvania"/>
-                    </include>
-                    <include name="addCashRegister">
-                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>
-                        <parameter name="password" value="pass123456"/>
-                        <parameter name="typeofService" value="Casa"/>
-                        <parameter name="name" value="Casa de marcat"/>
-                        <parameter name="currency" value="EUR"/>
-                        <parameter name="cashRegisterIBAN" value=""/>
-                        <parameter name="cashRegisterDetails" value="Casa de marcat"/>
-                    </include>
-                </methods>
-            </class>
+<!--                    <include name="addAuthorizedActivities">-->
+<!--                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>-->
+<!--                        <parameter name="password" value="pass123456"/>-->
+<!--                        <parameter name="activityName" value="Sediul profesional"/>-->
+<!--                        <parameter name="incomeCategory" value="Venituri din activități independente și profesii liberale "/>-->
+<!--                        <parameter name="sourceOfIncome" value="Activităţi de închiriere şi leasing cu echipamente de transport pe apă"/>-->
+<!--                        <parameter name="authorizationNr" value="1000"/>-->
+<!--                        <parameter name="registrationDate" value="01-01-2023"/>-->
+<!--                        <parameter name="endedDate" value="30-06-2023"/>-->
+<!--                    </include>-->
+<!--                    <include name="checkDeleteAuthorizedActivity">-->
+<!--                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>-->
+<!--                        <parameter name="password" value="pass123456"/>-->
+<!--                    </include>-->
+<!--                    <include name="addNewCurrency">-->
+<!--                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>-->
+<!--                        <parameter name="password" value="pass123456"/>-->
+<!--                        <parameter name="currencyName" value="Euro"/>-->
+<!--                        <parameter name="currencySymbol" value="EUR"/>-->
+<!--                    </include>-->
+<!--                    <include name="addBank">-->
+<!--                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>-->
+<!--                        <parameter name="password" value="pass123456"/>-->
+<!--                        <parameter name="typeofService" value="Banca"/>-->
+<!--                        <parameter name="bankName" value="BT Bank"/>-->
+<!--                        <parameter name="currency" value="EUR"/>-->
+<!--                        <parameter name="bankIBAN" value="RO25RZBR9782852662449233"/>-->
+<!--                        <parameter name="bankDetails" value="Banca Transilvania"/>-->
+<!--                    </include>-->
+<!--                    <include name="addCashRegister">-->
+<!--                        <parameter name="username" value="daniel_irimia87@yahoo.com"/>-->
+<!--                        <parameter name="password" value="pass123456"/>-->
+<!--                        <parameter name="typeofService" value="Casa"/>-->
+<!--                        <parameter name="name" value="Casa de marcat"/>-->
+<!--                        <parameter name="currency" value="EUR"/>-->
+<!--                        <parameter name="cashRegisterIBAN" value=""/>-->
+<!--                        <parameter name="cashRegisterDetails" value="Casa de marcat"/>-->
+<!--                    </include>-->
+<!--                </methods>-->
+<!--            </class>-->
 
 <!--			<class name="tests.ContAppPaymentTest">-->
 <!--				<methods>-->
@@ -166,6 +166,21 @@
 <!--                    </include>-->
 <!--                </methods>-->
 <!--            </class>-->
+            <class name="tests.HouseAndBankJournalPageTest">
+                <methods>
+                    <include name="addSupplierPaymentToBankJournal">
+                        <parameter name="email" value="daniel_irimia87@yahoo.com"/>
+                        <parameter name="password" value="pass123456"/>
+                        <parameter name="supplierName" value="Dan Test"/>
+                        <parameter name="bankName" value="Bancă principală"/>
+                        <parameter name="activityPlace" value="Sediul profesional"/>
+                        <parameter name="activityCode" value="7734"/>
+                        <parameter name="paymentValue" value="600"/>
+                        <parameter name="documentNumber" value="2342342"/>
+                    </include>
+                </methods>
+            </class>
+
         </classes>
     </test>
 
