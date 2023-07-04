@@ -1,11 +1,8 @@
 package pages.SettingCompany;
 
 import base.BaseTest;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 public class TVASetting extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Setari TVA']")
