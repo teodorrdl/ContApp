@@ -1,6 +1,7 @@
 package pages.SettingCompany;
 
 import base.BaseTest;
+import base.PageLinksAndText;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -26,7 +27,7 @@ public class SettingCompany extends BaseTest {
 
     public void clickSettingCompany(){
         click(settingCompany);
-        Assert.assertEquals(driver.getCurrentUrl(), "https://ps.contapp.ro/setari/general");
+        Assert.assertEquals(driver.getCurrentUrl(), PageLinksAndText.clickSettingCompanyLink.getValue());
     }
 
 }
