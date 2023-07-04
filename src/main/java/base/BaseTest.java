@@ -26,8 +26,8 @@ public class BaseTest extends BasePage {
         driver.switchTo().window(tab.get(1));
 
     }
-    private WebDriverWait waitPage() {
-        return new WebDriverWait(driver, 15);
+    protected WebDriverWait waitPage() {
+        return new WebDriverWait(driver, 20);
     }
 
     protected WebElement find(WebElement locator) {
@@ -108,6 +108,12 @@ public class BaseTest extends BasePage {
                 break;
             }
         }
+        return elem;
+    }
+
+    protected WebElement listofButtons(List<WebElement> list) {
+        WebElement elem = null;
+        elem = list.get(utils.Utils.randomNumber(list.size()-1));
         return elem;
     }
 
