@@ -125,31 +125,28 @@
 <!--                </methods>-->
 <!--            </class>-->
 
-<!--			<class name="tests.ContAppPaymentTest">-->
-<!--				<methods>-->
-<!--					<include name="addNewPayment">-->
-<!--						<parameter name="email" value="teodor.rdl@gmail.com"/>-->
-<!--						<parameter name="password" value="Pokpol00"/>-->
-<!--						<parameter name="CUI" value="16310091"/>-->
-<!--						<parameter name="RegistrationNumber" value="J40/5534/2004"/>-->
-<!--						<parameter name="SupplierName" value="Q TEST SA"/>-->
-<!--						<parameter name="City" value="Craiova"/>-->
-<!--						<parameter name="Address" value="Calea Bucuresti, nr. 61"/>-->
-<!--						<parameter name="IBAN" value="RO27RZBR2782911463382942"/>-->
-<!--						<parameter name="BankName" value="Banca Transilvania"/>-->
-<!--						<parameter name="Contact" value="Popescu Marian"/>-->
-<!--						<parameter name="SupplierEmail" value="test_@test.com"/>-->
-<!--						<parameter name="SupplierWebsite" value="www.firmates.ro"/>-->
-<!--						<parameter name="SupplierPhone" value="031816781"/>-->
-<!--						<parameter name="CaenActivity" value="urban"/>-->
-<!--						<parameter name="CaenNumber" value="71"/>-->
-<!--						<parameter name="DocumentNumber" value="551711"/>-->
-<!--						<parameter name="Lei" value="7001"/>-->
-<!--						<parameter name="Explication" value="fara"/>-->
-<!--						<parameter name="NewSupplier" value="furnizor"/>-->
-<!--					</include>-->
-<!--				</methods>-->
-<!--			</class>-->
+            <!--			<class name="tests.ContAppPaymentTest">-->
+            <!--				<methods>-->
+            <!--					<include name="addNewPayment">-->
+            <!--						<parameter name="email" value="teodor.rdl@gmail.com"/>-->
+            <!--						<parameter name="password" value="Pokpol00"/>-->
+            <!--						<parameter name="CUI" value="16310091"/>-->
+            <!--						<parameter name="RegistrationNumber" value="J40/5534/2004"/>-->
+            <!--						<parameter name="SupplierName" value="Q TEST SA"/>-->
+            <!--						<parameter name="City" value="Craiova"/>-->
+            <!--						<parameter name="Address" value="Calea Bucuresti, nr. 61"/>-->
+            <!--						<parameter name="IBAN" value="RO27RZBR2782911463382942"/>-->
+            <!--						<parameter name="BankName" value="Banca Transilvania"/>-->
+            <!--						<parameter name="Contact" value="Popescu Marian"/>-->
+            <!--						<parameter name="SupplierEmail" value="test_@test.com"/>-->
+            <!--						<parameter name="SupplierWebsite" value="www.firmates.ro"/>-->
+            <!--						<parameter name="SupplierPhone" value="031816781"/>-->
+            <!--						<parameter name="CaenActivity" value="urban"/>-->
+            <!--						<parameter name="CaenNumber" value="71"/>-->
+            <!--						<parameter name="DocumentNumber" value="551711"/>-->
+            <!--						<parameter name="Lei" value="7001"/>-->
+            <!--						<parameter name="Explication" value="fara"/>-->
+            <!--						<parameter name="NewSupplier" value="furnizor"/>-->
 
 <!--			<class name="tests.ContAppAssetsTest">-->
 <!--                <methods>-->

@@ -60,13 +60,5 @@ public class CurrencyPage extends BaseTest {
                     && currencyTable.get(i).getText().contains(currencySymbol));
             break;
         }
-//        for (WebElement currency : currencyTable) {
-//            if (currency.getText().contains(currencyName) && currency.getText().contains(currencySymbol)) {
-//                break;
-//            }
-//        }
-//        Assert.assertTrue(currencyTable.get(2).getText().contains(currencyName)
-//        && currencyTable.get(2).getText().contains(currencySymbol));
     }
-
 }
