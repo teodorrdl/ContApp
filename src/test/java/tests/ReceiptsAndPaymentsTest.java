@@ -50,7 +50,7 @@ public class ReceiptsAndPaymentsTest extends BasePage {
         accessHouseBankJournal().clickLinkReceiptsAndPayments();
         accessHouseBankJournal().clickLinkHouseBankJournal();
         accessHouseBankJournal().clickButtonReceipts();
-        accessHouseBankJournal().clickButtonVariousReceipts();
+        accessVariousReceipts().clickButtonVariousReceipts();
         accessVariousReceipts().addNrDoc(textNrDoc);
         accessVariousReceipts().addMoney(textMoney);
         accessVariousReceipts().clickFieldExplanation();

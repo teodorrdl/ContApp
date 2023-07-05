@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class VariousReceipts extends BaseTest {
+
+    @FindBy(xpath ="//button[normalize-space()='Incasari diverse']")
+    private WebElement buttonVariousReceipts;
     @FindBy(xpath = "//input[@id='input-number']")
     private WebElement fieldNrDoc;
 
@@ -44,4 +47,9 @@ public class VariousReceipts extends BaseTest {
     public void clickButtonClose(){
         click(buttonClose);
     }
+
+    public void clickButtonVariousReceipts(){
+        click(buttonVariousReceipts);
+    }
+
 }
