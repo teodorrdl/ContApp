@@ -6,8 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
-
+import java.util.ArrayList;
 import java.util.List;
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class BaseTest extends BasePage {
 
@@ -20,21 +21,20 @@ public class BaseTest extends BasePage {
         PageFactory.initElements(driver, this);
         action = new Actions(driver);
     }
-
-    private WebDriverWait waitPage() {
-        return new WebDriverWait(driver, 5);
+    
+    public void SwitchToNextTab() {
+        ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tab.get(1));
     }
 
-    protected WebElement find(WebElement locator) {
-        waitPage().until(ExpectedConditions.visibilityOf(locator));
-        return locator;
+    protected WebDriverWait waitPage() {
+        return new WebDriverWait(driver, 10);
     }
 
     protected WebElement clickAble(WebElement locator) {
-        waitPage().until(ExpectedConditions.visibilityOf(locator));
+        waitPage().until(ExpectedConditions.elementToBeClickable(locator));
         return locator;
     }
-
 
     protected void addText(String inputText, WebElement locator) {
         clear(locator);
@@ -44,7 +44,6 @@ public class BaseTest extends BasePage {
     protected void clear(WebElement locator) {
         click(locator);
         if (getOperationSystem().contains("Windows")) {
-            System.out.println(getOperationSystem().toString());
             locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         } else if (getOperationSystem().contains("Mac OS X")) {
             locator.sendKeys(Keys.chord(Keys.COMMAND, "a"));
@@ -129,6 +128,21 @@ public class BaseTest extends BasePage {
     }
 
     protected void action(WebElement locator) {
-        action.moveToElement(locator).click();
+        action.moveToElement(locator).click().perform();
     }
+
+    public void clickWithRetries(WebElement element) {
+        int retryCount = 0;
+        boolean actionSuccessful = false;
+
+        while (retryCount < 5 && !actionSuccessful) {
+            try {
+                action(element);
+                actionSuccessful = true;
+            } catch (StaleElementReferenceException e) {
+                retryCount++;
+            }
+        }
+    }
+
 }

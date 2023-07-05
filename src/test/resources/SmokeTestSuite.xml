@@ -22,12 +22,12 @@
             <!--                    </include>-->
             <!--                </methods>-->
             <!--            </class>-->
-<!--                        <class name="tests.LoginPageContactAppTest">-->
-<!--                           <methods>-->
-<!--                           <include name="verifyLogin">-->
-<!--                                 <parameter name="username" value="test@yahoo.com"/>-->
-<!--                                 <parameter name="password" value="pass123456"/>-->
-<!--                            </include>-->
+            <!--                        <class name="tests.LoginPageContactAppTest">-->
+            <!--                           <methods>-->
+            <!--                           <include name="verifyLogin">-->
+            <!--                                 <parameter name="username" value="test@yahoo.com"/>-->
+            <!--                                 <parameter name="password" value="pass123456"/>-->
+            <!--                            </include>-->
             <!--&lt;!&ndash;                    <include name="verifyLoginWithInvalidPassword">&ndash;&gt;-->
             <!--&lt;!&ndash;                        <parameter name="username" value="test@yahoo.com"/>&ndash;&gt;-->
             <!--&lt;!&ndash;                        <parameter name="invalidPassword" value=""/>&ndash;&gt;-->
@@ -38,8 +38,8 @@
             <!--&lt;!&ndash;                    </include>&ndash;&gt;-->
             <!--&lt;!&ndash;                    <include name="verifyForgotPasswordLink">&ndash;&gt;-->
             <!--&lt;!&ndash;                    </include>&ndash;&gt;-->
-<!--                            </methods>-->
-<!--                        </class>-->
+            <!--                            </methods>-->
+            <!--                        </class>-->
             <!--            <class name="tests.CreateAccountTest">-->
             <!--                <methods>-->
             <!--                    <include name="createAccountTest">-->
@@ -51,44 +51,92 @@
             <!--                    </include>-->
             <!--                </methods>-->
             <!--            </class>-->
-            <!--            <class name="tests.SingleStatementTest">-->
-            <!--                <methods>-->
-            <!--                    <include name="singleStatementTest">-->
-            <!--                        <parameter name="username" value="xevil54598@anomgo.com"/>-->
-            <!--                        <parameter name="password" value="123123123"/>-->
-            <!--                        <parameter name="CNP" value="1870613415828"></parameter>-->
-            <!--                        <parameter name="name" value="Dica"></parameter>-->
-            <!--                        <parameter name="additionalName" value="Cristian"></parameter>-->
-            <!--                        <parameter name="country" value="Romania"></parameter>-->
-            <!--                        <parameter name="county" value="Alba"></parameter>-->
-            <!--                        <parameter name="city" value="Alba Iulia"></parameter>-->
-            <!--                        <parameter name="address" value="Str. Ampoiului, nr. 2 Alba Iulia"></parameter>-->
-            <!--                        <parameter name="email" value="letovo3058@anwarb.com"></parameter>-->
-            <!--                        <parameter name="phoneNumber" value="0712345678"></parameter>-->
+            <!--                        <class name="tests.SingleStatementTest">-->
+            <!--                            <methods>-->
+            <!--                                <include name="singleStatementTest">-->
+            <!--                                    <parameter name="username" value="xevil54598@anomgo.com"/>-->
+            <!--                                    <parameter name="password" value="123123123"/>-->
+            <!--                                    <parameter name="CNP" value="1870613415828"></parameter>-->
+            <!--                                    <parameter name="name" value="Dica"></parameter>-->
+            <!--                                    <parameter name="additionalName" value="Cristian"></parameter>-->
+            <!--                                    <parameter name="country" value="Romania"></parameter>-->
+            <!--                                    <parameter name="county" value="Alba"></parameter>-->
+            <!--                                    <parameter name="city" value="Alba Iulia"></parameter>-->
+            <!--                                    <parameter name="address" value="Str. Ampoiului, nr. 2 Alba Iulia"></parameter>-->
+            <!--                                    <parameter name="email" value="letovo3058@anwarb.com"></parameter>-->
+            <!--                                    <parameter name="phoneNumber" value="0712345678"></parameter>-->
 
+            <!--                                </include>-->
+            <!--                            </methods>-->
+            <!--                                    </class>-->
+
+            <!--                                    <class name="tests.SingleStatementAddIncomeTest">-->
+            <!--                                        <methods>-->
+            <!--                                            <include name="singleStatementTestAddIncome">-->
+            <!--                                                <parameter name="username" value="litoror412@aramask.com"/>-->
+            <!--                                                <parameter name="password" value="123123123"/>-->
+            <!--                                                <parameter name="fatherName" value="Z"></parameter>-->
+            <!--                                                <parameter name="ibanAccount" value="RO96PORL4832863441713653"></parameter>-->
+            <!--                                                <parameter name="disabilityFrom" value="28022023"></parameter>-->
+            <!--                                                <parameter name="disabilityToDate" value="30052023"></parameter>-->
+            <!--                                                <parameter name="whichCategory" value="Drepturi de proprietate intelectuală - sistem real"></parameter>-->
+            <!--                                                <parameter name="incomeDescription" value="Lorem Ipsum is simply dummy kktext of the printing and typesetting industry"></parameter>-->
+            <!--                                                <parameter name="documentNumber" value="2514"></parameter>-->
+            <!--                                                <parameter name="incomeBrutEstimated" value="29000"></parameter>-->
+            <!--                                                <parameter name="estimatedDeductibleCosts" value="2000"></parameter>-->
+            <!--                                                <parameter name="whichTypeOfIncomeCategoryRealized" value="Închirierea în scop turistic a camerelor situate în locuințe personale - sistem real"></parameter>-->
+            <!--                                                <parameter name="descriptionIncomeRealized" value="Lorem Ipsum is simply dummy kktext "></parameter>-->
+            <!--                                                <parameter name="addressIncomeRealized" value="Busteni, Strada Alexandru Ioan Cuza, nr.50"></parameter>-->
+            <!--                                                <parameter name="brutIncomeRealized" value="30000"></parameter>-->
+            <!--                                                <parameter name="deductibleExpensesIncomeRealized" value="4230"></parameter>-->
+
+            <!--                                            </include>-->
+            <!--                                        </methods>-->
+            <!--                                    </class>-->
+
+            <!--            <class name="tests.ReceiptsAndPaymentsiTest">-->
+            <!--                <methods>-->
+            <!--                    <include name="incasariSiPlatiTest">-->
+            <!--                        <parameter name="username" value="litoror412@aramask.com"></parameter>-->
+            <!--                        <parameter name="password" value="123123123"></parameter>-->
             <!--                    </include>-->
             <!--                </methods>-->
-<!--                        </class>-->
+            <!--            </class>-->
 
-            <class name="tests.SingleStatementAddIncomeTest">
+            <class name="tests.ReceiptsAndPaymentsClientsTest">
                 <methods>
-                    <include name="singleStatementTestAddIncome">
-                        <parameter name="username" value="litoror412@aramask.com"/>
-                        <parameter name="password" value="123123123"/>
-                        <parameter name="fatherName" value="Z"></parameter>
-                        <parameter name="ibanAccount" value="RO96PORL4832863441713653"></parameter>
-                        <parameter name="disabilityFrom" value="28022023"></parameter>
-                        <parameter name="disabilityToDate" value="30052023"></parameter>
-                        <parameter name="whichCategory" value="Drepturi de proprietate intelectuală - sistem real"></parameter>
-                        <parameter name="incomeDescription" value="Lorem Ipsum is simply dummy kktext of the printing and typesetting industry"></parameter>
-                        <parameter name="documentNumber" value="2514"></parameter>
-                        <parameter name="incomeBrutEstimated" value="29000"></parameter>
-                        <parameter name="estimatedDeductibleCosts" value="2000"></parameter>
-                        <parameter name="whichTypeOfIncomeCategoryRealized" value="Închirierea în scop turistic a camerelor situate în locuințe personale - sistem real"></parameter>
-                        <parameter name="descriptionIncomeRealized" value="Lorem Ipsum is simply dummy kktext "></parameter>
-                        <parameter name="addressIncomeRealized" value="Busteni, Strada Alexandru Ioan Cuza, nr.50"></parameter>
-                        <parameter name="brutIncomeRealized" value="30000"></parameter>
-                        <parameter name="deductibleExpensesIncomeRealized" value="4230"></parameter>
+                    <include name="receiptsAndPaymentsClients">
+                        <parameter name="username" value="litoror412@aramask.com"></parameter>
+                        <parameter name="password" value="123123123"></parameter>
+                        <parameter name="searchInput" value="Client nou"></parameter>
+                        <parameter name="registrationNumber" value="17375366"></parameter>
+                        <parameter name="inputIBAN" value="RO96PORL4832863441713653"></parameter>
+                        <parameter name="inputBankName" value="BCR"></parameter>
+                        <parameter name="inputContactName" value="Dica Cristian"></parameter>
+                        <parameter name="inputEmail" value="litoror412@aramask.com"></parameter>
+                        <parameter name="inputPhoneNumber" value="0712345678"></parameter>
+                        <parameter name="inputWebsite" value="https://www.google.ro/"></parameter>
+                        <parameter name="searchBank" value="banca/"></parameter>
+                        <parameter name="searchTypeBank" value="Cas"></parameter>
+                        <parameter name="aboutBankType" value="BCR"></parameter>
+                        <parameter name="whichCurrency" value="RON"></parameter>
+                        <parameter name="bankDetailsText" value="Lorem Ipsum is simply dummy kktext"></parameter>
+                        <parameter name="addPlaceActivity" value="Sediul profesional"></parameter>
+                        <parameter name="addCaenCode" value="Actitivate Noua"></parameter>
+                        <parameter name="categoryIncomeTaxable" value="Cedarea folosinței bunurilor impusa opțional in sistem real pentru 1-5 contracte"></parameter>
+                        <parameter name="inputActivityIncome" value="1231212331Lorem Ipsum is 213simply dummy kktext"></parameter>
+                        <parameter name="autorizationNumber" value="45"></parameter>
+                        <parameter name="addReceiptDocument" value="Ordin de plata"></parameter>
+                        <parameter name="documentNumber" value="23"></parameter>
+                        <parameter name="receiptsMoney" value="23000"></parameter>
+                        <parameter name="addTypeArticol" value="Materii prime"></parameter>
+                        <parameter name="addExplicationTypeArticol" value="123123Lorem Ipsum is simply du123mmy text of the printing and typesetting industry."></parameter>
+                        <parameter name="addFiscalCategory" value="Venituri din activitate"></parameter>
+                        <parameter name="chosenClient" value="AUCHAN ROMÂNIA"></parameter>
+                    </include>
+                </methods>
+            </class>
+
             <!--            <class name="tests.LoginPageTest">-->
             <!--                <methods>-->
             <!--                    <include name="verifyLogin">-->
@@ -134,12 +182,6 @@
             <!--            </class>-->
 
 
-                    </include>
-                </methods>
-            </class>
-
-
-
             <!--           			<class name="tests.MyInfoTest" >&ndash;&gt;-->
             <!--				<methods>-->
             <!--					<include name="login">-->
@@ -159,48 +201,48 @@
             <!--				</methods>-->
             <!--			</class>-->
 
-<!--			<class name="tests.ContAppPaymentTest">-->
-<!--				<methods>-->
-<!--					<include name="addNewPayment">-->
-<!--						<parameter name="email" value="teodor.rdl@gmail.com"/>-->
-<!--						<parameter name="password" value="Pokpol00"/>-->
-<!--						<parameter name="CUI" value="16310091"/>-->
-<!--						<parameter name="RegistrationNumber" value="J40/5534/2004"/>-->
-<!--						<parameter name="SupplierName" value="Q TEST SA"/>-->
-<!--						<parameter name="City" value="Craiova"/>-->
-<!--						<parameter name="Address" value="Calea Bucuresti, nr. 61"/>-->
-<!--						<parameter name="IBAN" value="RO27RZBR2782911463382942"/>-->
-<!--						<parameter name="BankName" value="Banca Transilvania"/>-->
-<!--						<parameter name="Contact" value="Popescu Marian"/>-->
-<!--						<parameter name="SupplierEmail" value="test_@test.com"/>-->
-<!--						<parameter name="SupplierWebsite" value="www.firmates.ro"/>-->
-<!--						<parameter name="SupplierPhone" value="031816781"/>-->
-<!--						<parameter name="CaenActivity" value="urban"/>-->
-<!--						<parameter name="CaenNumber" value="71"/>-->
-<!--						<parameter name="DocumentNumber" value="551711"/>-->
-<!--						<parameter name="Lei" value="7001"/>-->
-<!--						<parameter name="Explication" value="fara"/>-->
-<!--						<parameter name="NewSupplier" value="furnizor"/>-->
+            <!--			<class name="tests.ContAppPaymentTest">-->
+            <!--				<methods>-->
+            <!--					<include name="addNewPayment">-->
+            <!--						<parameter name="email" value="teodor.rdl@gmail.com"/>-->
+            <!--						<parameter name="password" value="Pokpol00"/>-->
+            <!--						<parameter name="CUI" value="16310091"/>-->
+            <!--						<parameter name="RegistrationNumber" value="J40/5534/2004"/>-->
+            <!--						<parameter name="SupplierName" value="Q TEST SA"/>-->
+            <!--						<parameter name="City" value="Craiova"/>-->
+            <!--						<parameter name="Address" value="Calea Bucuresti, nr. 61"/>-->
+            <!--						<parameter name="IBAN" value="RO27RZBR2782911463382942"/>-->
+            <!--						<parameter name="BankName" value="Banca Transilvania"/>-->
+            <!--						<parameter name="Contact" value="Popescu Marian"/>-->
+            <!--						<parameter name="SupplierEmail" value="test_@test.com"/>-->
+            <!--						<parameter name="SupplierWebsite" value="www.firmates.ro"/>-->
+            <!--						<parameter name="SupplierPhone" value="031816781"/>-->
+            <!--						<parameter name="CaenActivity" value="urban"/>-->
+            <!--						<parameter name="CaenNumber" value="71"/>-->
+            <!--						<parameter name="DocumentNumber" value="551711"/>-->
+            <!--						<parameter name="Lei" value="7001"/>-->
+            <!--						<parameter name="Explication" value="fara"/>-->
+            <!--						<parameter name="NewSupplier" value="furnizor"/>-->
 
 
-<!--					</include>-->
-<!--				</methods>-->
-<!--			</class>-->
+            <!--					</include>-->
+            <!--				</methods>-->
+            <!--			</class>-->
 
-<!-- 			<class name="tests.ContAppAssetsTest">
-                <methods>
-                    <include name="addNewAssets">
-                        <parameter name="email" value="teodor.rdl@gmail.com"/>
-                        <parameter name="password" value="Pokpol00"/>
-                        <parameter name="nameAssets" value="Imobilizari noi"/>
-                        <parameter name="providerAssets" value="Test1 SRL"/>
-                        <parameter name="invNumberAssets" value="122131 "/>
-                        <parameter name="docNumberAssets" value="31241"/>
-                        <parameter name="valueAssets" value="7512"/>
-                        <parameter name="operationDocNoAssets" value="11463382942"/>
-                        <parameter name="operationDescAssets" value="Fonduri la Banca Transilvania"/>
+            <!-- 			<class name="tests.ContAppAssetsTest">
+                            <methods>
+                                <include name="addNewAssets">
+                                    <parameter name="email" value="teodor.rdl@gmail.com"/>
+                                    <parameter name="password" value="Pokpol00"/>
+                                    <parameter name="nameAssets" value="Imobilizari noi"/>
+                                    <parameter name="providerAssets" value="Test1 SRL"/>
+                                    <parameter name="invNumberAssets" value="122131 "/>
+                                    <parameter name="docNumberAssets" value="31241"/>
+                                    <parameter name="valueAssets" value="7512"/>
+                                    <parameter name="operationDocNoAssets" value="11463382942"/>
+                                    <parameter name="operationDescAssets" value="Fonduri la Banca Transilvania"/>
 
- -->
+             -->
 
         </classes>
     </test>
