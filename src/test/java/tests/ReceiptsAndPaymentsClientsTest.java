@@ -72,9 +72,7 @@ public class ReceiptsAndPaymentsClientsTest extends BasePage {
         receiptsAndPaymentsClients().addInputActivityIncome(inputActivityIncome);
         receiptsAndPaymentsClients().addAutorizationNumber(autorizationNumber);
         receiptsAndPaymentsClients().clickDateFromButton(dateFromButton);
-//        receiptsAndPaymentsClients().addDateFromAddIncome();
         receiptsAndPaymentsClients().clickDateToButton(dateToButton);
-//        receiptsAndPaymentsClients().addDateToAddIncome();
         receiptsAndPaymentsClients().clickSaveButtonPlaceActivity();
         receiptsAndPaymentsClients().clickReceiptDocument();
         receiptsAndPaymentsClients().addReceiptDocument(addReceiptDocument);

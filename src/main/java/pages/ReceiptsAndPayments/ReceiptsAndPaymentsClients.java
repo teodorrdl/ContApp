@@ -213,17 +213,12 @@ public class ReceiptsAndPaymentsClients extends BaseTest {
         addText(dateFromButton, this.dateFromButton);
     }
 
-//    public void addDateFromAddIncome() {
-//        click(dateFromAddIncome);
-//    }
 
     public void clickDateToButton(String toDateButton) {
         addText(toDateButton, this.toDateButton);
     }
 
-//    public void addDateToAddIncome() {
-//        click(dateToAddIncome);
-//    }
+
 
     public void clickSaveButtonPlaceActivity() {
         click(saveButtonPlaceActivity);
