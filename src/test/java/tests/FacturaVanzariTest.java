@@ -5,7 +5,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.BasePage;
 import pages.FacturaVanzari;
-
 import pages.LoginPageContactApp;
 
 public class FacturaVanzariTest extends BasePage {
