@@ -1,4 +1,4 @@
-package ReceiptsAndPayments;
+package pages.ReceiptsAndPayments;
 
 import base.BaseTest;
 import org.openqa.selenium.WebElement;
