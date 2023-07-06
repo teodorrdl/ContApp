@@ -41,7 +41,6 @@ public class HouseBankJournal extends BaseTest {
     }
 
     public void verifEnableButtonAccept(){
-       waitPage();
        if(buttonAccept.isEnabled())
            clickButtonAccept();
     }

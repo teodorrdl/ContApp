@@ -107,7 +107,7 @@ public class BaseTest extends BasePage {
 
     protected WebElement listofButtons(List<WebElement> list) {
         WebElement elem = null;
-        elem = list.get(utils.utils.randomNumber(list.size() - 1));
+        elem = list.get(utils.Utils.randomNumber(list.size() - 1));
         return elem;
     }
 
