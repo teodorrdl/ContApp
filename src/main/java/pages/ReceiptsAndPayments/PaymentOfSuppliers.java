@@ -1,19 +1,22 @@
-package pages;
+package pages.ReceiptsAndPayments;
 
 import base.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HouseAndBankJournalPage extends BaseTest {
+import java.util.List;
+
+public class PaymentOfSuppliers extends BaseTest {
+
+    public HouseBankJournal houseBankJournal(){
+        return new HouseBankJournal();
+    }
 
     @FindBy(xpath = "//a[contains(text(),'Încasări și plăți')]")
     public WebElement receiptsPaymentsBtnLink;
 
     @FindBy(xpath = "//a[contains(text(),'Jurnal de Casă/Bancă')]")
     public WebElement houseAndBankJournalBtnLink;
-
-    @FindBy(xpath = "//button[normalize-space()='Plată']")
-    public WebElement addPaymentBtn;
 
     @FindBy(xpath = "//button[normalize-space()='Plati furnizori']")
     public WebElement paymentSuppliersBtn;
@@ -57,6 +60,9 @@ public class HouseAndBankJournalPage extends BaseTest {
     @FindBy(xpath = "//input[@id='input-number']")
     public WebElement inputDocumentNumber;
 
+    @FindBy(xpath = "//tbody/tr[2]")
+    public List<WebElement> listPayment;
+
     public void clickReceiptsPaymentsBtnLink() {
         click(receiptsPaymentsBtnLink);
     }
@@ -90,7 +96,7 @@ public class HouseAndBankJournalPage extends BaseTest {
     }
 
     public void addPaymentToSupplier(String supplierName, String bankOrHouse, String activityPlace, String activityCode, String paymentValue, String documentNumber) {
-        click(addPaymentBtn);
+        houseBankJournal().clickAddPaymentBtn();
         click(paymentSuppliersBtn);
         getSupplier(supplierName);
         getBankOrHouse(bankOrHouse);

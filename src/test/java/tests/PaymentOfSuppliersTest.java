@@ -3,13 +3,13 @@ package tests;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.BasePage;
-import pages.HouseAndBankJournalPage;
+import pages.ReceiptsAndPayments.PaymentOfSuppliers;
 import pages.LoginPageContactApp;
 import pages.SettingCompany.SettingCompany;
 
-public class HouseAndBankJournalPageTest extends BasePage {
-    public HouseAndBankJournalPage houseAndBankJournalPage() {
-        return new HouseAndBankJournalPage();
+public class PaymentOfSuppliersTest extends BasePage {
+    public PaymentOfSuppliers houseAndBankJournalPage() {
+        return new PaymentOfSuppliers();
     }
 
     public LoginPageContactApp loginPageApp() {
