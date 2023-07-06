@@ -57,18 +57,16 @@ public class LoginPageContactApp extends BaseTest {
         click(authenticationButton);
         Assert.assertEquals(driver.getCurrentUrl(), PageLinksAndText.clickAuthenticationButtonLink.getValue());
     }
-
-
     public void verifyAlertMessages() {
         if (emailAlertMessage.getText().equals(expectedAlertMessages[1]) && passwordAlertMessage.getText().equals(expectedAlertMessages[2])) {
-            System.out.println(emailAlertMessage.getText());
-            System.out.println(passwordAlertMessage.getText());
+            Assert.assertEquals(emailAlertMessage.getText(), expectedAlertMessages[1]);
+            Assert.assertEquals(passwordAlertMessage.getText(), expectedAlertMessages[2]);
         } else if (emailAlertMessage.getText().equals(expectedAlertMessages[1])) {
-            System.out.println(emailAlertMessage.getText());
+            Assert.assertEquals(emailAlertMessage.getText(), expectedAlertMessages[1]);
         } else if (passwordAlertMessage.getText().equals(expectedAlertMessages[2])) {
-            System.out.println(passwordAlertMessage.getText());
+            Assert.assertEquals(passwordAlertMessage.getText(), expectedAlertMessages[2]);
         } else {
-            System.out.println(PageLinksAndText.verifyAlertMessagesText.getValue());
+            Assert.assertEquals(emailAlertMessage.getText(), expectedAlertMessages[0]);
         }
     }
 }

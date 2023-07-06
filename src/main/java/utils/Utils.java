@@ -26,17 +26,3 @@ public class Utils {
         return random.nextInt(number);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
