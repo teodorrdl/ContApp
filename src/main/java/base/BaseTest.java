@@ -6,9 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
+import utils.Utils;
+
 import java.util.ArrayList;
 import java.util.List;
-import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class BaseTest extends BasePage {
 
@@ -21,7 +22,7 @@ public class BaseTest extends BasePage {
         PageFactory.initElements(driver, this);
         action = new Actions(driver);
     }
-    
+
     public void SwitchToNextTab() {
         ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tab.get(1));
@@ -107,7 +108,7 @@ public class BaseTest extends BasePage {
 
     protected WebElement listofButtons(List<WebElement> list) {
         WebElement elem = null;
-        elem = list.get(utils.Utils.randomNumber(list.size() - 1));
+        elem = list.get(Utils.randomNumber(list.size() - 1));
         return elem;
     }
 
