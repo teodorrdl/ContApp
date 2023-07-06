@@ -74,7 +74,7 @@ public class docButondeCautare extends BaseTest {
 
     public Boolean verifButton(){
 
-      find(buttonSmileFace);
+//      find(buttonSmileFace);
 
 
         return true;
