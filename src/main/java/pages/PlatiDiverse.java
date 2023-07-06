@@ -1,9 +1,10 @@
 package pages;
 
 import base.BaseTest;
+import base.PageLinksAndText;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+import java.util.concurrent.TimeUnit;
 public class PlatiDiverse extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Autentifica-te']")
     private WebElement authenticationButtonLink;
@@ -102,16 +103,16 @@ public class PlatiDiverse extends BaseTest {
     public void clickRememberMeCheckbox() {
         click(rememberMeCheckbox);
     }
-    public void click(WebElement rememberMeCheckbox) { }
+
     public void clickLoginButton() {
         click(loginButton);
     }
 
 
-    private void clickCreateAccountButtonLink(String s){clickCreateAccountButtonLink("https://account.contapp.ro/register"); }
+    private void clickCreateAccountButtonLink(String s){clickCreateAccountButtonLink(PageLinksAndText.clickCreateAccountButtonLink.getValue()); }
 
 
-    private void clickAuthenticationButtonLink(String s) { clickAuthenticationButtonLink("https://account.contapp.ro/login");
+    private void clickAuthenticationButtonLink(String s) { clickAuthenticationButtonLink(PageLinksAndText.clickAuthenticationButtonLink.getValue());
     }
 
     public void clickContAppPs() {

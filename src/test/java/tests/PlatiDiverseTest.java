@@ -9,6 +9,8 @@ import pages.LoginPageContactApp;
 import pages.PlatiDiverse;
 
 public class PlatiDiverseTest extends BasePage {
+
+
     public LoginPageContactApp loginPage() {
         return new LoginPageContactApp();}
 
@@ -50,6 +52,8 @@ public class PlatiDiverseTest extends BasePage {
         page().clickinchide();
 
     }
+
+
     @Test(description = "adauga furnizor")
     @Parameters({"email", "password", "contAppPs", "configurare", "incasariSiPlati", "jurnalDeCasa", "adaugaPlata", "adaugaPlatiFurnizori",
             "furnizor", "adaugaFurnizor", "cautaCif", "numarDeLaRegistrulComertului", "tipEntitate", "nume", "tara", "judet",
@@ -88,4 +92,6 @@ public class PlatiDiverseTest extends BasePage {
         page().clickSalveaza();
         page().clickInchideFerestra();
     }
+
+
 }
