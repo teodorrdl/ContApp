@@ -15,6 +15,7 @@ import org.testng.annotations.*;
 
 public class BasePage {
 
+    
     public static WebDriver driver_local; //--> rulare in mod normal pe local
     public static ExtentTest logger;
     public static ExtentReports report;
