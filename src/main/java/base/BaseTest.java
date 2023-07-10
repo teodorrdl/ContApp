@@ -132,6 +132,11 @@ public class BaseTest extends BasePage {
         action.moveToElement(locator).click().perform();
     }
 
+    public void clickPreviousPage() {
+        waitPage();
+        driver.navigate().back();
+    }
+
     public void clickWithRetries(WebElement element) {
         int retryCount = 0;
         boolean actionSuccessful = false;
