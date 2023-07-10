@@ -145,5 +145,10 @@ public class BaseTest extends BasePage {
             }
         }
     }
-
+    public void scrollDown() {
+        action.keyDown(Keys.CONTROL).sendKeys(Keys.END).keyUp(Keys.CONTROL).perform();
+    }
+    public void scrollUp() {
+        action.keyDown(Keys.CONTROL).sendKeys(Keys.HOME).keyUp(Keys.CONTROL).perform();
+    }
 }
