@@ -23,6 +23,6 @@
 hs_err_pid*
 replay_pid*
 /src/test/resources/drivers/chromedriver
-/src/test/resources/SmokeTestSuite.xml
+resources/
 target/
 .idea/
