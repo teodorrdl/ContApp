@@ -28,7 +28,6 @@ public class ReceiptsAndPaymentsTest extends BasePage {
         loginPageContactApp().clickLoginButton();
         accessHouseBankJournal().clickLinkContAppPS();
         accessHouseBankJournal().verifEnableButtonAccept();
-
         accessHouseBankJournal().clickLinkReceiptsAndPayments();
         accessHouseBankJournal().clickLinkHouseBankJournal();
         accessHouseBankJournal().clickButtonReceipts();
