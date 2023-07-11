@@ -55,8 +55,5 @@ public class ReceiptsAndPaymentsTest extends BasePage {
         accessVariousReceipts().addFieldExplanation(textExplanation);
         accessVariousReceipts().clikButtonAddReceipt();
         accessVariousReceipts().clickButtonClose();
-
     }
-
-
 }
