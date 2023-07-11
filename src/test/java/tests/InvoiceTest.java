@@ -40,19 +40,19 @@ public class InvoiceTest extends BasePage {
         paymentPage().clickContAppPS();
         paymentPage().closeCookieButton();
         invoicePage().enterGeneralSettings();
-//        invoicePage().setGeneralSettings(generalCnp, generalLastName,generalFirstName,generalCity,
-//                generalStreet, generalEmail, generalPhoneNo);
-//        invoicePage().setTvaSettings(tvaRate,cifNumber);
-//        invoicePage().setActivityLocation(locationName,locationRegNum,locationCity,locationStreet);
-//        invoicePage().setActivity(activityFoundSource, activityAuthorizationNumber);
-//        invoicePage().setCurrency(currencyName);
-//        invoicePage().setHousesAndBanks(ibanBank,bankName,bankDetails);
-//        invoicePage().setSeries(seriesName, seriesNameLeadingZero, seriesFirstNum, seriesDecisionNum,
-//                seriesDeclarationHeader, seriesDeclarationFooter);
-//        invoicePage().setMeasureUnits(measureUnitName, measureUnitSymbol);
-//        invoicePage().setRolesPermissions();
-//        invoicePage().setUsers();
-//        invoicePage().setRepresentative(representativeFirstName, representativeLastName, representativeNum);
+        invoicePage().setGeneralSettings(generalCnp, generalLastName,generalFirstName,generalCity,
+                generalStreet, generalEmail, generalPhoneNo);
+        invoicePage().setTvaSettings(tvaRate,cifNumber);
+        invoicePage().setActivityLocation(locationName,locationRegNum,locationCity,locationStreet);
+        invoicePage().setActivity(activityFoundSource, activityAuthorizationNumber);
+        invoicePage().setCurrency(currencyName);
+        invoicePage().setHousesAndBanks(ibanBank,bankName,bankDetails);
+        invoicePage().setSeries(seriesName, seriesNameLeadingZero, seriesFirstNum, seriesDecisionNum,
+                seriesDeclarationHeader, seriesDeclarationFooter);
+        invoicePage().setMeasureUnits(measureUnitName, measureUnitSymbol);
+        invoicePage().setRolesPermissions();
+        invoicePage().setUsers();
+        invoicePage().setRepresentative(representativeFirstName, representativeLastName, representativeNum);
         invoicePage().setPreferences(delegateName, delegateSerial, delegateNum);
         invoicePage().setIntegrations();
 
