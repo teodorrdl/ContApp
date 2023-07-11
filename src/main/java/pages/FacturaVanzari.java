@@ -102,9 +102,6 @@ public class FacturaVanzari extends BaseTest {
         click(rememberMeCheckbox);
     }
 
-    public void click(WebElement rememberMeCheckbox) {
-    }
-
     public void clickLoginButton() {
         click(loginButton);
     }
