@@ -17,7 +17,7 @@ public class ReceiptsAndPaymentsClients extends BaseTest {
 
     @FindBy(xpath = "//input[@id='registration-number']")
     private WebElement registrationNumber;
-    @FindBy(xpath = "(//button[contains(@type,'button')])[8]")
+    @FindBy(xpath = "/html/body/main/div/div/div[3]/div/div[1]/div/div/div[2]/div/div[4]/div/div/div/div[2]/div/div/div[2]/div[1]/div/div/div/div[1]/div[1]/div/div/button")
     private WebElement searchRegistrationNumber;
 
     @FindBy(xpath = "//input[@id='input-iban']")
@@ -61,12 +61,10 @@ public class ReceiptsAndPaymentsClients extends BaseTest {
     private WebElement autorizationNumber;
     @FindBy(xpath = "(//input[@id='activity-from-start-date-'])[1]")
     private WebElement dateFromButton;
-    @FindBy(xpath = "//td[@class='day'][normalize-space()='6']")
-    private WebElement dateFromAddIncome;
+
     @FindBy(xpath = "(//input[@id='activity-from-end-date-'])[1]")
     private WebElement toDateButton;
-    @FindBy(xpath = "//td[@class='day'][normalize-space()='28']")
-    private WebElement dateToAddIncome;
+
     @FindBy(xpath = "//*[@id='create-activity-income--']/div/div/div[3]/button[1]")
     private WebElement saveButtonPlaceActivity;
     @FindBy(xpath = "//*[@id='add-income-transaction']/div/div/div[2]/div/div[3]/div/div/div/div[1]/div[1]/div/div/span/span[1]/span")
@@ -211,21 +209,16 @@ public class ReceiptsAndPaymentsClients extends BaseTest {
         addText(autorizationNumber, this.autorizationNumber);
     }
 
-    public void clickDateFromButton() {
-        click(dateFromButton);
+    public void clickDateFromButton(String dateFromButton) {
+        addText(dateFromButton, this.dateFromButton);
     }
 
-    public void addDateFromAddIncome() {
-        click(dateFromAddIncome);
+
+    public void clickDateToButton(String toDateButton) {
+        addText(toDateButton, this.toDateButton);
     }
 
-    public void clickDateToButton() {
-        click(toDateButton);
-    }
 
-    public void addDateToAddIncome() {
-        click(dateToAddIncome);
-    }
 
     public void clickSaveButtonPlaceActivity() {
         click(saveButtonPlaceActivity);

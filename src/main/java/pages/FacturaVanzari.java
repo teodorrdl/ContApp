@@ -227,4 +227,6 @@ public class FacturaVanzari extends BaseTest {
     public void deschide() {
         click(deschide);
     }
+
+
 }

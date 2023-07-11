@@ -13,6 +13,7 @@ public class ReceiptsAndPaymentsClientsTest extends BasePage {
     public LoginPageContactApp loginPageContactApp() {
         return new LoginPageContactApp();
     }
+
     public HouseBankJournal receiptsAndPayments() {
         return new HouseBankJournal();
     }
@@ -22,8 +23,8 @@ public class ReceiptsAndPaymentsClientsTest extends BasePage {
     }
 
     @Test(description = "Test incasari clienti section")
-    @Parameters({"username", "password", "searchInput", "registrationNumber", "inputIBAN", "inputBankName", "inputContactName", "inputEmail", "inputPhoneNumber", "inputWebsite", "searchBank", "searchTypeBank", "aboutBankType", "whichCurrency", "bankDetailsText", "addPlaceActivity", "addCaenCode", "categoryIncomeTaxable", "inputActivityIncome", "autorizationNumber", "addReceiptDocument", "documentNumber", "addTypeArticol", "addExplicationTypeArticol", "addFiscalCategory","chosenClient","receiptsMoney"})
-    public void receiptsAndPaymentsClients(String username, String password, String searchInput, String registrationNumber, String inputIBAN, String inputBankName, String inputContactName, String inputEmail, String inputPhoneNumber, String inputWebsite, String searchBank, String searchTypeBank, String aboutBankType, String whichCurrency, String bankDetailsText, String addPlaceActivity, String addCaenCode, String categoryIncomeTaxable, String inputActivityIncome, String autorizationNumber, String addReceiptDocument, String documentNumber, String addTypeArticol, String addExplicationTypeArticol, String addFiscalCategory,String chosenClient, String receiptsMoney) {
+    @Parameters({"username", "password", "searchInput", "registrationNumber", "inputIBAN", "inputBankName", "inputContactName", "inputEmail", "inputPhoneNumber", "inputWebsite", "searchBank", "searchTypeBank", "aboutBankType", "whichCurrency", "bankDetailsText", "addPlaceActivity", "addCaenCode", "categoryIncomeTaxable", "inputActivityIncome", "dateFromButton", "dateToButton", "autorizationNumber", "addReceiptDocument", "documentNumber", "addTypeArticol", "addExplicationTypeArticol", "addFiscalCategory", "chosenClient", "receiptsMoney"})
+    public void receiptsAndPaymentsClients(String username, String password, String searchInput, String registrationNumber, String inputIBAN, String inputBankName, String inputContactName, String inputEmail, String inputPhoneNumber, String inputWebsite, String searchBank, String searchTypeBank, String aboutBankType, String whichCurrency, String bankDetailsText, String addPlaceActivity, String addCaenCode, String categoryIncomeTaxable, String inputActivityIncome, String dateFromButton, String dateToButton, String autorizationNumber, String addReceiptDocument, String documentNumber, String addTypeArticol, String addExplicationTypeArticol, String addFiscalCategory, String chosenClient, String receiptsMoney) {
         loginPageContactApp().clickAuthenticationButton();
         loginPageContactApp().addEmail(username);
         loginPageContactApp().addPassword(password);
@@ -31,17 +32,9 @@ public class ReceiptsAndPaymentsClientsTest extends BasePage {
         loginPageContactApp().clickLoginButton();
         receiptsAndPayments().clickLinkContAppPS();
         receiptsAndPayments().verifEnableButtonAccept();
-
         receiptsAndPayments().clickLinkReceiptsAndPayments();
         receiptsAndPayments().clickLinkHouseBankJournal();
         receiptsAndPayments().clickButtonReceipts();
-
-//        receiptsAndPayments().clickSingleStatementButton();
-//        receiptsAndPayments().clickAcceptCookie();
-//        receiptsAndPayments().clickContAppPS();
-//        receiptsAndPayments().clickIncasariSiPlatiButton();
-//        receiptsAndPayments().clickJurnalDeCasaBancaButton();
-//        receiptsAndPayments().clickIncasareButton();
         receiptsAndPaymentsClients().clickIncasariClienti();
         receiptsAndPaymentsClients().clickClientButton();
         receiptsAndPaymentsClients().addSearchInput(searchInput);
@@ -77,11 +70,9 @@ public class ReceiptsAndPaymentsClientsTest extends BasePage {
         receiptsAndPaymentsClients().addCategoryIncomeTaxable(categoryIncomeTaxable);
         receiptsAndPaymentsClients().clickElementSelect();
         receiptsAndPaymentsClients().addInputActivityIncome(inputActivityIncome);
-        receiptsAndPaymentsClients().clickDateFromButton();
-        receiptsAndPaymentsClients().addDateFromAddIncome();
-        receiptsAndPaymentsClients().clickDateToButton();
-        receiptsAndPaymentsClients().addDateToAddIncome();
         receiptsAndPaymentsClients().addAutorizationNumber(autorizationNumber);
+        receiptsAndPaymentsClients().clickDateFromButton(dateFromButton);
+        receiptsAndPaymentsClients().clickDateToButton(dateToButton);
         receiptsAndPaymentsClients().clickSaveButtonPlaceActivity();
         receiptsAndPaymentsClients().clickReceiptDocument();
         receiptsAndPaymentsClients().addReceiptDocument(addReceiptDocument);

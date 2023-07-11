@@ -20,6 +20,13 @@ public class HouseBankJournal extends BaseTest {
     @FindBy(xpath="//button[@id='onetrust-accept-btn-handler']")
     private WebElement buttonAccept;
 
+    @FindBy(xpath = "//button[normalize-space()='Plată']")
+    public WebElement addPaymentBtn;
+
+    public void clickAddPaymentBtn(){
+        click(addPaymentBtn);
+    }
+
    public void clickLinkContAppPS(){
        click(linkContAppPS);
     }
@@ -41,10 +48,8 @@ public class HouseBankJournal extends BaseTest {
     }
 
     public void verifEnableButtonAccept(){
-       waitPage();
        if(buttonAccept.isEnabled())
            clickButtonAccept();
     }
-
 
 }
