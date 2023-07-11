@@ -72,25 +72,25 @@
 <!--                    </include>-->
 <!--                </methods>-->
 <!--            </class>-->
-<!--            <class name="tests.ReceiptsAndPaymentsTest">-->
-<!--                <methods>-->
-<!--                    <include name="testHouseBankJournal">-->
-<!--                        <parameter name="email" value="dana_catavei@yahoo.com"/>-->
-<!--                        <parameter name="password" value="InternSh!p2023"/>-->
-<!--                    </include>-->
-<!--                </methods>-->
-<!--            </class>-->
             <class name="tests.ReceiptsAndPaymentsTest">
                 <methods>
-                    <include name="testHouseBankJournalVariousReceipts">
+                    <include name="testHouseBankJournal">
                         <parameter name="email" value="dana_catavei@yahoo.com"/>
                         <parameter name="password" value="InternSh!p2023"/>
-                        <parameter name="textNrDoc" value="200"/>
-                        <parameter name="textMoney" value="5000"/>
-                        <parameter name="textExplanation" value="de-ale mele"/>
                     </include>
                 </methods>
             </class>
+<!--            <class name="tests.ReceiptsAndPaymentsTest">-->
+<!--                <methods>-->
+<!--                    <include name="testHouseBankJournalVariousReceipts">-->
+<!--                        <parameter name="email" value="dana_catavei@yahoo.com"/>-->
+<!--                        <parameter name="password" value="InternSh!p2023"/>-->
+<!--                        <parameter name="textNrDoc" value="200"/>-->
+<!--                        <parameter name="textMoney" value="5000"/>-->
+<!--                        <parameter name="textExplanation" value="de-ale mele"/>-->
+<!--                    </include>-->
+<!--                </methods>-->
+<!--            </class>-->
         </classes>
     </test>
 </suite>
