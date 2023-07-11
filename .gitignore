@@ -26,4 +26,5 @@ replay_pid*
 /src/test/resources/drivers/chromedriver
 resources/
 target/
+*target/**
 .idea/
