@@ -28,3 +28,4 @@ resources/
 target/
 *target/**
 .idea/
+/src/test/resources/
