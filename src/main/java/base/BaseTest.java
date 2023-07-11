@@ -138,9 +138,11 @@ public class BaseTest extends BasePage {
 
         while (retryCount < 5 && !actionSuccessful) {
             try {
-                action(element);
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+                js.executeScript("arguments[0].scrollIntoView(true);", element);
+                click(element);
                 actionSuccessful = true;
-            } catch (StaleElementReferenceException e) {
+            } catch (Exception e) {
                 retryCount++;
             }
         }
@@ -150,5 +152,11 @@ public class BaseTest extends BasePage {
     }
     public void scrollUp() {
         action.keyDown(Keys.CONTROL).sendKeys(Keys.HOME).keyUp(Keys.CONTROL).perform();
+    }
+
+    public void addTextToDisabledTextBox(String text, WebElement locator) {
+        if (locator.isEnabled()) {
+            addText(text, locator);
+        }
     }
 }

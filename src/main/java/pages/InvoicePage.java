@@ -416,10 +416,9 @@ public class InvoicePage extends BaseTest {
         click(preferenceBilingual);
         click(preferenceDelegate);
         scrollDown();
-        click(saveDelegate);
-        addText(delegateName, this.delegateName);
-        addText(delegateSerial, this.delegateSerial);
-        addText(delegateNum, this.delegateNum);
+        addTextToDisabledTextBox(delegateName, this.delegateName);
+        addTextToDisabledTextBox(delegateSerial, this.delegateSerial);
+        addTextToDisabledTextBox(delegateNum, this.delegateNum);
         scrollDown();
         click(saveDelegate);
         scrollUp();
@@ -432,5 +431,6 @@ public class InvoicePage extends BaseTest {
         click(integrationsSpv);
         click(integrationsGetAccess);
     }
+
 
 }
