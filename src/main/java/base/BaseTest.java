@@ -136,19 +136,26 @@ public class BaseTest extends BasePage {
         waitPage();
         driver.navigate().back();
     }
-
     public void clickWithRetries(WebElement element) {
         int retryCount = 0;
         boolean actionSuccessful = false;
 
         while (retryCount < 5 && !actionSuccessful) {
             try {
-                action(element);
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+                js.executeScript("arguments[0].scrollIntoView(true);", element);
+                click(element);
                 actionSuccessful = true;
-            } catch (StaleElementReferenceException e) {
+            } catch (Exception e) {
                 retryCount++;
             }
         }
+    }
+    public void scrollDown() {
+        action.keyDown(Keys.CONTROL).sendKeys(Keys.END).keyUp(Keys.CONTROL).perform();
+    }
+    public void scrollUp() {
+        action.keyDown(Keys.CONTROL).sendKeys(Keys.HOME).keyUp(Keys.CONTROL).perform();
     }
 
 }

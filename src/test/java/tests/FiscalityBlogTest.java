@@ -17,8 +17,8 @@ public class FiscalityBlogTest extends BasePage {
     }
 
     @Test(description = "Test the fiscality blog")
-    @Parameters({"username", "password"})
-    public void fiscalityBlogTest(String username, String password) {
+    @Parameters({"username", "password", "nameSubscribeSection", "emailSubscribeSection"})
+    public void fiscalityBlogTest(String username, String password, String nameSubscribeSection, String emailSubscribeSection) {
         loginPageContactApp().clickAuthenticationButton();
         loginPageContactApp().addEmail(username);
         loginPageContactApp().addPassword(password);
@@ -26,10 +26,21 @@ public class FiscalityBlogTest extends BasePage {
         loginPageContactApp().clickLoginButton();
         fiscalityBlog().clickAcceptCookieButton();
         fiscalityBlog().clickFiscalityBlogButton();
-        fiscalityBlog().clickPfaContability(0, 6000);
+        fiscalityBlog().clickPfaContability();
         fiscalityBlog().clickReadMore();
         fiscalityBlog().clickPreviousPage();
         fiscalityBlog().clickSecondPage();
+        fiscalityBlog().clickNormeAgricole();
+        fiscalityBlog().clickNormeDeVenit(0, 700);
+        fiscalityBlog().clickGhidPFA(0, 900);
+        fiscalityBlog().clickNextPage();
+        fiscalityBlog().clickPfaOperation();
+        fiscalityBlog().clickPrevPage();
+        fiscalityBlog().clickNormeAgricolePrevPage();
+        fiscalityBlog().addNameSubscribeSection(nameSubscribeSection);
+        fiscalityBlog().addEmailSubscribeSection(emailSubscribeSection);
+        fiscalityBlog().clickTermsAndConditios();
+        fiscalityBlog().clickSubscribeSection();
     }
 
 }
