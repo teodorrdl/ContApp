@@ -12,8 +12,17 @@ public enum PageLinksAndText {
     authenticationErrorMessage("Datele de autentificare introduse nu se potrivesc cu baza de date"),
     mandatoryEmailMessage("Campul \"E-mail\" este obligatoriu."),
 
-    mandatoryPasswordMessage("Campul \"Parola\" este obligatoriu.");
+    mandatoryPasswordMessage("Campul \"Parola\" este obligatoriu."),
 
+    incomePageLink("https://ps.contapp.ro/venituri"),
+
+    salesInvoicesLink("https://ps.contapp.ro/venituri/facturi"),
+
+    eInvoicesLink("https://ps.contapp.ro/setari/integrari"),
+
+    incomeArticlesLink("https://ps.contapp.ro/venituri/articole"),
+
+    clientsLink("https://ps.contapp.ro/venituri/clienti");
 
     private final String value;
 
