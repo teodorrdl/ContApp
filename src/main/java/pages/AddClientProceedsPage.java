@@ -34,7 +34,7 @@ public class AddClientProceedsPage extends BaseTest {
     @FindBy(xpath = "//div//span[@id='select2-select-create-customer-org-type-select-container']")
     private WebElement entity;
 
-    @FindBy(xpath = "//ul[@class='select2-results__options']")
+    @FindBy(xpath = "//ul[@class='select2-results__options']//li")
     private List<WebElement> entityDroplist;
 
     @FindBy(xpath = "//input[@id='input-name']")
@@ -43,7 +43,7 @@ public class AddClientProceedsPage extends BaseTest {
     @FindBy(xpath = "//div//span[@id='select2-select-create-customer-lifespan-select-container']")
     private WebElement deadline;
 
-    @FindBy(xpath = "//ul[@class='select2-results__options']")
+    @FindBy(xpath = "//ul[@class='select2-results__options']//li")
     private List<WebElement> deadlineDroplist;
 
     @FindBy(xpath = "//input[@id='input-iban']")
@@ -55,12 +55,12 @@ public class AddClientProceedsPage extends BaseTest {
     @FindBy(xpath = "//div//span[@id='select2-select-create-customer-country-select-container']")
     private WebElement country;
 
-    @FindBy(xpath = "//ul[@class='select2-results__options']")
+    @FindBy(xpath = "//ul[@class='select2-results__options']//li")
     private List<WebElement> countryDroplist;
     @FindBy(xpath = "//div//span[@id='select2-select-create-customer-county-select-container']")
     private WebElement county;
 
-    @FindBy(xpath = "//ul[@class='select2-results__options']")
+    @FindBy(xpath = "//ul[@class='select2-results__options']//li")
     private List<WebElement> countyDroplist;
 
     @FindBy(xpath = "//input[@id='input-city']")
@@ -71,7 +71,7 @@ public class AddClientProceedsPage extends BaseTest {
 
     @FindBy(xpath = "//div//span[@id='select2-select-create-customer-currency-select-container']")
     private WebElement currency;
-    @FindBy(xpath = "//ul[@class='select2-results__options']")
+    @FindBy(xpath = "//ul[@class='select2-results__options']//li")
     private List<WebElement> currencyDroplist;
 
     @FindBy(xpath = "//input[@id='input-contactName']")
@@ -139,9 +139,12 @@ public class AddClientProceedsPage extends BaseTest {
         addText(registerNumber, registerNumberField);
     }
 
-    public void selectEntityTypeDroplistButton(String text) {
+    public void selectEntityField() {
         click(entity);
-        listofElements(entityDroplist, text);
+    }
+
+    public void selectEntityList(String text){
+        click(listofElements(entityDroplist, text));
     }
 
     public void addNameField(String name) {
@@ -150,7 +153,7 @@ public class AddClientProceedsPage extends BaseTest {
 
     public void selectDeadlineDroplist(String text) {
         click(deadline);
-        listofElements(deadlineDroplist, text);
+        click(listofElements(deadlineDroplist, text));
     }
 
     public void addIbanField(String iban) {
@@ -161,14 +164,18 @@ public class AddClientProceedsPage extends BaseTest {
         addText(bankName, bankNameField);
     }
 
-    public void selectCountryDroplist(String text) {
+    public void selectCountryField(){
         click(country);
-        listofElements(countryDroplist, text);
+    }
+    public void selectCountryList(String text) {
+        click(listofElements(countryDroplist, text));
     }
 
-    public void selectCountyDroplist(String text) {
+    public void selectCountyField(){
         click(county);
-        listofElements(countyDroplist, text);
+    }
+    public void selectCountyList(String text) {
+        click(listofElements(countyDroplist, text));
     }
 
     public void addCityField(String city) {
@@ -181,7 +188,7 @@ public class AddClientProceedsPage extends BaseTest {
 
     public void selectCurrencyDroplist(String text) {
         click(currency);
-        listofElements(currencyDroplist, text);
+        click(listofElements(currencyDroplist, text));
     }
 
     public void addContactPersonField(String personContactName) {
@@ -217,7 +224,6 @@ public class AddClientProceedsPage extends BaseTest {
     }
 
     public void addNewInvoice() {
-        Assert.assertTrue(addInvoice.isDisplayed());
         click(addInvoice);
     }
 

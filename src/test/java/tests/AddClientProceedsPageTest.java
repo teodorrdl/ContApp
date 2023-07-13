@@ -18,11 +18,10 @@ public class AddClientProceedsPageTest extends BasePage {
     }
 
 
-// String client, String cuiOrCif, String registerNumber,String entity, String name, String deadline, String iban, String bankName, String country, String county, String city, String adress, String currency, String contactPersonName, String email, String phone, String website,
-//"client", "cuiOrCif", "registerNumber","entity", "name", "deadline", "iban", "bankName","country", "county", "city", "adress", "currency", "contactPersonName", "email", "phone", "website",
+
     @Test(description = "Succesfull new proceed added")
-    @Parameters({"bankHome", "activity", "caen", "nrDocuments", "price", "acquisition", "fiscal", "expText"})
-    public void addNewProceed(String bankHome, String activity, String caen, String nrDocuments, String price, String acquisition, String fiscal, String expText) {
+    @Parameters({"clientText", "bankHome", "activity", "caen", "nrDocuments", "price", "acquisition", "fiscal", "expText"})
+    public void addNewProceed( String clientText, String bankHome, String activity, String caen, String nrDocuments, String price, String acquisition, String fiscal, String expText) {
         LoginPageContactApp loginApp = new LoginPageContactApp();
         loginApp.clickAuthenticationButton();
         loginApp.addEmail("olaru.iuliana1999@gmail.com");
@@ -31,33 +30,19 @@ public class AddClientProceedsPageTest extends BasePage {
         addClient().closeCoockiesAdd();
         addClient().selectContAppPSButton();
         addClient().selectAddProceedsButton();
-//        addClient().selectClientDroplist(client);
-//        addClient().addCuiOrCIF(cuiOrCif);
-//        addClient().addRegisterNumber(registerNumber);
-//        addClient().selectEntityTypeDroplistButton(entity);
-//        addClient().addNameField(name);
-//        addClient().selectDeadlineDroplist(deadline);
-//        addClient().addIbanField(iban);
-//        addClient().addBankNameField(bankName);
-//        addClient().selectCountryDroplist(country);
-//        addClient().selectCountyDroplist(county);
-//        addClient().addCityField(city);
-//        addClient().addAdressField(adress);
-//        addClient().selectCurrencyDroplist(currency);
-//        addClient().addContactPersonField(contactPersonName);
-//        addClient().addContactPersonEmailField(email);
-//        addClient().addContactPersonPhoneField(phone);
-//        addClient().addContactPersonWebsiteField(website);
-//        addClient().selectSaveButton();
-
+        addClient().selectClientField();
+        addClient().selectClientList(clientText);
         addProceeds().selectBankHome(bankHome);
         addProceeds().selectActivityPlace(activity);
-        addProceeds().selectCaenCode(caen);
+        addProceeds().selectCaenField();
+        addProceeds().selectCaenList(caen);
         addProceeds().addNumberOfDocuments(nrDocuments);
         addProceeds().price(price);
         addProceeds().selectTypeOfAcquisition(acquisition);
+        addProceeds().selectExplicationField();
         addProceeds().addExplication(expText);
-        addProceeds().selectFiscalCategory(fiscal);
+        addProceeds().selectFiscalField();
+        addProceeds().selectFiscalList(fiscal);
         addProceeds().selectSaveButton();
     }
 
@@ -76,13 +61,16 @@ public class AddClientProceedsPageTest extends BasePage {
         addClient().selectClientList(clientText);
         addClient().addCuiOrCIF(cuiOrCif);
         addClient().addRegisterNumber(registerNumber);
-        addClient().selectEntityTypeDroplistButton(entity);
+        addClient().selectEntityField();
+        addClient().selectEntityList(entity);
         addClient().addNameField(name);
         addClient().selectDeadlineDroplist(deadline);
         addClient().addIbanField(iban);
         addClient().addBankNameField(bankName);
-        addClient().selectCountryDroplist(country);
-        addClient().selectCountyDroplist(county);
+        addClient().selectCountryField();
+        addClient().selectCountryList(country);
+        addClient().selectCountyField();
+        addClient().selectCountyList(county);
         addClient().addCityField(city);
         addClient().addAdressField(adress);
         addClient().selectCurrencyDroplist(currency);
@@ -95,8 +83,8 @@ public class AddClientProceedsPageTest extends BasePage {
 
 
     @Test(description = "Add new client just with the minimal information")
-    @Parameters({"entity", "name", "deadline", "country", "county", "city", "adress"})
-    public void addMinimReqNewClient(String entity, String name, String deadline, String country, String county, String city, String adress) {
+    @Parameters({"clientText", "entity", "name", "deadline", "country", "county", "city", "adress"})
+    public void addMinimReqNewClient(String clientText, String entity, String name, String deadline, String country, String county, String city, String adress) {
         LoginPageContactApp loginApp = new LoginPageContactApp();
         loginApp.clickAuthenticationButton();
         loginApp.addEmail("olaru.iuliana1999@gmail.com");
@@ -105,20 +93,24 @@ public class AddClientProceedsPageTest extends BasePage {
         addClient().closeCoockiesAdd();
         addClient().selectContAppPSButton();
         addClient().selectAddProceedsButton();
-        addClient().selectClientList(" Client nou");
-        addClient().selectEntityTypeDroplistButton(entity);
+        addClient().selectClientField();
+        addClient().selectClientList(clientText);
+        addClient().selectEntityField();
+        addClient().selectEntityList(entity);
         addClient().addNameField(name);
         addClient().selectDeadlineDroplist(deadline);
-        addClient().selectCountryDroplist(country);
-        addClient().selectCountyDroplist(county);
+        addClient().selectCountryField();
+        addClient().selectCountryList(country);
+        addClient().selectCountyField();
+        addClient().selectCountyList(county);
         addClient().addCityField(city);
         addClient().addAdressField(adress);
         addClient().selectSaveButton();
     }
 
     @Test(description = "When clicking to add a new payment of an existing client it redirects you on the payment page")
-    @Parameters({"text", "client"})
-    public void addNewPayment(String text, String client) {
+    @Parameters({"client"})
+    public void addNewPayment(String client) {
         LoginPageContactApp loginApp = new LoginPageContactApp();
         loginApp.clickAuthenticationButton();
         loginApp.addEmail("olaru.iuliana1999@gmail.com");
@@ -127,14 +119,15 @@ public class AddClientProceedsPageTest extends BasePage {
         addClient().closeCoockiesAdd();
         addClient().selectContAppPSButton();
         addClient().selectAddProceedsButton();
+        addClient().selectClientField();
         addClient().selectClientList(client);
         addClient().addNewInvoice();
         Assert.assertEquals(driver_local.getCurrentUrl(), addNewPaymentWindow);
     }
 
-    @Test(description = "Error popup for adding a number over the limit")
-    @Parameters({"client", "bankHome"})
-    public void overLimitErrorPopup(String client, String bankHome){
+    @Test(description = "Error popup for adding a number over the limit if is selected 'Casa principala' in the bank field")
+    @Parameters({"client", "bankHome", "price"})
+    public void overLimitErrorPopup(String client, String bankHome, String price){
         LoginPageContactApp loginApp = new LoginPageContactApp();
         loginApp.clickAuthenticationButton();
         loginApp.addEmail("olaru.iuliana1999@gmail.com");
@@ -143,9 +136,10 @@ public class AddClientProceedsPageTest extends BasePage {
         addClient().closeCoockiesAdd();
         addClient().selectContAppPSButton();
         addClient().selectAddProceedsButton();
+        addClient().selectClientField();
         addClient().selectClientList(client);
         addProceeds().selectBankHome(bankHome);
-        addProceeds().selectImputValue();
+        addProceeds().selectImputValue(price);
     }
 
     @Test(description = "Succesfull new proceed added in other proceeds window")
@@ -162,13 +156,17 @@ public class AddClientProceedsPageTest extends BasePage {
         addClient().selectOtherProceeds();
         addProceeds().selectBankHome(bankHome);
         addProceeds().selectActivityPlace(activity);
-        addProceeds().selectCaenCode(caen);
-        addProceeds().selectDocuments(documents);
+        addProceeds().selectCaenField();
+        addProceeds().selectCaenList(caen);
+        addProceeds().selectDocumentsField();
+        addProceeds().selectDocumentsList(documents);
         addProceeds().addNumberOfDocuments(nrDocuments);
         addProceeds().price(price);
         addProceeds().selectTypeOfAcquisition(acquisition);
+        addProceeds().selectExplicationField();
         addProceeds().addExplication(expText);
-        addProceeds().selectFiscalCategory(fiscal);
+        addProceeds().selectFiscalField();
+        addProceeds().selectFiscalList(fiscal);
         addProceeds().selectSaveButton();
     }
 
