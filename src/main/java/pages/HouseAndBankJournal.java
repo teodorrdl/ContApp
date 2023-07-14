@@ -91,44 +91,7 @@ public class HouseAndBankJournal extends BaseTest {
     private WebElement supplierCurrency;
     @FindBy(xpath = "//span[normalize-space()='Q TEST SA']")
     private WebElement selectCreatedClient;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
-//    @FindBy(xpath = "")
-//    private WebElement ;
+
 
     public void addIncome(){
         click(houseAndBankJournal);
