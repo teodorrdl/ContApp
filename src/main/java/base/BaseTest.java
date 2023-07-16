@@ -6,9 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
+import utils.Utils;
+
 import java.util.ArrayList;
 import java.util.List;
-import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class BaseTest extends BasePage {
 
@@ -21,7 +22,7 @@ public class BaseTest extends BasePage {
         PageFactory.initElements(driver, this);
         action = new Actions(driver);
     }
-    
+
     public void SwitchToNextTab() {
         ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tab.get(1));
@@ -107,7 +108,7 @@ public class BaseTest extends BasePage {
 
     protected WebElement listofButtons(List<WebElement> list) {
         WebElement elem = null;
-        elem = list.get(utils.utils.randomNumber(list.size() - 1));
+        elem = list.get(Utils.randomNumber(list.size() - 1));
         return elem;
     }
 
@@ -131,18 +132,35 @@ public class BaseTest extends BasePage {
         action.moveToElement(locator).click().perform();
     }
 
+    public void clickPreviousPage() {
+        waitPage();
+        driver.navigate().back();
+    }
     public void clickWithRetries(WebElement element) {
         int retryCount = 0;
         boolean actionSuccessful = false;
 
         while (retryCount < 5 && !actionSuccessful) {
             try {
-                action(element);
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+                js.executeScript("arguments[0].scrollIntoView(true);", element);
+                click(element);
                 actionSuccessful = true;
-            } catch (StaleElementReferenceException e) {
+            } catch (Exception e) {
                 retryCount++;
             }
         }
     }
+    public void scrollDown() {
+        action.keyDown(Keys.CONTROL).sendKeys(Keys.END).keyUp(Keys.CONTROL).perform();
+    }
+    public void scrollUp() {
+        action.keyDown(Keys.CONTROL).sendKeys(Keys.HOME).keyUp(Keys.CONTROL).perform();
+    }
 
+    public void addTextToDisabledTextBox(String text, WebElement locator) {
+        if (locator.isEnabled()) {
+            addText(text, locator);
+        }
+    }
 }
