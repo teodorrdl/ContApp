@@ -44,7 +44,6 @@ public class CartPage extends BaseTest {
         int i=0;
         while(listCartProducts.size() > 0 ){
             elem = listCartProducts.get(0);
-            //click(elem);
             action(elem);
             flag = true;
             i++;

@@ -106,7 +106,6 @@ public class FiscalityBlog extends BaseTest {
 
     public void addNameSubscribeSection(String nameSubscribeSection) {
         scrollDown();
-        waitPage();
         addText(nameSubscribeSection, this.nameSubscribeSection);
     }
 
