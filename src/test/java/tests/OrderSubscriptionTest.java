@@ -32,7 +32,6 @@ public class OrderSubscriptionTest extends BasePage {
         loginPageContactApp().clickRememberMeCheckbox();
         loginPageContactApp().clickLoginButton();
         newOrderSubscription().clickLinkOrderSubscription();
-        newOrderSubscription().clickButtonAllOrder();
         cartPage().verifyCart();
         newOrderSubscription().clickOrder(orderName);
         newOrderSubscription().clickButtonOrder();
