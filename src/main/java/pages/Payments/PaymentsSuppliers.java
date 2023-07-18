@@ -95,7 +95,6 @@ public class PaymentsSuppliers extends BaseTest {
     private WebElement addPayment;
     @FindBy(xpath = "/html/body/main/div/div/div[2]/div/div[1]/div[1]/div/div/div/div[2]/div[1]/div/div/span[2]/span/span[2]/ul/li[2]")
     private WebElement chooseSupplier;
-
     public void clickPaymentsButton() {
         click(paymentsButton);
     }
@@ -260,10 +259,6 @@ public class PaymentsSuppliers extends BaseTest {
         addText(searchInput, this.searchInput);
         click(choosenInput);
     }
-
-//    public void clickSaveArticol() {
-//        click(saveArticole);
-//    }
 
     public void clickAddPayment(int x,int y) {
         javascriptExecutor(x,y);
