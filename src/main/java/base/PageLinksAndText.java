@@ -6,14 +6,24 @@ public enum PageLinksAndText {
     verifyAssetsRegistryButtonLink("https://ps.contapp.ro/export/3850/assets/pdf/view?year=2023"),
     clickCreateAccountButtonLink("https://account.contapp.ro/register"),
     clickAuthenticationButtonLink("https://account.contapp.ro/login"),
+    clickViewCart("https://shop.contapp.ro/cos"),
     clickCreateAccountButtonText("The url page  is not the expected one."),
     verifyAlertMessagesText("The alert messages are not the expected ones."),
     emailIncorectText("Email incorect!"),
     authenticationErrorMessage("Datele de autentificare introduse nu se potrivesc cu baza de date"),
     mandatoryEmailMessage("Campul \"E-mail\" este obligatoriu."),
 
-    mandatoryPasswordMessage("Campul \"Parola\" este obligatoriu.");
+    mandatoryPasswordMessage("Campul \"Parola\" este obligatoriu."),
 
+    incomePageLink("https://ps.contapp.ro/venituri"),
+
+    salesInvoicesLink("https://ps.contapp.ro/venituri/facturi"),
+
+    eInvoicesLink("https://ps.contapp.ro/setari/integrari"),
+
+    incomeArticlesLink("https://ps.contapp.ro/venituri/articole"),
+
+    clientsLink("https://ps.contapp.ro/venituri/clienti");
 
     private final String value;
 

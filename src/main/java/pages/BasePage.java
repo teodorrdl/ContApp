@@ -30,6 +30,7 @@ public class BasePage {
         options.addArguments("--remote-allow-origins=*");
         driver_local = new ChromeDriver(options);
         driver_local.manage().window().maximize();
+        driver_local.manage().deleteAllCookies();
         driver_local.get(PageLinksAndText.contactAppUrlLink.getValue());
         context.setAttribute("WebDriver", driver_local);
     }

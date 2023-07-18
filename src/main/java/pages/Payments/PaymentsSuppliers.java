@@ -209,7 +209,6 @@ public class PaymentsSuppliers extends BaseTest {
 
     public void addAuthorizationNumber(String authorizationNumber) {
         addText(authorizationNumber, this.authorizationNumber);
-        waitPage();
     }
 
     public void addFromDate(String activityDateFrom) {
