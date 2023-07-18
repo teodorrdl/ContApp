@@ -6,6 +6,7 @@ public enum PageLinksAndText {
     verifyAssetsRegistryButtonLink("https://ps.contapp.ro/export/3850/assets/pdf/view?year=2023"),
     clickCreateAccountButtonLink("https://account.contapp.ro/register"),
     clickAuthenticationButtonLink("https://account.contapp.ro/login"),
+    clickViewCart("https://shop.contapp.ro/cos"),
     clickCreateAccountButtonText("The url page  is not the expected one."),
     verifyAlertMessagesText("The alert messages are not the expected ones."),
     emailIncorectText("Email incorect!"),

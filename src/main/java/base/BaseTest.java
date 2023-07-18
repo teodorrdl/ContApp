@@ -163,4 +163,11 @@ public class BaseTest extends BasePage {
             addText(text, locator);
         }
     }
+
+    public WebElement findElement(WebElement locator) {
+
+        waitPage().until(ExpectedConditions.visibilityOf(locator));
+        return locator;
+    }
+
 }
