@@ -31,6 +31,8 @@ public class LoginPageContactApp extends BaseTest {
 
     @FindBy(xpath = "//a[normalize-space()='Ai uitat parola?']")
     public WebElement forgotPasswordLink;
+    @FindBy(xpath = "//button[@id='onetrust-accept-btn-handler']")
+    private WebElement acceptCookieButton;
 
     @FindBy(xpath = "(//button[@aria-label='Închideți'])[1]")
     public WebElement closeCookieButton;
@@ -68,6 +70,11 @@ public class LoginPageContactApp extends BaseTest {
         click(authenticationButton);
         Assert.assertEquals(driver.getCurrentUrl(), PageLinksAndText.clickAuthenticationButtonLink.getValue());
     }
+
+    public void clickAcceptCookie() {
+        click(acceptCookieButton);
+    }
+
     public void verifyAlertMessages() {
         if (emailAlertMessage.getText().equals(expectedAlertMessages[1]) && passwordAlertMessage.getText().equals(expectedAlertMessages[2])) {
             Assert.assertEquals(emailAlertMessage.getText(), expectedAlertMessages[1]);
