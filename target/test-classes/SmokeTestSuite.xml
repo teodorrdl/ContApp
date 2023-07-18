@@ -8,8 +8,67 @@
     <!--	</listeners>-->
     <test name="Smoke Test">
         <classes>
-            <class name="tests.AddClientProceedsPageTest">
+            <class name="tests.AddClientsTest">
                 <methods>
+<!--                    <include name="addClient">-->
+<!--                        <parameter name="cuiOrCif" value="n9ye58j"></parameter>&ndash;&gt;-->
+<!--                        <parameter name="registerNumber" value="097382hr8"></parameter>-->
+<!--                        <parameter name="entity" value="Alta"></parameter>-->
+<!--                        <parameter name="name" value="Chocolate Factory SRL"></parameter>-->
+<!--                        <parameter name="deadline" value="7"></parameter>-->
+<!--                        <parameter name="iban" value="0987654567875"></parameter>-->
+<!--                        <parameter name="bankName" value="Bank"></parameter>-->
+<!--                        <parameter name="country" value="Armenia"></parameter>-->
+<!--                        <parameter name="county" value="Yerevan"></parameter>-->
+<!--                        <parameter name="city" value="city"></parameter>-->
+<!--                        <parameter name="adress" value="Ciocho Street"></parameter>-->
+<!--                        <parameter name="currency" value="CHF"></parameter>-->
+<!--                        <parameter name="conctactPersonName" value="Ionela Marinescu"></parameter>-->
+<!--                        <parameter name="email" value="ionela.marinescu@gmail.com"></parameter>-->
+<!--                        <parameter name="phone" value="074657457"></parameter>-->
+<!--                        <parameter name="website" value="ciochofactory.ro"></parameter>-->
+<!--                    </include>-->
+<!--                    <include name="existingClientNotification">-->
+<!--                        <parameter name="cuiOrCif" value="n9ye58j"></parameter>-->
+<!--                        <parameter name="registerNumber" value="097382hr8"></parameter>-->
+<!--                        <parameter name="entity" value="Alta"></parameter>-->
+<!--                        <parameter name="name" value="Chocolate Factory SRL"></parameter>-->
+<!--                        <parameter name="deadline" value="7"></parameter>-->
+<!--                        <parameter name="iban" value="0987654567875"></parameter>-->
+<!--                        <parameter name="bankName" value="Bank"></parameter>-->
+<!--                        <parameter name="country" value="Armenia"></parameter>-->
+<!--                        <parameter name="county" value="Yerevan"></parameter>-->
+<!--                        <parameter name="city" value="city"></parameter>-->
+<!--                        <parameter name="adress" value="Ciocho Street"></parameter>-->
+<!--                        <parameter name="currency" value="CHF"></parameter>-->
+<!--                        <parameter name="conctactPersonName" value="Ionela Marinescu"></parameter>-->
+<!--                        <parameter name="email" value="ionela.marinescu@gmail.com"></parameter>-->
+<!--                        <parameter name="phone" value="074657457"></parameter>-->
+<!--                        <parameter name="website" value="ciochofactory.ro"></parameter>-->
+<!--                    </include>-->
+                    <include name="verifiedSavedClient">
+                        <parameter name="cuiOrCif" value="n9ye58j"></parameter>
+                        <parameter name="registerNumber" value="097382hr8"></parameter>
+                        <parameter name="entity" value="Alta"></parameter>
+                        <parameter name="name" value="Chocolate Factory SRL"></parameter>
+                        <parameter name="deadline" value="7"></parameter>
+                        <parameter name="iban" value="0987654567875"></parameter>
+                        <parameter name="bankName" value="Bank"></parameter>
+                        <parameter name="country" value="Armenia"></parameter>
+                        <parameter name="county" value="Yerevan"></parameter>
+                        <parameter name="city" value="city"></parameter>
+                        <parameter name="adress" value="Ciocho Street"></parameter>
+                        <parameter name="currency" value="CHF"></parameter>
+                        <parameter name="conctactPersonName" value="Ionela Marinescu"></parameter>
+                        <parameter name="email" value="ionela.marinescu@gmail.com"></parameter>
+                        <parameter name="phone" value="074657457"></parameter>
+                        <parameter name="website" value="ciochofactory.ro"></parameter>
+                    </include>
+                </methods>
+            </class>
+
+<!--            <class name="tests.AddClientProceedsPageTest">-->
+<!--                <methods>-->
 <!--                    <include name="addNewProceed">-->
 <!--                        <parameter name="clientText" value="kiudrcfvgjk"></parameter>-->
 <!--                        <parameter name="bankHome" value="Bancă principală"></parameter>-->
@@ -50,9 +109,9 @@
 <!--                        <parameter name="city" value="Agrigento"></parameter>-->
 <!--                        <parameter name="adress" value="Flowers Street 56"></parameter>-->
 <!--                    </include>-->
-                    <include name="addNewPayment">
-                        <parameter name="client" value="kiudrcfvgjk"></parameter>
-                    </include>
+<!--                    <include name="addNewPayment">-->
+<!--                        <parameter name="client" value="kiudrcfvgjk"></parameter>-->
+<!--                    </include>-->
 <!--                    <include name="overLimitErrorPopup">-->
 <!--                        <parameter name="client" value="kiudrcfvgjk"></parameter>-->
 <!--                        <parameter name="bankHome" value="Casă principală"></parameter>-->
@@ -69,8 +128,8 @@
 <!--                        <parameter name="expText" value="produse"></parameter>-->
 <!--                        <parameter name="fiscal" value="Venituri din activitate"></parameter>-->
 <!--                    </include>-->
-                </methods>
-            </class>
+<!--                </methods>-->
+<!--            </class>-->
 
 <!--            <class name="tests.LoginPageContactAppTest">-->
 <!--                <methods>-->

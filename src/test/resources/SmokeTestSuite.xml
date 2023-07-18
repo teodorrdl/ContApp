@@ -8,69 +8,128 @@
     <!--	</listeners>-->
     <test name="Smoke Test">
         <classes>
-            <class name="tests.AddClientProceedsPageTest">
+            <class name="tests.AddClientsTest">
                 <methods>
-                    <include name="addNewProceed">
-                        <parameter name="clientText" value="kiudrcfvgjk"></parameter>
-                        <parameter name="bankHome" value="Bancă principală"></parameter>
-                        <parameter name="activity" value="Sediul profesional"></parameter>
-                        <parameter name="caen" value="Sediul profesional | ertyuhnj"></parameter>
-                        <parameter name="nrDocuments" value="3"></parameter>
-                        <parameter name="price" value="200"></parameter>
-                        <parameter name="acquisition" value="Altele"></parameter>
-                        <parameter name="expText" value="produse"></parameter>
-                        <parameter name="fiscal" value="Venituri din activitate"></parameter>
-                    </include>
-                    <include name="addNewClient">
-                        <parameter name="clientText" value="Client nou"></parameter>
-                        <parameter name="cuiOrCif" value="bj897yhui"></parameter>
-                        <parameter name="registerNumber" value="bvcd657"></parameter>
+<!--                    <include name="addClient">-->
+<!--                        <parameter name="cuiOrCif" value="n9ye58j"></parameter>&ndash;&gt;-->
+<!--                        <parameter name="registerNumber" value="097382hr8"></parameter>-->
+<!--                        <parameter name="entity" value="Alta"></parameter>-->
+<!--                        <parameter name="name" value="Chocolate Factory SRL"></parameter>-->
+<!--                        <parameter name="deadline" value="7"></parameter>-->
+<!--                        <parameter name="iban" value="0987654567875"></parameter>-->
+<!--                        <parameter name="bankName" value="Bank"></parameter>-->
+<!--                        <parameter name="country" value="Armenia"></parameter>-->
+<!--                        <parameter name="county" value="Yerevan"></parameter>-->
+<!--                        <parameter name="city" value="city"></parameter>-->
+<!--                        <parameter name="adress" value="Ciocho Street"></parameter>-->
+<!--                        <parameter name="currency" value="CHF"></parameter>-->
+<!--                        <parameter name="conctactPersonName" value="Ionela Marinescu"></parameter>-->
+<!--                        <parameter name="email" value="ionela.marinescu@gmail.com"></parameter>-->
+<!--                        <parameter name="phone" value="074657457"></parameter>-->
+<!--                        <parameter name="website" value="ciochofactory.ro"></parameter>-->
+<!--                    </include>-->
+<!--                    <include name="existingClientNotification">-->
+<!--                        <parameter name="cuiOrCif" value="n9ye58j"></parameter>-->
+<!--                        <parameter name="registerNumber" value="097382hr8"></parameter>-->
+<!--                        <parameter name="entity" value="Alta"></parameter>-->
+<!--                        <parameter name="name" value="Chocolate Factory SRL"></parameter>-->
+<!--                        <parameter name="deadline" value="7"></parameter>-->
+<!--                        <parameter name="iban" value="0987654567875"></parameter>-->
+<!--                        <parameter name="bankName" value="Bank"></parameter>-->
+<!--                        <parameter name="country" value="Armenia"></parameter>-->
+<!--                        <parameter name="county" value="Yerevan"></parameter>-->
+<!--                        <parameter name="city" value="city"></parameter>-->
+<!--                        <parameter name="adress" value="Ciocho Street"></parameter>-->
+<!--                        <parameter name="currency" value="CHF"></parameter>-->
+<!--                        <parameter name="conctactPersonName" value="Ionela Marinescu"></parameter>-->
+<!--                        <parameter name="email" value="ionela.marinescu@gmail.com"></parameter>-->
+<!--                        <parameter name="phone" value="074657457"></parameter>-->
+<!--                        <parameter name="website" value="ciochofactory.ro"></parameter>-->
+<!--                    </include>-->
+                    <include name="verifiedSavedClient">
+                        <parameter name="cuiOrCif" value="n9ye58j"></parameter>
+                        <parameter name="registerNumber" value="097382hr8"></parameter>
                         <parameter name="entity" value="Alta"></parameter>
-                        <parameter name="name" value="Cupcake Master SRL"></parameter>
-                        <parameter name="deadline" value="14"></parameter>
-                        <parameter name="iban" value="3243567876543"></parameter>
-                        <parameter name="bankName" value="BCR"></parameter>
-                        <parameter name="country" value="Albania"></parameter>
-                        <parameter name="county" value="Berat"></parameter>
-                        <parameter name="city" value="Agrigento"></parameter>
-                        <parameter name="adress" value="Cupcake Street"></parameter>
-                        <parameter name="currency" value="EUR"></parameter>
-                        <parameter name="conctactPersonName" value="Mihaela Popescu"></parameter>
-                        <parameter name="email" value="mihaela popescu@gmail.com"></parameter>
-                        <parameter name="phone" value="0747656787"></parameter>
-                        <parameter name="website" value="cupcakemaster.ro"></parameter>
-                    </include>
-                    <include name="addMinimReqNewClient">
-                        <parameter name="clientText" value="Client nou"></parameter>
-                        <parameter name="entity" value="Alta"></parameter>
-                        <parameter name="name" value="Flower shop SRL"></parameter>
-                        <parameter name="deadline" value="30"></parameter>
-                        <parameter name="country" value="Albania"></parameter>
-                        <parameter name="county" value="Berat"></parameter>
-                        <parameter name="city" value="Agrigento"></parameter>
-                        <parameter name="adress" value="Flowers Street 56"></parameter>
-                    </include>
-                    <include name="addNewPayment">
-                        <parameter name="client" value="kiudrcfvgjk"></parameter>
-                    </include>
-                    <include name="overLimitErrorPopup">
-                        <parameter name="client" value="kiudrcfvgjk"></parameter>
-                        <parameter name="bankHome" value="Casă principală"></parameter>
-                        <parameter name="price" value="10001"></parameter>
-                    </include>
-                    <include name="addOtherProceed">
-                        <parameter name="bankHome" value="Bancă principală"></parameter>
-                        <parameter name="activity" value="Sediul profesional"></parameter>
-                        <parameter name="caen" value="Sediul profesional | ertyuhnj"></parameter>
-                        <parameter name="documents" value="Decont"></parameter>
-                        <parameter name="nrDocuments" value="3"></parameter>
-                        <parameter name="price" value="200"></parameter>
-                        <parameter name="acquisition" value="Altele"></parameter>
-                        <parameter name="expText" value="produse"></parameter>
-                        <parameter name="fiscal" value="Venituri din activitate"></parameter>
+                        <parameter name="name" value="Chocolate Factory SRL"></parameter>
+                        <parameter name="deadline" value="7"></parameter>
+                        <parameter name="iban" value="0987654567875"></parameter>
+                        <parameter name="bankName" value="Bank"></parameter>
+                        <parameter name="country" value="Armenia"></parameter>
+                        <parameter name="county" value="Yerevan"></parameter>
+                        <parameter name="city" value="city"></parameter>
+                        <parameter name="adress" value="Ciocho Street"></parameter>
+                        <parameter name="currency" value="CHF"></parameter>
+                        <parameter name="conctactPersonName" value="Ionela Marinescu"></parameter>
+                        <parameter name="email" value="ionela.marinescu@gmail.com"></parameter>
+                        <parameter name="phone" value="074657457"></parameter>
+                        <parameter name="website" value="ciochofactory.ro"></parameter>
                     </include>
                 </methods>
             </class>
+
+<!--            <class name="tests.AddClientProceedsPageTest">-->
+<!--                <methods>-->
+<!--                    <include name="addNewProceed">-->
+<!--                        <parameter name="clientText" value="kiudrcfvgjk"></parameter>-->
+<!--                        <parameter name="bankHome" value="Bancă principală"></parameter>-->
+<!--                        <parameter name="activity" value="Sediul profesional"></parameter>-->
+<!--                        <parameter name="caen" value="Sediul profesional | ertyuhnj"></parameter>-->
+<!--                        <parameter name="nrDocuments" value="3"></parameter>-->
+<!--                        <parameter name="price" value="200"></parameter>-->
+<!--                        <parameter name="acquisition" value="Altele"></parameter>-->
+<!--                        <parameter name="expText" value="produse"></parameter>-->
+<!--                        <parameter name="fiscal" value="Venituri din activitate"></parameter>-->
+<!--                    </include>-->
+<!--                    <include name="addNewClient">-->
+<!--                        <parameter name="clientText" value="Client nou"></parameter>-->
+<!--                        <parameter name="cuiOrCif" value="bj897yhui"></parameter>-->
+<!--                        <parameter name="registerNumber" value="bvcd657"></parameter>-->
+<!--                        <parameter name="entity" value="Alta"></parameter>-->
+<!--                        <parameter name="name" value="Cupcake Master SRL"></parameter>-->
+<!--                        <parameter name="deadline" value="14"></parameter>-->
+<!--                        <parameter name="iban" value="3243567876543"></parameter>-->
+<!--                        <parameter name="bankName" value="BCR"></parameter>-->
+<!--                        <parameter name="country" value="Albania"></parameter>-->
+<!--                        <parameter name="county" value="Berat"></parameter>-->
+<!--                        <parameter name="city" value="Agrigento"></parameter>-->
+<!--                        <parameter name="adress" value="Cupcake Street"></parameter>-->
+<!--                        <parameter name="currency" value="EUR"></parameter>-->
+<!--                        <parameter name="conctactPersonName" value="Mihaela Popescu"></parameter>-->
+<!--                        <parameter name="email" value="mihaela popescu@gmail.com"></parameter>-->
+<!--                        <parameter name="phone" value="0747656787"></parameter>-->
+<!--                        <parameter name="website" value="cupcakemaster.ro"></parameter>-->
+<!--                    </include>-->
+<!--                    <include name="addMinimReqNewClient">-->
+<!--                        <parameter name="clientText" value="Client nou"></parameter>-->
+<!--                        <parameter name="entity" value="Alta"></parameter>-->
+<!--                        <parameter name="name" value="Flower shop SRL"></parameter>-->
+<!--                        <parameter name="deadline" value="30"></parameter>-->
+<!--                        <parameter name="country" value="Albania"></parameter>-->
+<!--                        <parameter name="county" value="Berat"></parameter>-->
+<!--                        <parameter name="city" value="Agrigento"></parameter>-->
+<!--                        <parameter name="adress" value="Flowers Street 56"></parameter>-->
+<!--                    </include>-->
+<!--                    <include name="addNewPayment">-->
+<!--                        <parameter name="client" value="kiudrcfvgjk"></parameter>-->
+<!--                    </include>-->
+<!--                    <include name="overLimitErrorPopup">-->
+<!--                        <parameter name="client" value="kiudrcfvgjk"></parameter>-->
+<!--                        <parameter name="bankHome" value="Casă principală"></parameter>-->
+<!--                        <parameter name="price" value="10001"></parameter>-->
+<!--                    </include>-->
+<!--                    <include name="addOtherProceed">-->
+<!--                        <parameter name="bankHome" value="Bancă principală"></parameter>-->
+<!--                        <parameter name="activity" value="Sediul profesional"></parameter>-->
+<!--                        <parameter name="caen" value="Sediul profesional | ertyuhnj"></parameter>-->
+<!--                        <parameter name="documents" value="Decont"></parameter>-->
+<!--                        <parameter name="nrDocuments" value="3"></parameter>-->
+<!--                        <parameter name="price" value="200"></parameter>-->
+<!--                        <parameter name="acquisition" value="Altele"></parameter>-->
+<!--                        <parameter name="expText" value="produse"></parameter>-->
+<!--                        <parameter name="fiscal" value="Venituri din activitate"></parameter>-->
+<!--                    </include>-->
+<!--                </methods>-->
+<!--            </class>-->
 
 <!--            <class name="tests.LoginPageContactAppTest">-->
 <!--                <methods>-->
