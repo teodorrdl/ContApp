@@ -40,6 +40,18 @@ public class SettingCompanyTest extends BasePage {
         return new HousesAndBanks();
     }
 
+    public SeriesPage seriesPage() {
+        return new SeriesPage();
+    }
+
+    public UnitMeasurePage unitMeasurePage() {
+        return new UnitMeasurePage();
+    }
+
+    public RolesAndPermissionsPage rolesAndPermissionsPage() {
+        return new RolesAndPermissionsPage();
+    }
+
     @Test(description = "check the company settings if direct to the correct url with valid login credentials " +
             "and with the company already created", priority = 2)
     @Parameters({"username", "password"})
@@ -211,5 +223,57 @@ public class SettingCompanyTest extends BasePage {
         housesAndBanks().checkBankOrHouseAdded(typeofService, name, currency, cashRegisterIBAN);
     }
 
+    @Test(description = "Add new series and add new decisions numbers", priority = 11)
+    @Parameters({"username", "password", "year", "seriesType", "seriesName", "seriesNumber" ,"firstNr"})
+    public void addNewSeries(String username, String password, String year, String seriesType, String seriesName,
+                             String seriesNumber, String firstNr){
+        loginPageContactApp().clickCloseCookie();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickRememberMeCheckbox();
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        seriesPage().clickSeriesLink();
+        seriesPage().addNewSeries(year,seriesType,seriesName,seriesNumber,firstNr);
+        seriesPage().checkSeriesAdded(seriesType,seriesName,seriesNumber,firstNr);
+        seriesPage().addNrDecisions();
+    }
 
+    @Test(description = "Add new measure unit", priority = 11)
+    @Parameters({"username", "password", "measureUnitName", "measureUnitSymbol", "blCode"})
+    public void addNewMeasureUnit(String username, String password, String measureUnitName, String measureUnitSymbol, String blCode){
+        loginPageContactApp().clickCloseCookie();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickRememberMeCheckbox();
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        unitMeasurePage().clickUnitMeasureLink();
+        unitMeasurePage().addUnitMeasure(measureUnitName,measureUnitSymbol,blCode);
+        unitMeasurePage().checkUnitMeasure(measureUnitName,measureUnitSymbol,blCode);
+    }
+
+    @Test(description = "Check if the permission can be changed for each role", priority = 11)
+    @Parameters({"username", "password"})
+    public void checkPermissionForRoles(String username, String password){
+        loginPageContactApp().clickCloseCookie();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickRememberMeCheckbox();
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        rolesAndPermissionsPage().clickRolesAndPermissionsLink();
+        rolesAndPermissionsPage().clickOpenAdminRole();
+        rolesAndPermissionsPage().clickOpenAccountantRole();
+        rolesAndPermissionsPage().clickOpenVisitorRole();
+    }
 }

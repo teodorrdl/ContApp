@@ -32,6 +32,17 @@ public class LoginPageContactApp extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Ai uitat parola?']")
     public WebElement forgotPasswordLink;
 
+    @FindBy(xpath = "(//button[@aria-label='Închideți'])[1]")
+    public WebElement closeCookieButton;
+
+    public void clickCloseCookie() {
+        try {
+            click(closeCookieButton);
+        } catch (Exception e) {
+            System.out.println("Cookie is not displayed");
+        }
+    }
+
     public String[] expectedAlertMessages = {PageLinksAndText.authenticationErrorMessage.getValue(),
             PageLinksAndText.mandatoryEmailMessage.getValue(),
             PageLinksAndText.mandatoryPasswordMessage.getValue()
