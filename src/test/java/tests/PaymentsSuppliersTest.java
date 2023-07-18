@@ -15,10 +15,11 @@ public class PaymentsSuppliersTest extends BasePage {
     public HouseBankJournal receiptsAndPayments() {
         return new HouseBankJournal();
     }
-
     public PaymentsSuppliers paymentsSuppliers() {
         return new PaymentsSuppliers();
     }
+
+
     @Test(description = "Test Plati Furnizori")
     @Parameters({"username", "password", "registrationNumber", "inputIban", "inputBankName", "inputContactName", "inputEmail", "inputWebsite", "inputPhoneNumber", "bankType", "nameBank", "currency", "detailsBank", "ibanDetails", "professionalHeadquarters", "caenCode", "activityPlace", "incomeCategory", "income", "authorizationNumber", "activityDateFrom", "activityDateEnd", "paymentDocument", "inputNumberDocument", "datePaymentDocument", "typeArticol", "explanation", "fiscalCategory","selectSupplier","moneyPaymentt"})
     public void paymentsSuppliersTest(String username, String password, String registrationNumber, String inputIban, String inputBankName, String inputContactName, String inputEmail, String inputWebsite, String inputPhoneNumber, String bankType, String nameBank, String currency, String detailsBank, String ibanDetails, String professionalHeadquarters, String caenCode, String activityPlace, String incomeCategory, String income, String authorizationNumber, String activityDateFrom, String activityDateEnd, String paymentDocument, String inputNumberDocument, String datePaymentDocument, String typeArticol, String explanation, String fiscalCategory,String selectSupplier,String moneyPaymentt) {
