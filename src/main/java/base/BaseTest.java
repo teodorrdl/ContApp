@@ -96,7 +96,6 @@ public class BaseTest extends BasePage {
             throw new IllegalStateException("This is not " + searchString + " .The actual Url is: " + getUrl());
         }
     }
-
     protected WebElement listofElements(List<WebElement> list, String text) {
         WebElement elem = null;
         for (int i = 0; i < list.size(); i++) {
@@ -128,7 +127,6 @@ public class BaseTest extends BasePage {
         js.executeScript("window.scrollBy(" + x + "," + y + ")");
 
     }
-
     protected void action(WebElement locator) {
         action.moveToElement(locator).click().perform();
     }
@@ -152,7 +150,6 @@ public class BaseTest extends BasePage {
             }
         }
     }
-
     public void scrollDown() {
         action.keyDown(Keys.CONTROL).sendKeys(Keys.END).keyUp(Keys.CONTROL).perform();
     }

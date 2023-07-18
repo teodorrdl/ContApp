@@ -37,7 +37,6 @@ public class FiscalityBlog extends BaseTest {
     private WebElement termsAndConditions;
     @FindBy(xpath = "//span[@class='elementor-button-text'][contains(text(),'Abonează-te')]")
     private WebElement subscribeButton;
-
     @FindBy(xpath = "//a[normalize-space()='« Prev']")
     private WebElement prevPage;
 
@@ -110,7 +109,6 @@ public class FiscalityBlog extends BaseTest {
     }
 
     public void addEmailSubscribeSection(String emailSubscribeSection) {
-
         addText(emailSubscribeSection, this.emailSubscribeSection);
     }
 
@@ -121,8 +119,5 @@ public class FiscalityBlog extends BaseTest {
     public void clickSubscribeSection() {
         click(subscribeButton);
     }
-
-
-
 
 }
