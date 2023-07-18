@@ -1,11 +1,15 @@
 package base;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
+import utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,25 +25,20 @@ public class BaseTest extends BasePage {
         PageFactory.initElements(driver, this);
         action = new Actions(driver);
     }
+
     public void SwitchToNextTab() {
         ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tab.get(1));
-
-    }
-    private WebDriverWait waitPage() {
-        return new WebDriverWait(driver, 15);
     }
 
-    protected WebElement find(WebElement locator) {
-        waitPage().until(ExpectedConditions.visibilityOf(locator));
-        return locator;
+    protected WebDriverWait waitPage() {
+        return new WebDriverWait(driver, 10);
     }
 
     protected WebElement clickAble(WebElement locator) {
         waitPage().until(ExpectedConditions.elementToBeClickable(locator));
         return locator;
     }
-
 
     protected void addText(String inputText, WebElement locator) {
         clear(locator);
@@ -48,7 +47,6 @@ public class BaseTest extends BasePage {
 
     protected void clear(WebElement locator) {
         click(locator);
-
         if (getOperationSystem().contains("Windows")) {
             locator.sendKeys(Keys.chord(Keys.CONTROL, "a"));
         } else if (getOperationSystem().contains("Mac OS X")) {
@@ -98,8 +96,6 @@ public class BaseTest extends BasePage {
             throw new IllegalStateException("This is not " + searchString + " .The actual Url is: " + getUrl());
         }
     }
-
-
     protected WebElement listofElements(List<WebElement> list, String text) {
         WebElement elem = null;
         for (int i = 0; i < list.size(); i++) {
@@ -112,6 +108,12 @@ public class BaseTest extends BasePage {
         return elem;
     }
 
+    protected WebElement listofButtons(List<WebElement> list) {
+        WebElement elem = null;
+        elem = list.get(Utils.randomNumber(list.size() - 1));
+        return elem;
+    }
+
     protected void uploadDoc(WebElement element, String path) {
         element.sendKeys(path);
     }
@@ -119,6 +121,53 @@ public class BaseTest extends BasePage {
     private String getOperationSystem() {
         String operateSystem = System.getProperty("os.name");
         return operateSystem;
+    }
+
+    protected void javascriptExecutor(int x, int y) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(" + x + "," + y + ")");
+
+    }
+    protected void action(WebElement locator) {
+        action.moveToElement(locator).click().perform();
+    }
+
+    public void clickPreviousPage() {
+        driver.navigate().back();
+    }
+
+    public void clickWithRetries(WebElement element) {
+        int retryCount = 0;
+        boolean actionSuccessful = false;
+
+        while (retryCount < 5 && !actionSuccessful) {
+            try {
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+                js.executeScript("arguments[0].scrollIntoView(true);", element);
+                click(element);
+                actionSuccessful = true;
+            } catch (Exception e) {
+                retryCount++;
+            }
+        }
+    }
+    public void scrollDown() {
+        action.keyDown(Keys.CONTROL).sendKeys(Keys.END).keyUp(Keys.CONTROL).perform();
+    }
+
+    public void scrollUp() {
+        action.keyDown(Keys.CONTROL).sendKeys(Keys.HOME).keyUp(Keys.CONTROL).perform();
+    }
+
+    public void addTextToDisabledTextBox(String text, WebElement locator) {
+        if (locator.isEnabled()) {
+            addText(text, locator);
+        }
+    }
+
+    public WebElement findElement(WebElement locator) {
+        waitPage().until(ExpectedConditions.visibilityOf(locator));
+        return locator;
     }
 
 }

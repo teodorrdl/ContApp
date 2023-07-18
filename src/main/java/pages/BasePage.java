@@ -15,6 +15,7 @@ import org.testng.annotations.*;
 
 public class BasePage {
 
+    
     public static WebDriver driver_local; //--> rulare in mod normal pe local
     public static ExtentTest logger;
     public static ExtentReports report;
@@ -29,6 +30,7 @@ public class BasePage {
         options.addArguments("--remote-allow-origins=*");
         driver_local = new ChromeDriver(options);
         driver_local.manage().window().maximize();
+        driver_local.manage().deleteAllCookies();
         driver_local.get(PageLinksAndText.contactAppUrlLink.getValue());
         context.setAttribute("WebDriver", driver_local);
     }
@@ -36,7 +38,6 @@ public class BasePage {
 
     @AfterMethod(alwaysRun=true)
     public void tearDown() {
-
         driver_local.quit();
     }
 
