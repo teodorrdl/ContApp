@@ -24,6 +24,8 @@
 hs_err_pid*
 replay_pid*
 /src/test/resources/drivers/chromedriver
+resources/
 target/
 *target/**
 .idea/
+/src/test/resources/
