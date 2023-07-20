@@ -1,6 +1,7 @@
 package pages.OrderSubscription;
 
 import base.BaseTest;
+import base.PageLinksAndText;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -109,6 +110,6 @@ public class OrderSubscriptionFlow extends BaseTest {
     }
 
     public void verifyOrder() {
-        Assert.assertEquals(findElement(textThanks).getText(), "Mulțumim pentru comandă!");
+        Assert.assertEquals(findElement(textThanks).getText(), PageLinksAndText.messageThanksCart.getValue());
     }
 }

@@ -24,6 +24,9 @@ public enum PageLinksAndText {
     incomeArticlesLink("https://ps.contapp.ro/venituri/articole"),
 
     clientsLink("https://ps.contapp.ro/venituri/clienti"),
+
+    messageCart("Produsele din cos au fost sterse!"),
+    messageThanksCart("Mulțumim pentru comandă!"),
     textmessage("Mulțumim pentru părere");
 
 
