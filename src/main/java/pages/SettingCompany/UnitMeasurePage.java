@@ -56,9 +56,9 @@ public class UnitMeasurePage extends BaseTest {
 
     public void checkUnitMeasure(String unitMeasureName, String unitMeasureSymbol, String blCode) {
         for (int i = 1; i < unitMeasureTable.size(); i++) {
-            WebElement unitMeasure = unitMeasureTable.get(i);
-            Assert.assertTrue(unitMeasure.getText().contains(unitMeasureName)
-                    && unitMeasure.getText().contains(unitMeasureSymbol) && unitMeasure.getText().contains(blCode));
+            Assert.assertTrue(unitMeasureTable.get(i).getText().contains(unitMeasureName)
+                    && unitMeasureTable.get(i).getText().contains(unitMeasureSymbol)
+                    && unitMeasureTable.get(i).getText().contains(blCode));
             break;
         }
     }

@@ -86,9 +86,9 @@ public class SeriesPage extends BaseTest {
 
     public void checkSeriesAdded(String typeOfSeries, String seriesName, String seriesNumber, String firstNr) {
         for (int i = 1; i < seriesTable.size(); i++) {
-            WebElement series = seriesTable.get(i);
-            Assert.assertTrue(series.getText().contains(typeOfSeries) && series.getText().contains(seriesName)
-                    && series.getText().contains(seriesNumber) && series.getText().contains(firstNr));
+            Assert.assertTrue(seriesTable.get(i).getText().contains(typeOfSeries)
+                    && seriesTable.get(i).getText().contains(seriesName)
+                    && seriesTable.get(i).getText().contains(seriesNumber) && seriesTable.get(i).getText().contains(firstNr));
             break;
         }
     }
