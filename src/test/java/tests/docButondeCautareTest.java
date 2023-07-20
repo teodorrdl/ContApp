@@ -8,13 +8,16 @@ import pages.docButondeCautare;
 
 public class docButondeCautareTest extends BasePage {
     public docButondeCautare butondeCautare() {
-        return new docButondeCautare();}
+        return new docButondeCautare();
+    }
 
     public LoginPageContactApp login() {
-        return new LoginPageContactApp();}
+        return new LoginPageContactApp();
+    }
+
     @Test(description = "Testare Documentatie")
-    @Parameters({"email", "pass","textCampCautare"})
-    public void butonCautareTest(String email,String pass, String textCampCautare){
+    @Parameters({"email", "pass", "textCampCautare"})
+    public void butonCautareTest(String email, String pass, String textCampCautare) {
         login().clickCloseCookie();
         login().clickAuthenticationButton();
         login().addEmail(email);
@@ -24,21 +27,12 @@ public class docButondeCautareTest extends BasePage {
         butondeCautare().clickButonDocumentatie();
         butondeCautare().addCampdeCautare(textCampCautare);
         butondeCautare().butondeCautare();
-       butondeCautare().clikLinkPlatiDiverse();
+        butondeCautare().clikLinkPlatiDiverse();
         butondeCautare().clickbuttonSmileFace();
         butondeCautare().verifMessage();
-        //butondeCautare().verifMessage2();
-
-
-
 
 
     }
-
-
-
-
-
 
 
 }

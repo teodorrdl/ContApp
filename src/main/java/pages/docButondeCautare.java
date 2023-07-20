@@ -1,6 +1,7 @@
 package pages;
 
 import base.BaseTest;
+import base.PageLinksAndText;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -8,104 +9,56 @@ import org.testng.Assert;
 import java.util.List;
 
 public class docButondeCautare extends BaseTest {
-//    @FindBy(xpath = "//a[@aria-label='Documentație']//img")
-//    private WebElement butonDocumentatie;
-//    @FindBy(xpath = "//input[@name='query']")
-//    private WebElement campdeCautare;
-//  @FindBy(xpath = "//button[normalize-space('Caută ')]//i[1]")
-//    private WebElement lupadeCautere;
-//
-//  @FindBy(xpath = "//ul[@class='result']")
-//    private List<WebElement> listaElementedoc;
-//
-//      @FindBy(xpath = "//div[@id='serp-dd']//ul[1]//li[1]")
-//      private WebElement linkPlatiDiverse;
-//
-//      public void clickButonDocumentatie(){
-//          click(butonDocumentatie);
-//      }
-//    public void addCampdeCautare(String text){
-//    // waitPage();
-//    //  click(campdeCautare);
-//      addText(text,campdeCautare);
-//    }
-//    public void butondeCautare() {
-//        click(lupadeCautere);
-//    }
-//    public void clikLinkPlatiDiverse(){
-//        click(linkPlatiDiverse);
-//    }
-@FindBy(xpath = "//a[@aria-label='Documentație']//img")
-private WebElement butonDocumentatie;
+
+    @FindBy(xpath = "//a[@aria-label='Documentație']//img")
+    private WebElement butonDocumentatie;
     @FindBy(xpath = "//section[@id='docsSearch']//input")
     private WebElement campdeCautare;
-    @FindBy(xpath = "//button[contains(@aria-label,'Caută')]")//span[contains(text(),'Caută')]
+    @FindBy(xpath = "//button[contains(@aria-label,'Caută')]")
     private WebElement lupadeCautere;
 
     @FindBy(xpath = "//ul[@class='result']")
     private List<WebElement> listaElementedoc;
 
-    @FindBy(xpath = "//a[contains(text(),'Plăți furnizori')]") //a[contains(text(),'Plăți diverse')]//div[@id='serp-dd']//ul[1]//li[1]
+    @FindBy(xpath = "//a[contains(text(),'Plăți furnizori')]")
     private WebElement linkPlatiFurnizori;
 
-    @FindBy(xpath="//button[@data-rating='positive']//span[2]")
+    @FindBy(xpath = "//button[@class='rateAction rateAction--positive']//span[@class='rating-face']//*[name()='svg']")
     private WebElement buttonSmileFace;
 
-    @FindBy(xpath ="//span[@class='articleRatings-feedback-message']")
+    @FindBy(xpath = "//span[@class='articleRatings-feedback-message']")
     private WebElement message;
 
-
-    @FindBy(xpath ="(//p[@class='help'])[1]")
+    @FindBy(xpath = "(//p[@class='help'])[1]")
     private WebElement message2;
 
-    public void clickButonDocumentatie(){
+    public void clickButonDocumentatie() {
         click(butonDocumentatie);
     }
-    public void addCampdeCautare(String text)  {
+
+    public void addCampdeCautare(String text) {
         SwitchToNextTab();
         addText(text, campdeCautare);
-
     }
-
-
-
     public void butondeCautare() {
         click(lupadeCautere);
     }
-    public void clikLinkPlatiDiverse(){
+
+    public void clikLinkPlatiDiverse() {
         click(linkPlatiFurnizori);
     }
-
-
-    public void clickbuttonSmileFace(){
-        //find(buttonSmileFace);
-        //scrollUntilViewElement(buttonSmileFace);
+    public void clickbuttonSmileFace() {
         movetoElement();
         click(buttonSmileFace);
     }
 
-    public void verifMessage(){
+    public void verifMessage() {
         movetoElement();
         click(buttonSmileFace);
-        Assert.assertEquals(getText(message),"Mulțumim pentru părere");
+        Assert.assertEquals(getText(message), PageLinksAndText.textmessage.getValue());
     }
-    public void verifMessage2(){
-        movetoElement();
-        Assert.assertEquals(getText(message2),"Încă ai nevoie de ajutor? Contactează-ne!");
-    }
-    public void afisElemente(){
-
-        for (int i=0; i<listaElementedoc.size(); i++){
-            System.out.println(listaElementedoc.get(i).getText());
-        }
-
-    }
-
-    public Boolean verifButton(){
-
+    public Boolean verifButton() {
         findElement(buttonSmileFace);
-
-
         return true;
     }
 

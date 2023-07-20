@@ -23,7 +23,9 @@ public enum PageLinksAndText {
 
     incomeArticlesLink("https://ps.contapp.ro/venituri/articole"),
 
-    clientsLink("https://ps.contapp.ro/venituri/clienti");
+    clientsLink("https://ps.contapp.ro/venituri/clienti"),
+    textmessage("Mulțumim pentru părere");
+
 
     private final String value;
 
