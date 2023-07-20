@@ -10,6 +10,7 @@ import java.util.List;
 
 import static org.apache.commons.lang3.StringUtils.trim;
 
+
 public class CartPage extends BaseTest {
 
     @FindBy (xpath = "//i[@class='capp capp-cart']")

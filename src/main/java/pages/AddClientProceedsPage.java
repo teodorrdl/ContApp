@@ -110,7 +110,7 @@ public class AddClientProceedsPage extends BaseTest {
 
 
     public void closeCoockiesAdd() {
-        find(cookiesAdd);
+        findElement(cookiesAdd);
         click(closeCoockiesAddButton);
     }
 
