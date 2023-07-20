@@ -51,6 +51,7 @@ public class LoginPageContactApp extends BaseTest {
     };
 
     public void addEmail(String email) {
+
         addText(email, emailField);
     }
 
