@@ -136,7 +136,7 @@ public class ContAppPaymentsPage extends BaseTest {
     @FindBy(xpath = "//span[normalize-space()='PFA']")
     private WebElement selectPFAButton;
 
-    @FindBy(xpath = "//*[@id=\"onetrust-accept-btn-handler\"]")
+    @FindBy(xpath = "//button[@id='onetrust-accept-btn-handler']")
     private WebElement closeCookieButton;
 
     @FindBy(xpath = "(//b[contains(@role,'presentation')])[5]")
