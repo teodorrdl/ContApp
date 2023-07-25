@@ -3,6 +3,7 @@ package base;
 public enum PageLinksAndText {
     clickSettingCompanyLink("https://ps.contapp.ro/setari/general"),
     contactAppUrlLink("https://contapp.ro/"),
+    accountLink("https://account.contapp.ro"),
     verifyAssetsRegistryButtonLink("https://ps.contapp.ro/export/3850/assets/pdf/view?year=2023"),
     clickCreateAccountButtonLink("https://account.contapp.ro/register"),
     clickAuthenticationButtonLink("https://account.contapp.ro/login"),
