@@ -27,6 +27,9 @@ public enum PageLinksAndText {
     insertOrActivateTokenMessage("Insereaza sau activeaza token-ul de acces in S.P.V."),
     supportSPVLink("https://suport.contapp.ro/article/150-certificat-semnatura-digitala-acces-spv"),
     authorizationInvoiceLink("https://ps.contapp.ro/autorizare-efactura/ff3f9b76-99c8-406f-a765-5a52221d2c97"),
+
+    messageCart("Produsele din cos au fost sterse!"),
+    messageThanksCart("Mulțumim pentru comandă!"),
     textmessage("Mulțumim pentru părere");
 
     private final String value;
