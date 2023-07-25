@@ -26,6 +26,7 @@ public class HouseAndBankJournalTest extends BasePage {
                                         String IBAN,String BankName,String Contact, String SupplierEmail,
                                         String SupplierPhone, String SupplierWebsite) {
 
+        paymentPage().closeCookieButton();
         paymentPage().clickAutentification();
         paymentPage().addEmail(email);
         paymentPage().addPassword(password);
@@ -49,7 +50,6 @@ public class HouseAndBankJournalTest extends BasePage {
         paymentPage().addSupplierIban(IBAN);
         paymentPage().addSupplierBankName(BankName);
         paymentPage().addSupplierContact(Contact);
-        paymentPage().closeCookieButton();
         paymentPage().addSupplierEmail(SupplierEmail);
         paymentPage().addSupplierPhone(SupplierPhone);
         paymentPage().addSupplierWebsite(SupplierWebsite);
