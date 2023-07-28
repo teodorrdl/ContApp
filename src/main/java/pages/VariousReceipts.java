@@ -17,11 +17,11 @@ public class VariousReceipts extends BaseTest {
     private WebElement selectHousesAndBanks;
     @FindBy(xpath = "//span[@id='select2-select-transaction-location-id-income---container']")
     private WebElement openActivityLocation;
-    @FindBy(xpath = "//span[contains(text(),'Activitate desfășurată la terți')]")
+    @FindBy(xpath = "//span[normalize-space()='Sediul profesional']")
     private WebElement selectActivityLocation;
     @FindBy(xpath = "//div[@class='col-lg-4']//span[@role='combobox']")
     private WebElement openCaenCode;
-    @FindBy(xpath = "(//span[contains(text(),'Activitate desfășurată la terți | 551711')])[1]")
+    @FindBy(xpath = "//span[normalize-space()='Sediul profesional | 0115 - Cultivarea tutunului']")
     private WebElement selectCaenCode;
     @FindBy(xpath = "//span[@id='select2-select-receipt-document-selector-id-income---container']")
     private WebElement openIncomeDoc;
