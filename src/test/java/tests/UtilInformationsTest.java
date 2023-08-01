@@ -1,5 +1,6 @@
 package tests;
 
+import base.PageLinksAndText;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -23,6 +24,8 @@ public class UtilInformationsTest extends BasePage {
     public UtilInformations utilInfo() {
         return new UtilInformations();
     }
+
+
     @Test(description = "Happy Test! Check informatii utile!", priority = 0)
 
     @Parameters({"email","password","currency"})
@@ -37,7 +40,7 @@ public class UtilInformationsTest extends BasePage {
         utilInfo().clickLinkUtilInfo();
         utilInfo().clickLinkCurrencyHistory();
         utilInfo().clickButtonCurrencyRate();
-        Assert.assertTrue(utilInfo().readCurrencyValues(currency),"Minim calculat cu succes!");
+        Assert.assertTrue(utilInfo().readCurrencyValues(currency), PageLinksAndText.messageMin.getValue());
     }
 }
 

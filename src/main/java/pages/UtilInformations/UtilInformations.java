@@ -1,10 +1,12 @@
 package pages.UtilInformations;
 
 import base.BaseTest;
+import base.PageLinksAndText;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,7 @@ import static org.apache.commons.lang3.StringUtils.trim;
 
 public class UtilInformations extends BaseTest {
 
+    String text = "USD";
     @FindBy(xpath="//a[normalize-space()='Informații utile']")
     private WebElement linkUtilInfo;
 
@@ -35,6 +38,9 @@ public class UtilInformations extends BaseTest {
     @FindBy(xpath="//tbody//tr//td//span")
     private List<WebElement> tableCurrencyValues;
 
+    @FindBy(xpath ="//tr[@class='align-middle ']//td//span")
+    private List<WebElement> locatorFirstLine;
+
     public void clickLinkUtilInfo(){
         click(linkUtilInfo);
     }
@@ -53,10 +59,22 @@ public class UtilInformations extends BaseTest {
        click(fieldCurrencyValue);
     }
 
+    public boolean setCurrency(String text){
+        boolean checkCurency =false;
+        this.text = text;
+        waitPage().until(ExpectedConditions.visibilityOfAllElements(locatorFirstLine));
+        for(int i=0;i<locatorFirstLine.size();i++){
+            if(locatorFirstLine.get(i).getText().contains(text)) {
+                checkCurency = true;
+                break;
+            }
+        }
+        return checkCurency;
+    }
     public boolean readCurrencyValues(String text){
        addText(text,fieldCurrency);
        click(fieldCurrencyValue);
-       waitPage().until(ExpectedConditions.visibilityOf(tableCurrencyValues.get(0).findElement(By.xpath("//span[contains(text(), " + text+ ")]"))));
+       Assert.assertTrue(setCurrency(text), PageLinksAndText.messageMin.getValue());
        List<Double> myNum = new ArrayList<>();
 
         for (int i = 2; i < tableCurrencyValues.size(); i+=2) {
@@ -69,5 +87,5 @@ public class UtilInformations extends BaseTest {
                 min=myNum.get(i+1);
         }
         return min!=0?true:false;
-          }
+    }
 }

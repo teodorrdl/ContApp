@@ -25,6 +25,7 @@ public enum PageLinksAndText {
     integrationsLink("https://ps.contapp.ro/setari/integrari"),
     successMessage("Actualizat cu succes"),
     insertOrActivateTokenMessage("Insereaza sau activeaza token-ul de acces in S.P.V."),
+    messageMin("Calculul valorii minime a esuat!"),
     supportSPVLink("https://suport.contapp.ro/article/150-certificat-semnatura-digitala-acces-spv"),
     authorizationInvoiceLink("https://ps.contapp.ro/autorizare-efactura/ff3f9b76-99c8-406f-a765-5a52221d2c97"),
 
