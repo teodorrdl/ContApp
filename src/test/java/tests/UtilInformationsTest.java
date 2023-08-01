@@ -24,7 +24,6 @@ public class UtilInformationsTest extends BasePage {
         return new UtilInformations();
     }
 
-
     @Test(description = "Happy Test! Check informatii utile!", priority = 0)
 
     @Parameters({"email","password","currency"})
@@ -39,10 +38,7 @@ public class UtilInformationsTest extends BasePage {
         utilInfo().clickLinkUtilInfo();
         utilInfo().clickLinkCurrencyHistory();
         utilInfo().clickButtonCurrencyRate();
-        //utilInfo().searchCurrency(currency);
-        //utilInfo().readCurrencyValues(currency);
         Assert.assertTrue(utilInfo().readCurrencyValues(currency),"Minim calculat cu succes!");
-
     }
 }
 

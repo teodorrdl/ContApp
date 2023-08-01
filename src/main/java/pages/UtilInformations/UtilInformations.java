@@ -56,43 +56,18 @@ public class UtilInformations extends BaseTest {
     public boolean readCurrencyValues(String text){
        addText(text,fieldCurrency);
        click(fieldCurrencyValue);
-
        waitPage().until(ExpectedConditions.visibilityOf(tableCurrencyValues.get(0).findElement(By.xpath("//span[contains(text(), " + text+ ")]"))));
-       //waitPage().until(ExpectedConditions.visibilityOfAllElements(tableCurrencyValues.get(0)));
-        //waitPage().until(ExpectedConditions.);
-
        List<Double> myNum = new ArrayList<>();
 
         for (int i = 2; i < tableCurrencyValues.size(); i+=2) {
-
-            System.out.println("i = " + i + " " +tableCurrencyValues.get(i).getText());
-
             if(!tableCurrencyValues.get(i).getText().equals("-"))
                 myNum.add(Double.parseDouble(tableCurrencyValues.get(i).getText()));
-
-//            if(i%2==0) {
-//                myNum[j] =tableCurrencyValues.get(i%2).getText();
-//                j++;
-//            }
-//            if(tableCurrencyValues.contains(text)){
-//                System.out.println( "A gasit! " + tableCurrencyValues.get(i).getText());
-//            }
-
         }
         double min = myNum.get(0);
         for (int i = 0; i < myNum.size()-1; i++){
             if(min > myNum.get(i+1) )
                 min=myNum.get(i+1);
         }
-        System.out.println("min = " + min);
-
         return min!=0?true:false;
-
-//        for ( Integer var : myNum)
-//        {
-//           System.out.println(var);
-//
-//        }
     }
-
 }
