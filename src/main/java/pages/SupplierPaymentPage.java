@@ -31,7 +31,9 @@ public class SupplierPaymentPage extends BaseTest {
     private WebElement documentNum;
     @FindBy(xpath = "//label[@for='transaction-date-expense--']//i[@class='bi bi-calendar']")
     private WebElement openDocDate;
-    @FindBy(xpath = "//td[@class='old day'][normalize-space()='26']")
+    @FindBy(xpath = "//th[@class='prev']")
+    private WebElement prevDate;
+    @FindBy(xpath = "//td[@class='old day'][normalize-space()='29']")
     private WebElement selectDocDate;
     @FindBy(xpath = "//span[@id='select2-select-company-article-types-list-id-expense---container']")
     private WebElement openItemType;
@@ -137,6 +139,7 @@ public class SupplierPaymentPage extends BaseTest {
     public void addDocNumAndDate(String documentNum) {
         addText(documentNum, this.documentNum);
         click(openDocDate);
+        click(prevDate);
         click(selectDocDate);
     }
 
