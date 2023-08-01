@@ -44,4 +44,18 @@ public class OrderSubscriptionTest extends BasePage {
         newOrderSubscription().clickButtonPlaceOrder();
         newOrderSubscription().verifyOrder();
     }
+
+    @Test(description = "Happy Test! Check price from cart!", priority = 0)
+
+    @Parameters({"email","password"})
+    public void testPriceCart(String email, String password) {
+        newOrderSubscription().verifEnableButtonTrustClose();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(email);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickRememberMeCheckbox();
+        loginPageContactApp().clickLoginButton();
+        newOrderSubscription().clickLinkOrderSubscription();
+        cartPage().checkTotalPriceProductsCart();
+    }
 }

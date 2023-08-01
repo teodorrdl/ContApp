@@ -13,6 +13,7 @@ import utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class BaseTest extends BasePage {
 
@@ -170,4 +171,10 @@ public class BaseTest extends BasePage {
         return locator;
     }
 
+    public static void switchToWindow(WebDriver driver) {
+        Set<String> windowHandles = driver.getWindowHandles();
+        for (String windowHandle : windowHandles) {
+            driver.switchTo().window(windowHandle);
+        }
+    }
 }
