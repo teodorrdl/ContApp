@@ -95,7 +95,6 @@ public class SingleDeclarationSubscription extends BaseTest {
     }
 
     public void clickForPayment() {
-//        scrollDown();
         click(forPayment);
     }
 

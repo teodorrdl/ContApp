@@ -38,5 +38,6 @@ public class SingleDeclarationSubscriptionTest extends BasePage {
         singleDeclarationSubscription().clickForPayment();
         singleDeclarationSubscription().makingPayment();
 
+
     }
 }
