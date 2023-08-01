@@ -23,7 +23,6 @@ public class UtilInformationsTest extends BasePage {
     public UtilInformations utilInfo() {
         return new UtilInformations();
     }
-
     @Test(description = "Happy Test! Check informatii utile!", priority = 0)
 
     @Parameters({"email","password","currency"})

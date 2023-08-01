@@ -32,7 +32,7 @@ public class BasePage {
         driver_local.manage().deleteAllCookies();
         driver_local.get(PageLinksAndText.contactAppUrlLink.getValue());
         context.setAttribute("WebDriver", driver_local);
-    }
+            }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {

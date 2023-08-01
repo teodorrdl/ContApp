@@ -69,5 +69,5 @@ public class UtilInformations extends BaseTest {
                 min=myNum.get(i+1);
         }
         return min!=0?true:false;
-    }
+          }
 }
