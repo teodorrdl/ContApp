@@ -19,10 +19,7 @@ public enum PageLinksAndText {
     eInvoicesLink("https://ps.contapp.ro/setari/integrari"),
     incomeArticlesLink("https://ps.contapp.ro/venituri/articole"),
     clientsLink("https://ps.contapp.ro/venituri/clienti"),
-
-
     questionMessage("Ți-am răspuns la întrebare?"),
-
     representativesLink("https://ps.contapp.ro/setari/representanti"),
     usersLink("https://ps.contapp.ro/setari/utilizatori"),
     preferencesLink("https://ps.contapp.ro/setari/preferinte"),
@@ -32,18 +29,13 @@ public enum PageLinksAndText {
     messageMin("Calculul valorii minime a esuat!"),
     supportSPVLink("https://suport.contapp.ro/article/150-certificat-semnatura-digitala-acces-spv"),
     authorizationInvoiceLink("https://ps.contapp.ro/autorizare-efactura/ff3f9b76-99c8-406f-a765-5a52221d2c97"),
-
-
     messageCart("Produsele din cos au fost sterse!"),
     messageThanksCart("Mulțumim pentru comandă!"),
     textmessage("Mulțumim pentru părere");
-
     private final String value;
-
     PageLinksAndText(String value) {
         this.value = value;
     }
-
     public String getValue() {
         return this.value;
     }

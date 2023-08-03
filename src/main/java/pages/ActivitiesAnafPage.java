@@ -37,9 +37,8 @@ public class ActivitiesAnafPage extends BaseTest {
         SwitchToNextTab();
         addText(search, campdeCautare);
         clickLupadeCautare();
-        //   click(listofElements(listaElementedoc,search));
         click(activitatiDesfasurate);
-        //  Assert.assertEquals("Mulțumim pentru părere","Ți-am răspuns la întrebare");    }
+
 
     }
     public void verifMessage() {
