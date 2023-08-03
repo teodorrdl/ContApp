@@ -65,7 +65,6 @@ public class PaymentsSuppliersTest extends BasePage {
         paymentsSuppliers().whichTypeOfArticol(typeArticol);
         paymentsSuppliers().addExplanation(explanation);
         paymentsSuppliers().addFiscalCategory(fiscalCategory);
-//        paymentsSuppliers().clickSaveArticol();
         paymentsSuppliers().selectSupplier(selectSupplier);
         paymentsSuppliers().addMoneyPayment(moneyPaymentt);
         paymentsSuppliers().clickAddPayment(0,50);

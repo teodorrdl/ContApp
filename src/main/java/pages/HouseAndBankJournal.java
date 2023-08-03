@@ -57,7 +57,7 @@ public class HouseAndBankJournal extends BaseTest {
     private WebElement documentNum;
     @FindBy(xpath = "//label[contains(@for,'transaction-date-income--')]//i[contains(@class,'bi bi-calendar')]")
     private WebElement openDocDate;
-    @FindBy(xpath = "//td[@class='day'][normalize-space()='20']")
+    @FindBy(xpath = "//td[@class='day'][normalize-space()='1']")
     private WebElement selectDocDate;
     @FindBy(xpath = "//div[@class='col-sm-6 col-lg-3']//input[@id='input-total']")
     private WebElement totalIncome;
