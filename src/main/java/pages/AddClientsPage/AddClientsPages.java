@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-import javax.swing.*;
 import java.util.List;
 
 public class AddClientsPages extends BaseTest {
@@ -69,6 +68,9 @@ public class AddClientsPages extends BaseTest {
     @FindBy(xpath = "//ul[@class='select2-results__options']//li")
     private List<WebElement> countyDroplist;
 
+    @FindBy(xpath = "//tbody//tr//td//span")
+    private List<WebElement> clientTable;
+
     @FindBy(xpath = "//input[@id='input-city']")
     private WebElement cityField;
 
@@ -104,8 +106,13 @@ public class AddClientsPages extends BaseTest {
     @FindBy(xpath = "//div[@class='justify-content-start modal-footer']//button[2]")
     private WebElement notificationCancelBtn;
 
-    @FindBy(xpath = "//table[@class='table table-hover table-borderless']")
-    private WebElement clientsTable;
+
+
+    @FindBy(xpath = "//div[@class='toast toast-success']")
+    private WebElement successPopup;
+
+
+
 
     public void closeCoockiesAdd() {
         if(cookiesAdd.isDisplayed());
@@ -174,6 +181,8 @@ public class AddClientsPages extends BaseTest {
         click(listofElements(countyDroplist, text));
     }
 
+
+
     public void addCityField(String city) {
         addText(city, cityField);
     }
@@ -213,7 +222,7 @@ public class AddClientsPages extends BaseTest {
     }
 
     public void findNotification(){
-        // daca cu debugger pe metoda asta imi merge si imi apasa pe inchide notificare, dar daca il rulez sau pun debugger-ul in alta parte imi da client unic, desi nu este
+        findElement(notification);
         if (notification.isDisplayed()){
             click(notification);
             click(notificationCancelBtn);
@@ -222,9 +231,7 @@ public class AddClientsPages extends BaseTest {
         }
     }
 
-    public void findClientsTable(){
-        Assert.assertTrue(clientsTable.isDisplayed());
-    }
+
 
     public void acceptAlert(){
         click(alert);
@@ -233,31 +240,15 @@ public class AddClientsPages extends BaseTest {
         }
     }
 
+    public void succesClientAddedPopup(){
+        click(successPopup);
+        Assert.assertTrue(successPopup.isDisplayed());
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public void selectClientTable(String text){
+        Assert.assertEquals(listofElements(clientTable, text).getText(), text);
+    }
 
 
 
