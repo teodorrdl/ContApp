@@ -32,7 +32,7 @@ public class BaseTest extends BasePage {
     }
 
     protected WebDriverWait waitPage() {
-        return new WebDriverWait(driver, 10);
+        return new WebDriverWait(driver, 15);
     }
 
     protected WebElement clickAble(WebElement locator) {
