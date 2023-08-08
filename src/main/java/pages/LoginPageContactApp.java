@@ -13,7 +13,8 @@ public class LoginPageContactApp extends BaseTest {
 
     @FindBy(xpath = "//input[@id='email']")
     private WebElement emailField;
-
+@FindBy(xpath = "'onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon']")
+private WebElement closeCookieButton;
     @FindBy(xpath = "//input[@id='password']")
     private WebElement passwordField;
 
@@ -34,16 +35,9 @@ public class LoginPageContactApp extends BaseTest {
     @FindBy(xpath = "//button[@id='onetrust-accept-btn-handler']")
     private WebElement acceptCookieButton;
 
-    @FindBy(xpath = "(//button[@aria-label='Închideți'])[1]")
-    public WebElement closeCookieButton;
 
-    public void clickCloseCookie() {
-        try {
-            click(closeCookieButton);
-        } catch (Exception e) {
-            System.out.println("Cookie is not displayed");
-        }
-    }
+
+
 
     public String[] expectedAlertMessages = {PageLinksAndText.authenticationErrorMessage.getValue(),
             PageLinksAndText.mandatoryEmailMessage.getValue(),
@@ -86,6 +80,15 @@ public class LoginPageContactApp extends BaseTest {
             Assert.assertEquals(passwordAlertMessage.getText(), expectedAlertMessages[2]);
         } else {
             Assert.assertEquals(emailAlertMessage.getText(), expectedAlertMessages[0]);
+        }
+    }
+
+    public void clickCloseCookie() {
+        try {
+
+            click(closeCookieButton);
+        } catch (Exception e) {
+            System.out.println("Cookie is not displayed");
         }
     }
 }
