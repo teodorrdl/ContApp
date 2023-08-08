@@ -32,11 +32,11 @@ public class BasePage {
         driver_local.manage().deleteAllCookies();
         driver_local.get(PageLinksAndText.contactAppUrlLink.getValue());
         context.setAttribute("WebDriver", driver_local);
-            }
+    }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
-       driver_local.quit();
+        driver_local.quit();
     }
 
     public void reportLog(String message) {

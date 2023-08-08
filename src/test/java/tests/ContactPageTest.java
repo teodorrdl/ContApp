@@ -1,5 +1,6 @@
 package tests;
 
+import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.BasePage;
@@ -23,6 +24,7 @@ public class ContactPageTest extends BasePage {
     public void contactTest(String email, String password, String name, String emailTest, String message) throws IOException {
         login().clickCloseCookie();
         login().clickAuthenticationButton();
+        logger.log(LogStatus.PASS, "Autentificarea s-a creat cu succes!");
         login().addEmail(email);
         login().addPassword(password);
         login().clickRememberMeCheckbox();
