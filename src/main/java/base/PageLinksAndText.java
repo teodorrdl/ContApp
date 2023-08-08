@@ -22,7 +22,8 @@ public enum PageLinksAndText {
 
     incomeArticlesLink("https://ps.contapp.ro/venituri/articole"),
 
-    clientsLink("https://ps.contapp.ro/venituri/clienti");
+    clientsLink("https://ps.contapp.ro/venituri/clienti"),
+    toastMessage("Pentru data selectată nu aveți un abonament activ. Te rog mergi la secțiunea abonamente.");
 
     private final String value;
 
