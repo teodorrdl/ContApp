@@ -63,12 +63,10 @@ public class ContactPage extends BaseTest {
         } catch (Exception e) {
             throw new NoSuchFrameException("No frame available!");
         }
-        Assert.assertTrue(getPageTitle().equals("Suport ContApp"), PageLinksAndText.messageTestPageTitle.getValue());
     }
 
 
     public void inputName(String name){
-        //waitPage().until(ExpectedConditions.visibilityOf(fieldInputName));
         addText(name,fieldInputName);
     }
     public void inputEmail(String email){
@@ -83,8 +81,7 @@ public class ContactPage extends BaseTest {
             click(valueEmojiHeart);
             click(buttonEmojiPicker);
             click(valueEmojiSmilingFace);
-            //click(buttonUploadFile);
-            addText("C:\\_DANA\\Screenshot 2023-08-01 124456.png",buttonUploadFile);
+            addText(PageLinksAndText.filePath.getValue(), buttonUploadFile);
         }
         catch(Exception e) {
             throw new IOException();

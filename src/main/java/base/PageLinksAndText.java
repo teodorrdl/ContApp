@@ -34,6 +34,7 @@ public enum PageLinksAndText {
     messageCart("Produsele din cos au fost sterse!"),
     messageThanksCart("Mulțumim pentru comandă!"),
     questionMessage("Ți-am răspuns la întrebare?"),
+    filePath("src/test/resources/Screenshot 2023-05-16 213119.png"),
     textmessage("Mulțumim pentru părere");
 
     private final String value;
