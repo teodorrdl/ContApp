@@ -40,6 +40,34 @@ public class SettingCompanyTest extends BasePage {
         return new HousesAndBanks();
     }
 
+    public SeriesPage seriesPage() {
+        return new SeriesPage();
+    }
+
+    public UnitMeasurePage unitMeasurePage() {
+        return new UnitMeasurePage();
+    }
+
+    public RolesAndPermissionsPage rolesAndPermissionsPage() {
+        return new RolesAndPermissionsPage();
+    }
+
+    public UsersPage usersPage() {
+        return new UsersPage();
+    }
+
+    public RepresentativesPage representativesPage() {
+        return new RepresentativesPage();
+    }
+
+    public Preferences preferences() {
+        return new Preferences();
+    }
+
+    public Integrations integrations() {
+        return new Integrations();
+    }
+
     @Test(description = "check the company settings if direct to the correct url with valid login credentials " +
             "and with the company already created", priority = 2)
     @Parameters({"username", "password"})
@@ -211,5 +239,136 @@ public class SettingCompanyTest extends BasePage {
         housesAndBanks().checkBankOrHouseAdded(typeofService, name, currency, cashRegisterIBAN);
     }
 
+    @Test(description = "Add new series and add new decisions numbers", priority = 12)
+    @Parameters({"username", "password", "year", "seriesType", "seriesName", "seriesNumber" ,"firstNr"})
+    public void addNewSeries(String username, String password, String year, String seriesType, String seriesName,
+                             String seriesNumber, String firstNr){
+        loginPageContactApp().clickCloseCookie();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickRememberMeCheckbox();
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        seriesPage().clickSeriesLink();
+        seriesPage().addNewSeries(year,seriesType,seriesName,seriesNumber,firstNr);
+        seriesPage().checkSeriesAdded(seriesType,seriesName,seriesNumber,firstNr);
+        seriesPage().addNrDecisions();
+    }
 
+    @Test(description = "Add new measure unit", priority = 13)
+    @Parameters({"username", "password", "measureUnitName", "measureUnitSymbol", "blCode"})
+    public void addNewMeasureUnit(String username, String password, String measureUnitName, String measureUnitSymbol, String blCode){
+        loginPageContactApp().clickCloseCookie();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickRememberMeCheckbox();
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        unitMeasurePage().clickUnitMeasureLink();
+        unitMeasurePage().addUnitMeasure(measureUnitName,measureUnitSymbol,blCode);
+        unitMeasurePage().checkUnitMeasure(measureUnitName,measureUnitSymbol,blCode);
+    }
+
+    @Test(description = "Check if the permission can be changed for each role", priority = 14)
+    @Parameters({"username", "password"})
+    public void checkPermissionForRoles(String username, String password){
+        loginPageContactApp().clickCloseCookie();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickRememberMeCheckbox();
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        rolesAndPermissionsPage().clickRolesAndPermissionsLink();
+        rolesAndPermissionsPage().clickOpenAdminRole();
+        rolesAndPermissionsPage().clickOpenAccountantRole();
+        rolesAndPermissionsPage().clickOpenVisitorRole();
+    }
+
+    @Test(description = "Invite new user", priority = 15)
+    @Parameters({"username", "password", "email", "role"})
+    public void inviteNewUser(String username, String password, String email, String role){
+        loginPageContactApp().clickCloseCookie();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        usersPage().clickUsersLink();
+        usersPage().inviteUser(email, role);
+        usersPage().isUserInvited(email);
+    }
+
+    @Test(description = "Add new representative", priority = 16)
+    @Parameters({"username", "password", "lastName", "firstName", "identifier", "percentage"})
+    public void addNewRepresentative(String username, String password, String lastName, String firstName, String identifier, String percentage){
+        loginPageContactApp().clickCloseCookie();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        representativesPage().clickRepresentativesLink();
+        representativesPage().addNewRepresentative(lastName, firstName, identifier, percentage);
+        representativesPage().checkIfRepresentativeIsAdded(lastName, firstName, identifier, percentage);
+    }
+
+    @Test(description = "Check if the preferences invoice is saved", priority = 17)
+    @Parameters({"username", "password", "delegateName", "CISeries", "CINumber"})
+    public void checkPreferencesInvoiceIsSaved(String username, String password, String delegateName, String CISeries, String CINumber){
+        loginPageContactApp().clickCloseCookie();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        preferences().clickPreferencesLink();
+        preferences().preferencesInvoice(delegateName, CISeries, CINumber);
+        preferences().checkCheckbox();
+        preferences().customizeTextEmail();
+    }
+
+    @Test(description = "Check if generate invoice is working with certificate SPV", priority = 18)
+    @Parameters({"username", "password"})
+    public void checkGenerateInvoiceWithCertificateSPV(String username, String password){
+        loginPageContactApp().clickCloseCookie();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        integrations().clickIntegrationsLink();
+        integrations().clickWithCertificateDigitalSPV();
+    }
+
+    @Test(description = "Check if generate invoice is working without certificate SPV", priority = 19)
+    @Parameters({"username", "password"})
+    public void checkGenerateInvoiceWithoutCertificateSPV(String username, String password){
+        loginPageContactApp().clickCloseCookie();
+        loginPageContactApp().clickAuthenticationButton();
+        loginPageContactApp().addEmail(username);
+        loginPageContactApp().addPassword(password);
+        loginPageContactApp().clickLoginButton();
+        settingCompany().clickContAppPs();
+        settingCompany().clickDropdownButtonSetting();
+        settingCompany().clickSettingCompany();
+        integrations().clickIntegrationsLink();
+        integrations().clickWithoutCertificateDigitalSPV();
+    }
 }

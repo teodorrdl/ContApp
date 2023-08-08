@@ -1,6 +1,9 @@
 package base;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,6 +13,7 @@ import utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class BaseTest extends BasePage {
 
@@ -29,7 +33,7 @@ public class BaseTest extends BasePage {
     }
 
     protected WebDriverWait waitPage() {
-        return new WebDriverWait(driver, 10);
+        return new WebDriverWait(driver, 15);
     }
 
     protected WebElement clickAble(WebElement locator) {
@@ -93,8 +97,6 @@ public class BaseTest extends BasePage {
             throw new IllegalStateException("This is not " + searchString + " .The actual Url is: " + getUrl());
         }
     }
-
-
     protected WebElement listofElements(List<WebElement> list, String text) {
         WebElement elem = null;
         for (int i = 0; i < list.size(); i++) {
@@ -103,6 +105,7 @@ public class BaseTest extends BasePage {
                 break;
             }
         }
+
         return elem;
     }
 
@@ -111,7 +114,6 @@ public class BaseTest extends BasePage {
         elem = list.get(Utils.randomNumber(list.size() - 1));
         return elem;
     }
-
 
     protected void uploadDoc(WebElement element, String path) {
         element.sendKeys(path);
@@ -127,15 +129,14 @@ public class BaseTest extends BasePage {
         js.executeScript("window.scrollBy(" + x + "," + y + ")");
 
     }
-
     protected void action(WebElement locator) {
         action.moveToElement(locator).click().perform();
     }
 
     public void clickPreviousPage() {
-        waitPage();
         driver.navigate().back();
     }
+
     public void clickWithRetries(WebElement element) {
         int retryCount = 0;
         boolean actionSuccessful = false;
@@ -154,6 +155,7 @@ public class BaseTest extends BasePage {
     public void scrollDown() {
         action.keyDown(Keys.CONTROL).sendKeys(Keys.END).keyUp(Keys.CONTROL).perform();
     }
+
     public void scrollUp() {
         action.keyDown(Keys.CONTROL).sendKeys(Keys.HOME).keyUp(Keys.CONTROL).perform();
     }
@@ -161,6 +163,18 @@ public class BaseTest extends BasePage {
     public void addTextToDisabledTextBox(String text, WebElement locator) {
         if (locator.isEnabled()) {
             addText(text, locator);
+        }
+    }
+
+    public WebElement findElement(WebElement locator) {
+        waitPage().until(ExpectedConditions.visibilityOf(locator));
+        return locator;
+    }
+
+    public static void switchToWindow(WebDriver driver) {
+        Set<String> windowHandles = driver.getWindowHandles();
+        for (String windowHandle : windowHandles) {
+            driver.switchTo().window(windowHandle);
         }
     }
 }

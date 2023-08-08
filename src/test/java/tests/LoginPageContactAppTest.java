@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pages.BasePage;
 import pages.LoginPageContactApp;
 
-public class LoginPageContactAppTest extends BasePage {
+public class LoginPageContactAppTest extends BasePage{
     public LoginPageContactApp loginPageContactApp() {
         return new LoginPageContactApp();
     }
