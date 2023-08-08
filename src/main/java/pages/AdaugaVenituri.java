@@ -14,19 +14,18 @@ public class AdaugaVenituri extends BaseTest {
     @FindBy(xpath = "//a[normalize-space()='Creeaza un cont!']")
     private WebElement createAccountButtonLink;
 
-    @FindBy(xpath ="//input[@id='email']")
+    @FindBy(xpath = "//input[@id='email']")
     private WebElement email;
 
-    @FindBy(xpath ="//input[@id='password']")
+    @FindBy(xpath = "//input[@id='password']")
     private WebElement passwordField;
-
 
 
     @FindBy(xpath = "//label[@for='remember-me']")
     private WebElement rememberMeCheckbox;
     @FindBy(xpath = "//button[@class='onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon']")
     private WebElement inchideCookie;
-   @FindBy(xpath = "'onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon']")
+    @FindBy(xpath = "'onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-icon']")
     private WebElement closeCookieButton;
     @FindBy(xpath = "//button[normalize-space()='Autentificare']")
     private WebElement loginButton;
@@ -59,6 +58,7 @@ public class AdaugaVenituri extends BaseTest {
     private WebElement unitateDeMasura;
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     private WebElement salveaza;
+
     public void clickCloseCookie() {
         try {
             click(closeCookieButton);
@@ -66,6 +66,7 @@ public class AdaugaVenituri extends BaseTest {
             System.out.println("Cookie is not displayed");
         }
     }
+
     public void addText(WebElement emailField, String email) {
         addText(emailField, email);
     }
@@ -83,6 +84,7 @@ public class AdaugaVenituri extends BaseTest {
     public void clickLoginButton() {
         click(loginButton);
     }
+
     public void clickAuthenticationButton() {
         click(authenticationButton);
         Assert.assertEquals(driver.getCurrentUrl(), PageLinksAndText.clickAuthenticationButtonLink.getValue());
