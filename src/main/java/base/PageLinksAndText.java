@@ -18,7 +18,7 @@ public enum PageLinksAndText {
     salesInvoicesLink("https://ps.contapp.ro/venituri/facturi"),
     eInvoicesLink("https://ps.contapp.ro/setari/integrari"),
     incomeArticlesLink("https://ps.contapp.ro/venituri/articole"),
-    toastMessage("Pentru data selectată nu aveți un abonament activ. Te rog mergi la secțiunea abonamente.");
+    toastMessage("Pentru data selectată nu aveți un abonament activ. Te rog mergi la secțiunea abonamente."),
     clientsLink("https://ps.contapp.ro/venituri/clienti"),
     questionMessage("Ți-am răspuns la întrebare?"),
     representativesLink("https://ps.contapp.ro/setari/representanti"),
@@ -34,11 +34,7 @@ public enum PageLinksAndText {
     authorizationInvoiceLink("https://ps.contapp.ro/autorizare-efactura/ff3f9b76-99c8-406f-a765-5a52221d2c97"),
     messageCart("Produsele din cos au fost sterse!"),
     messageThanksCart("Mulțumim pentru comandă!"),
-    questionMessage("Ți-am răspuns la întrebare?"),
     filePath("src/test/resources/Screenshot 2023-05-16 213119.png"),
-    textmessage("Mulțumim pentru părere");
-    messageCart("Produsele din cos au fost sterse!"),
-    messageThanksCart("Mulțumim pentru comandă!"),
     textmessage("Mulțumim pentru părere");
     private final String value;
     PageLinksAndText(String value) {
