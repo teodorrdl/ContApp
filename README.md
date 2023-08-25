@@ -3,7 +3,7 @@
 ## Prerequisites 
 - **Programming Language:**  Java 18
 - **Build Tool:** Maven 4.0.0
-- 
+
 ## Dependencies:
 - Selenium 3.141.59
 - TestNG 7.1.0
